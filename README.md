@@ -45,6 +45,20 @@ Import the following:
 #import <OpenAPIClient/OAIAddress.h>
 #import <OpenAPIClient/OAICampaign.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
+#import <OpenAPIClient/OAIInlineResponse400.h>
+#import <OpenAPIClient/OAIInlineResponse400InvalidRequestBody.h>
+#import <OpenAPIClient/OAIInlineResponse403.h>
+#import <OpenAPIClient/OAIInlineResponse4031.h>
+#import <OpenAPIClient/OAIInlineResponse4031AccessTokenExpired.h>
+#import <OpenAPIClient/OAIInlineResponse4032.h>
+#import <OpenAPIClient/OAIInlineResponse4032EmailAddressInUse.h>
+#import <OpenAPIClient/OAIInlineResponse4032EmailNotAuthorized.h>
+#import <OpenAPIClient/OAIInlineResponse4032OauthFailed.h>
+#import <OpenAPIClient/OAIInlineResponse403InvalidCredentials.h>
+#import <OpenAPIClient/OAIInlineResponse415.h>
+#import <OpenAPIClient/OAIInlineResponse415UnsupportedMediaType.h>
+#import <OpenAPIClient/OAIInlineResponse500.h>
+#import <OpenAPIClient/OAIInlineResponse500InternalServerError.h>
 #import <OpenAPIClient/OAILoginData.h>
 #import <OpenAPIClient/OAILoginDataSSO.h>
 #import <OpenAPIClient/OAILoginDataSoMe.h>
@@ -93,7 +107,7 @@ OAILoginApi *apiInstance = [[OAILoginApi alloc] init];
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost/v1*
+All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -109,6 +123,20 @@ Class | Method | HTTP request | Description
  - [OAIAddress](docs/OAIAddress.md)
  - [OAICampaign](docs/OAICampaign.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
+ - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
+ - [OAIInlineResponse400InvalidRequestBody](docs/OAIInlineResponse400InvalidRequestBody.md)
+ - [OAIInlineResponse403](docs/OAIInlineResponse403.md)
+ - [OAIInlineResponse4031](docs/OAIInlineResponse4031.md)
+ - [OAIInlineResponse4031AccessTokenExpired](docs/OAIInlineResponse4031AccessTokenExpired.md)
+ - [OAIInlineResponse4032](docs/OAIInlineResponse4032.md)
+ - [OAIInlineResponse4032EmailAddressInUse](docs/OAIInlineResponse4032EmailAddressInUse.md)
+ - [OAIInlineResponse4032EmailNotAuthorized](docs/OAIInlineResponse4032EmailNotAuthorized.md)
+ - [OAIInlineResponse4032OauthFailed](docs/OAIInlineResponse4032OauthFailed.md)
+ - [OAIInlineResponse403InvalidCredentials](docs/OAIInlineResponse403InvalidCredentials.md)
+ - [OAIInlineResponse415](docs/OAIInlineResponse415.md)
+ - [OAIInlineResponse415UnsupportedMediaType](docs/OAIInlineResponse415UnsupportedMediaType.md)
+ - [OAIInlineResponse500](docs/OAIInlineResponse500.md)
+ - [OAIInlineResponse500InternalServerError](docs/OAIInlineResponse500InternalServerError.md)
  - [OAILoginData](docs/OAILoginData.md)
  - [OAILoginDataSSO](docs/OAILoginDataSSO.md)
  - [OAILoginDataSoMe](docs/OAILoginDataSoMe.md)

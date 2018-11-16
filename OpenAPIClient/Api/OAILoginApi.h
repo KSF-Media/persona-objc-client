@@ -1,4 +1,10 @@
 #import <Foundation/Foundation.h>
+#import "OAIInlineResponse400.h"
+#import "OAIInlineResponse403.h"
+#import "OAIInlineResponse4031.h"
+#import "OAIInlineResponse4032.h"
+#import "OAIInlineResponse415.h"
+#import "OAIInlineResponse500.h"
 #import "OAILoginData.h"
 #import "OAILoginDataSSO.h"
 #import "OAILoginDataSoMe.h"
