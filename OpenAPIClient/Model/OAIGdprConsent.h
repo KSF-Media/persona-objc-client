@@ -17,16 +17,14 @@
 
 
 
-@protocol OAIPackageOffer
+@protocol OAIGdprConsent
 @end
 
-@interface OAIPackageOffer : OAIObject
+@interface OAIGdprConsent : OAIObject
 
 
-@property(nonatomic) NSNumber* months;
+@property(nonatomic) NSString* key;
 
-@property(nonatomic) NSNumber* totalPrice;
-
-@property(nonatomic) NSNumber* monthlyPrice;
+@property(nonatomic) NSNumber* val;
 
 @end
