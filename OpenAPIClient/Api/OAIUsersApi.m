@@ -148,10 +148,13 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
+///  @param cacheControl  (optional)
+///
 ///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
+    cacheControl: (NSString*) cacheControl
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
@@ -176,6 +179,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
+    }
+    if (cacheControl != nil) {
+        headerParams[@"Cache-Control"] = cacheControl;
     }
     // HTTP header `Accept`
     NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];

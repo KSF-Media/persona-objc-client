@@ -70,6 +70,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
+    cacheControl: (NSString*) cacheControl
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
 
@@ -82,12 +83,14 @@ Authorization header expects the following format ‘OAuth {token}’
 
 NSString* uuid = @"uuid_example"; // 
 NSString* authorization = @"authorization_example"; //  (optional)
+NSString* cacheControl = @"cacheControl_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Get user by UUID.
 [apiInstance usersUuidGetWithUuid:uuid
               authorization:authorization
+              cacheControl:cacheControl
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -104,6 +107,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **authorization** | **NSString***|  | [optional] 
+ **cacheControl** | **NSString***|  | [optional] 
 
 ### Return type
 

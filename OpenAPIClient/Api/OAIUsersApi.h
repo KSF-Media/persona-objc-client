@@ -50,14 +50,16 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @param uuid 
 /// @param authorization  (optional)
+/// @param cacheControl  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Authorization`",
+///  code:400 message:"Invalid `Cache-Control` or `Authorization`",
 ///  code:404 message:"`uuid` not found"
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
+    cacheControl: (NSString*) cacheControl
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
 
