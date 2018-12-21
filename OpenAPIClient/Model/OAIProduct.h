@@ -15,8 +15,11 @@
 
 
 #import "OAIActiveDays.h"
+#import "OAIPaper.h"
 @protocol OAIActiveDays;
 @class OAIActiveDays;
+@protocol OAIPaper;
+@class OAIPaper;
 
 
 
@@ -33,5 +36,7 @@
 @property(nonatomic) OAIActiveDays* active;
 
 @property(nonatomic) NSDate* nextDelivery;
+
+@property(nonatomic) OAIPaper* paper;
 
 @end

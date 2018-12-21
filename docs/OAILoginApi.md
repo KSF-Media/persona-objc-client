@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**loginPost**](OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
 [**loginSomePost**](OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
 [**loginSsoPost**](OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
+[**loginUuidDelete**](OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
 
 
 # **loginPost**
@@ -149,6 +150,60 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **loginUuidDelete**
+```objc
+-(NSURLSessionTask*) loginUuidDeleteWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+```
+
+Logout
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
+
+// Logout
+[apiInstance loginUuidDeleteWithUuid:uuid
+              authorization:authorization
+          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAILoginApi->loginUuidDelete: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+**NSArray<NSObject*>***
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

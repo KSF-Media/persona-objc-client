@@ -80,5 +80,21 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 
+/// Logout
+/// Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization`",
+///  code:404 message:"`uuid` not found"
+///
+/// @return NSArray<NSObject*>*
+-(NSURLSessionTask*) loginUuidDeleteWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+
+
 
 @end
