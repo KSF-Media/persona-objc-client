@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**brand** | **NSString*** |  | 
 **key** | **NSString*** |  | 
 **val** | **NSNumber*** |  | 
 

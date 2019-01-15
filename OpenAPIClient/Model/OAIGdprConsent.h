@@ -23,6 +23,8 @@
 @interface OAIGdprConsent : OAIObject
 
 
+@property(nonatomic) NSString* brand;
+
 @property(nonatomic) NSString* key;
 
 @property(nonatomic) NSNumber* val;

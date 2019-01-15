@@ -15,9 +15,12 @@
 
 
 #import "OAIAddress.h"
+#import "OAIGdprConsent.h"
 #import "OAISubscription.h"
 @protocol OAIAddress;
 @class OAIAddress;
+@protocol OAIGdprConsent;
+@class OAIGdprConsent;
 @protocol OAISubscription;
 @class OAISubscription;
 
@@ -42,5 +45,7 @@
 @property(nonatomic) NSString* cusno;
 
 @property(nonatomic) NSArray<OAISubscription>* subs;
+
+@property(nonatomic) NSArray<OAIGdprConsent>* consent;
 
 @end

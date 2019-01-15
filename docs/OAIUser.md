@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **address** | [**OAIAddress***](OAIAddress.md) |  | [optional] 
 **cusno** | **NSString*** |  | 
 **subs** | [**NSArray&lt;OAISubscription&gt;***](OAISubscription.md) |  | 
+**consent** | [**NSArray&lt;OAIGdprConsent&gt;***](OAIGdprConsent.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
