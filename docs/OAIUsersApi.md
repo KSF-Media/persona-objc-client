@@ -4,9 +4,58 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**usersPost**](OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 
+
+# **usersPost**
+```objc
+-(NSURLSessionTask*) usersPostWithNewUser: (OAINewUser*) newUser
+        completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+```
+
+Create a new user.
+
+### Example 
+```objc
+
+OAINewUser* newUser = [[OAINewUser alloc] init]; // 
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Create a new user.
+[apiInstance usersPostWithNewUser:newUser
+          completionHandler: ^(OAILoginResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersPost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **newUser** | [**OAINewUser***](OAINewUser.md)|  | 
+
+### Return type
+
+[**OAILoginResponse***](OAILoginResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usersUuidGdprPut**
 ```objc

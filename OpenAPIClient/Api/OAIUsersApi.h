@@ -2,6 +2,8 @@
 #import "OAIGdprConsent.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
+#import "OAILoginResponse.h"
+#import "OAINewUser.h"
 #import "OAIUser.h"
 #import "OAIApi.h"
 
@@ -25,6 +27,20 @@ extern NSString* kOAIUsersApiErrorDomain;
 extern NSInteger kOAIUsersApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
+
+/// Create a new user.
+/// 
+///
+/// @param newUser 
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body`",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAILoginResponse*
+-(NSURLSessionTask*) usersPostWithNewUser: (OAINewUser*) newUser
+    completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+
 
 /// Updates the GDPR consent settings for a given user.
 /// Authorization header expects the following format ‘OAuth {token}’
