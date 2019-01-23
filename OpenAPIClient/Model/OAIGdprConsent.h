@@ -25,8 +25,8 @@
 
 @property(nonatomic) NSString* brand;
 
-@property(nonatomic) NSString* key;
+@property(nonatomic) NSString* consentKey;
 
-@property(nonatomic) NSNumber* val;
+@property(nonatomic) NSNumber* value;
 
 @end
