@@ -31,6 +31,8 @@
 
 @property(nonatomic) NSString* password;
 
+@property(nonatomic) NSString* confirmPassword;
+
 @property(nonatomic) NSString* streetAddress;
 
 @property(nonatomic) NSString* zipCode;

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **lastName** | **NSString*** |  | 
 **emailAddress** | **NSString*** |  | 
 **password** | **NSString*** |  | 
+**confirmPassword** | **NSString*** |  | 
 **streetAddress** | **NSString*** |  | [optional] 
 **zipCode** | **NSString*** |  | [optional] 
 **city** | **NSString*** |  | [optional] 
