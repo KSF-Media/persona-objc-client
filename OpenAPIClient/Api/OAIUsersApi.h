@@ -54,11 +54,11 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
-/// @return NSArray<NSObject*>*
+/// @return OAIUser*
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
     gdprConsent: (NSArray<OAIGdprConsent>*) gdprConsent
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
 
 /// Get user by UUID.

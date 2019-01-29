@@ -62,7 +62,7 @@ No authorization required
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
     gdprConsent: (NSArray<OAIGdprConsent>*) gdprConsent
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
 
 Updates the GDPR consent settings for a given user.
@@ -82,7 +82,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidGdprPutWithUuid:uuid
               gdprConsent:gdprConsent
               authorization:authorization
-          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
+          completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**NSArray<NSObject*>***
+[**OAIUser***](OAIUser.md)
 
 ### Authorization
 

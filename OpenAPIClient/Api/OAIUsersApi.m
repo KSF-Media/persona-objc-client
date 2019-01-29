@@ -129,12 +129,12 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
-///  @returns NSArray<NSObject*>*
+///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
     gdprConsent: (NSArray<OAIGdprConsent>*) gdprConsent
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
         NSParameterAssert(uuid);
@@ -201,10 +201,10 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSArray<NSObject*>*"
+                              responseType: @"OAIUser*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSArray<NSObject*>*)data, error);
+                                    handler((OAIUser*)data, error);
                                 }
                             }];
 }
