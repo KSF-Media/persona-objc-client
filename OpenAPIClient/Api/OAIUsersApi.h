@@ -5,6 +5,7 @@
 #import "OAILoginResponse.h"
 #import "OAINewUser.h"
 #import "OAIUser.h"
+#import "OAIUserUpdate.h"
 #import "OAIApi.h"
 
 /**
@@ -76,6 +77,25 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
+    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Update a user
+/// Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param userUpdate 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAIUser*
+-(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
+    userUpdate: (OAIUserUpdate*) userUpdate
+    authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
 

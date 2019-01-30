@@ -73,6 +73,8 @@ Import the following:
 #import <OpenAPIClient/OAISubscription.h>
 #import <OpenAPIClient/OAISubscriptionDates.h>
 #import <OpenAPIClient/OAIUser.h>
+#import <OpenAPIClient/OAIUserUpdate.h>
+#import <OpenAPIClient/OAIUserUpdateAddress.h>
 // load API classes for accessing endpoints
 #import <OpenAPIClient/OAILoginApi.h>
 #import <OpenAPIClient/OAIUsersApi.h>
@@ -120,6 +122,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersPost**](docs/OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
 *OAIUsersApi* | [**usersUuidGdprPut**](docs/OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
+*OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 
 
 ## Documentation For Models
@@ -156,6 +159,8 @@ Class | Method | HTTP request | Description
  - [OAISubscription](docs/OAISubscription.md)
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
  - [OAIUser](docs/OAIUser.md)
+ - [OAIUserUpdate](docs/OAIUserUpdate.md)
+ - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)
 
 
 ## Documentation For Authorization

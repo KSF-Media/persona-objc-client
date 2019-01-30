@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**usersPost**](OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
+[**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 
 
 # **usersPost**
@@ -169,6 +170,64 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidPatch**
+```objc
+-(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
+    userUpdate: (OAIUserUpdate*) userUpdate
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+```
+
+Update a user
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+OAIUserUpdate* userUpdate = [[OAIUserUpdate alloc] init]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Update a user
+[apiInstance usersUuidPatchWithUuid:uuid
+              userUpdate:userUpdate
+              authorization:authorization
+          completionHandler: ^(OAIUser* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidPatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **userUpdate** | [**OAIUserUpdate***](OAIUserUpdate.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAIUser***](OAIUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
