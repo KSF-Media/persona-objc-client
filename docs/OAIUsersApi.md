@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usersPost**](OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
+[**usersUuidEntitlementGet**](OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
@@ -54,6 +55,62 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidEntitlementGet**
+```objc
+-(NSURLSessionTask*) usersUuidEntitlementGetWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+    cacheControl: (NSString*) cacheControl
+        completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
+```
+
+Get users entitlements.
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+NSString* cacheControl = @"cacheControl_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Get users entitlements.
+[apiInstance usersUuidEntitlementGetWithUuid:uuid
+              authorization:authorization
+              cacheControl:cacheControl
+          completionHandler: ^(NSArray<NSString*>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidEntitlementGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+ **cacheControl** | **NSString***|  | [optional] 
+
+### Return type
+
+**NSArray<NSString*>***
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
