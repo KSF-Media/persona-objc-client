@@ -1,6 +1,6 @@
-#import "OAIUser.h"
+#import "OAILegalConsent.h"
 
-@implementation OAIUser
+@implementation OAILegalConsent
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"uuid": @"uuid", @"email": @"email", @"firstName": @"firstName", @"lastName": @"lastName", @"address": @"address", @"cusno": @"cusno", @"subs": @"subs", @"consent": @"consent", @"legal": @"legal" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"screenName": @"screenName", @"consentId": @"consentId", @"dateAccepted": @"dateAccepted" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"firstName", @"lastName", @"address", ];
+  NSArray *optionalProperties = @[];
   return [optionalProperties containsObject:propertyName];
 }
 

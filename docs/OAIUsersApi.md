@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**usersUuidEntitlementGet**](OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
+[**usersUuidLegalPut**](OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 
 
@@ -227,6 +228,64 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidLegalPut**
+```objc
+-(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
+    legalConsent: (NSArray<OAILegalConsent>*) legalConsent
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+```
+
+Updates the legal consent settings for a given user.
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSArray<OAILegalConsent>* legalConsent = @[[[NSArray alloc] init]]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Updates the legal consent settings for a given user.
+[apiInstance usersUuidLegalPutWithUuid:uuid
+              legalConsent:legalConsent
+              authorization:authorization
+          completionHandler: ^(OAIUser* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidLegalPut: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **legalConsent** | [**NSArray&lt;OAILegalConsent&gt;***](NSArray.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAIUser***](OAIUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

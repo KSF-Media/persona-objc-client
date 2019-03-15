@@ -60,6 +60,7 @@ Import the following:
 #import <OpenAPIClient/OAIInlineResponse415UnsupportedMediaType.h>
 #import <OpenAPIClient/OAIInlineResponse500.h>
 #import <OpenAPIClient/OAIInlineResponse500InternalServerError.h>
+#import <OpenAPIClient/OAILegalConsent.h>
 #import <OpenAPIClient/OAILoginData.h>
 #import <OpenAPIClient/OAILoginDataSSO.h>
 #import <OpenAPIClient/OAILoginDataSoMe.h>
@@ -124,6 +125,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidEntitlementGet**](docs/OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 *OAIUsersApi* | [**usersUuidGdprPut**](docs/OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
+*OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 
 
@@ -148,6 +150,7 @@ Class | Method | HTTP request | Description
  - [OAIInlineResponse415UnsupportedMediaType](docs/OAIInlineResponse415UnsupportedMediaType.md)
  - [OAIInlineResponse500](docs/OAIInlineResponse500.md)
  - [OAIInlineResponse500InternalServerError](docs/OAIInlineResponse500InternalServerError.md)
+ - [OAILegalConsent](docs/OAILegalConsent.md)
  - [OAILoginData](docs/OAILoginData.md)
  - [OAILoginDataSSO](docs/OAILoginDataSSO.md)
  - [OAILoginDataSoMe](docs/OAILoginDataSoMe.md)

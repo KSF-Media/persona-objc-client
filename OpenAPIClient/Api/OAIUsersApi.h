@@ -2,6 +2,7 @@
 #import "OAIGdprConsent.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
+#import "OAILegalConsent.h"
 #import "OAILoginResponse.h"
 #import "OAINewUser.h"
 #import "OAIUser.h"
@@ -95,6 +96,25 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
+    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Updates the legal consent settings for a given user.
+/// Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param legalConsent 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAIUser*
+-(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
+    legalConsent: (NSArray<OAILegalConsent>*) legalConsent
+    authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
 

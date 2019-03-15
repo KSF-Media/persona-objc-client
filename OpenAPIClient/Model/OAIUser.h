@@ -16,11 +16,14 @@
 
 #import "OAIAddress.h"
 #import "OAIGdprConsent.h"
+#import "OAILegalConsent.h"
 #import "OAISubscription.h"
 @protocol OAIAddress;
 @class OAIAddress;
 @protocol OAIGdprConsent;
 @class OAIGdprConsent;
+@protocol OAILegalConsent;
+@class OAILegalConsent;
 @protocol OAISubscription;
 @class OAISubscription;
 
@@ -47,5 +50,7 @@
 @property(nonatomic) NSArray<OAISubscription>* subs;
 
 @property(nonatomic) NSArray<OAIGdprConsent>* consent;
+
+@property(nonatomic) NSArray<OAILegalConsent>* legal;
 
 @end
