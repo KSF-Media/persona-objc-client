@@ -70,9 +70,11 @@ Import the following:
 #import <OpenAPIClient/OAIPackageDescription.h>
 #import <OpenAPIClient/OAIPackageOffer.h>
 #import <OpenAPIClient/OAIPaper.h>
+#import <OpenAPIClient/OAIPausedSubscription.h>
 #import <OpenAPIClient/OAIProduct.h>
 #import <OpenAPIClient/OAISubscription.h>
 #import <OpenAPIClient/OAISubscriptionDates.h>
+#import <OpenAPIClient/OAISubscriptionPauseDates.h>
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
 #import <OpenAPIClient/OAIUserUpdateAddress.h>
@@ -127,6 +129,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 *OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
 ## Documentation For Models
@@ -160,9 +163,11 @@ Class | Method | HTTP request | Description
  - [OAIPackageDescription](docs/OAIPackageDescription.md)
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
  - [OAIPaper](docs/OAIPaper.md)
+ - [OAIPausedSubscription](docs/OAIPausedSubscription.md)
  - [OAIProduct](docs/OAIProduct.md)
  - [OAISubscription](docs/OAISubscription.md)
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
+ - [OAISubscriptionPauseDates](docs/OAISubscriptionPauseDates.md)
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)
  - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)

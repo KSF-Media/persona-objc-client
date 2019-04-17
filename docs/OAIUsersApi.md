@@ -10,11 +10,12 @@ Method | HTTP request | Description
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+[**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
 # **usersPost**
 ```objc
--(NSURLSessionTask*) usersPostWithNewUser: (OAINewUser*) newUser
+-(NSURLSessionTask*) usersPostWithBody: (OAINewUser*) body
         completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 ```
 
@@ -23,12 +24,12 @@ Create a new user.
 ### Example 
 ```objc
 
-OAINewUser* newUser = [[OAINewUser alloc] init]; // 
+OAINewUser* body = [[OAINewUser alloc] init]; // 
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Create a new user.
-[apiInstance usersPostWithNewUser:newUser
+[apiInstance usersPostWithBody:body
           completionHandler: ^(OAILoginResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -43,7 +44,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newUser** | [**OAINewUser***](OAINewUser.md)|  | 
+ **body** | [**OAINewUser***](OAINewUser.md)|  | 
 
 ### Return type
 
@@ -119,7 +120,7 @@ No authorization required
 # **usersUuidGdprPut**
 ```objc
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
-    gdprConsent: (NSArray<OAIGdprConsent>*) gdprConsent
+    body: (NSArray<OAIGdprConsent>*) body
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -132,14 +133,14 @@ Authorization header expects the following format ‘OAuth {token}’
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
-NSArray<OAIGdprConsent>* gdprConsent = @[[[NSArray alloc] init]]; // 
+NSArray<OAIGdprConsent>* body = @[[[NSArray alloc] init]]; // 
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Updates the GDPR consent settings for a given user.
 [apiInstance usersUuidGdprPutWithUuid:uuid
-              gdprConsent:gdprConsent
+              body:body
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -156,7 +157,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
- **gdprConsent** | [**NSArray&lt;OAIGdprConsent&gt;***](NSArray.md)|  | 
+ **body** | [**NSArray&lt;OAIGdprConsent&gt;***](NSArray.md)|  | 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -235,7 +236,7 @@ No authorization required
 # **usersUuidLegalPut**
 ```objc
 -(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
-    legalConsent: (NSArray<OAILegalConsent>*) legalConsent
+    body: (NSArray<OAILegalConsent>*) body
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -248,14 +249,14 @@ Authorization header expects the following format ‘OAuth {token}’
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
-NSArray<OAILegalConsent>* legalConsent = @[[[NSArray alloc] init]]; // 
+NSArray<OAILegalConsent>* body = @[[[NSArray alloc] init]]; // 
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Updates the legal consent settings for a given user.
 [apiInstance usersUuidLegalPutWithUuid:uuid
-              legalConsent:legalConsent
+              body:body
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -272,7 +273,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
- **legalConsent** | [**NSArray&lt;OAILegalConsent&gt;***](NSArray.md)|  | 
+ **body** | [**NSArray&lt;OAILegalConsent&gt;***](NSArray.md)|  | 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -293,7 +294,7 @@ No authorization required
 # **usersUuidPatch**
 ```objc
 -(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
-    userUpdate: (OAIUserUpdate*) userUpdate
+    body: (OAIUserUpdate*) body
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -306,14 +307,14 @@ Authorization header expects the following format ‘OAuth {token}’
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
-OAIUserUpdate* userUpdate = [[OAIUserUpdate alloc] init]; // 
+OAIUserUpdate* body = [[OAIUserUpdate alloc] init]; // 
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Update a user
 [apiInstance usersUuidPatchWithUuid:uuid
-              userUpdate:userUpdate
+              body:body
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -330,12 +331,72 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
- **userUpdate** | [**OAIUserUpdate***](OAIUserUpdate.md)|  | 
+ **body** | [**OAIUserUpdate***](OAIUserUpdate.md)|  | 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
 
 [**OAIUser***](OAIUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoPausePost**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAISubscriptionPauseDates*) body
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSArray<OAIPausedSubscription>* output, NSError* error)) handler;
+```
+
+Pause users subscription
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+OAISubscriptionPauseDates* body = [[OAISubscriptionPauseDates alloc] init]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Pause users subscription
+[apiInstance usersUuidSubscriptionsSubsnoPausePostWithUuid:uuid
+              subsno:subsno
+              body:body
+              authorization:authorization
+          completionHandler: ^(NSArray<OAIPausedSubscription>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoPausePost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **body** | [**OAISubscriptionPauseDates***](OAISubscriptionPauseDates.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**NSArray<OAIPausedSubscription>***](OAIPausedSubscription.md)
 
 ### Authorization
 

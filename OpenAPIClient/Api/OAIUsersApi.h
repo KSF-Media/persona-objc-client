@@ -5,6 +5,8 @@
 #import "OAILegalConsent.h"
 #import "OAILoginResponse.h"
 #import "OAINewUser.h"
+#import "OAIPausedSubscription.h"
+#import "OAISubscriptionPauseDates.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
 #import "OAIApi.h"
@@ -33,14 +35,14 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 /// Create a new user.
 /// 
 ///
-/// @param newUser 
+/// @param body 
 /// 
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `body`",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return OAILoginResponse*
--(NSURLSessionTask*) usersPostWithNewUser: (OAINewUser*) newUser
+-(NSURLSessionTask*) usersPostWithBody: (OAINewUser*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 
@@ -66,7 +68,7 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
-/// @param gdprConsent 
+/// @param body 
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
@@ -76,7 +78,7 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
-    gdprConsent: (NSArray<OAIGdprConsent>*) gdprConsent
+    body: (NSArray<OAIGdprConsent>*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
@@ -103,7 +105,7 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
-/// @param legalConsent 
+/// @param body 
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
@@ -113,7 +115,7 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
-    legalConsent: (NSArray<OAILegalConsent>*) legalConsent
+    body: (NSArray<OAILegalConsent>*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
@@ -122,7 +124,7 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
-/// @param userUpdate 
+/// @param body 
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
@@ -132,9 +134,30 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
-    userUpdate: (OAIUserUpdate*) userUpdate
+    body: (OAIUserUpdate*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Pause users subscription
+/// 
+///
+/// @param uuid 
+/// @param subsno 
+/// @param body 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` or `subsno` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return NSArray<OAIPausedSubscription>*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAISubscriptionPauseDates*) body
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<OAIPausedSubscription>* output, NSError* error)) handler;
 
 
 

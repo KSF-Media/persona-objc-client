@@ -61,17 +61,17 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
 ///
 /// Login with email and password
 /// 
-///  @param loginData  
+///  @param body  
 ///
 ///  @returns OAILoginResponse*
 ///
--(NSURLSessionTask*) loginPostWithLoginData: (OAILoginData*) loginData
+-(NSURLSessionTask*) loginPostWithBody: (OAILoginData*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler {
-    // verify the required parameter 'loginData' is set
-    if (loginData == nil) {
-        NSParameterAssert(loginData);
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"loginData"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
             NSError* error = [NSError errorWithDomain:kOAILoginApiErrorDomain code:kOAILoginApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
@@ -103,7 +103,7 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = loginData;
+    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"POST"
@@ -127,17 +127,17 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
 ///
 /// Login with social media
 /// 
-///  @param loginDataSoMe  
+///  @param body  
 ///
 ///  @returns OAILoginResponse*
 ///
--(NSURLSessionTask*) loginSomePostWithLoginDataSoMe: (OAILoginDataSoMe*) loginDataSoMe
+-(NSURLSessionTask*) loginSomePostWithBody: (OAILoginDataSoMe*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler {
-    // verify the required parameter 'loginDataSoMe' is set
-    if (loginDataSoMe == nil) {
-        NSParameterAssert(loginDataSoMe);
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"loginDataSoMe"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
             NSError* error = [NSError errorWithDomain:kOAILoginApiErrorDomain code:kOAILoginApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
@@ -169,7 +169,7 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = loginDataSoMe;
+    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"POST"
@@ -193,17 +193,17 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
 ///
 /// Login with the AccessToken given by the SSO auth
 /// 
-///  @param loginDataSSO  
+///  @param body  
 ///
 ///  @returns OAILoginResponse*
 ///
--(NSURLSessionTask*) loginSsoPostWithLoginDataSSO: (OAILoginDataSSO*) loginDataSSO
+-(NSURLSessionTask*) loginSsoPostWithBody: (OAILoginDataSSO*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler {
-    // verify the required parameter 'loginDataSSO' is set
-    if (loginDataSSO == nil) {
-        NSParameterAssert(loginDataSSO);
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"loginDataSSO"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
             NSError* error = [NSError errorWithDomain:kOAILoginApiErrorDomain code:kOAILoginApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
@@ -235,7 +235,7 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = loginDataSSO;
+    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"POST"

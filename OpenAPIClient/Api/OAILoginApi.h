@@ -35,7 +35,7 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 /// Login with email and password
 /// 
 ///
-/// @param loginData 
+/// @param body 
 /// 
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `body`",
@@ -44,14 +44,14 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 ///  code:500 message:"Internal server error"
 ///
 /// @return OAILoginResponse*
--(NSURLSessionTask*) loginPostWithLoginData: (OAILoginData*) loginData
+-(NSURLSessionTask*) loginPostWithBody: (OAILoginData*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 
 /// Login with social media
 /// 
 ///
-/// @param loginDataSoMe 
+/// @param body 
 /// 
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `body`",
@@ -60,14 +60,14 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 ///  code:500 message:"Internal server error"
 ///
 /// @return OAILoginResponse*
--(NSURLSessionTask*) loginSomePostWithLoginDataSoMe: (OAILoginDataSoMe*) loginDataSoMe
+-(NSURLSessionTask*) loginSomePostWithBody: (OAILoginDataSoMe*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 
 /// Login with the AccessToken given by the SSO auth
 /// 
 ///
-/// @param loginDataSSO 
+/// @param body 
 /// 
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `body`",
@@ -76,7 +76,7 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 ///  code:500 message:"Internal server error"
 ///
 /// @return OAILoginResponse*
--(NSURLSessionTask*) loginSsoPostWithLoginDataSSO: (OAILoginDataSSO*) loginDataSSO
+-(NSURLSessionTask*) loginSsoPostWithBody: (OAILoginDataSSO*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **loginPost**
 ```objc
--(NSURLSessionTask*) loginPostWithLoginData: (OAILoginData*) loginData
+-(NSURLSessionTask*) loginPostWithBody: (OAILoginData*) body
         completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 ```
 
@@ -21,12 +21,12 @@ Login with email and password
 ### Example 
 ```objc
 
-OAILoginData* loginData = [[OAILoginData alloc] init]; // 
+OAILoginData* body = [[OAILoginData alloc] init]; // 
 
 OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 // Login with email and password
-[apiInstance loginPostWithLoginData:loginData
+[apiInstance loginPostWithBody:body
           completionHandler: ^(OAILoginResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -41,7 +41,7 @@ OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginData** | [**OAILoginData***](OAILoginData.md)|  | 
+ **body** | [**OAILoginData***](OAILoginData.md)|  | 
 
 ### Return type
 
@@ -60,7 +60,7 @@ No authorization required
 
 # **loginSomePost**
 ```objc
--(NSURLSessionTask*) loginSomePostWithLoginDataSoMe: (OAILoginDataSoMe*) loginDataSoMe
+-(NSURLSessionTask*) loginSomePostWithBody: (OAILoginDataSoMe*) body
         completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 ```
 
@@ -69,12 +69,12 @@ Login with social media
 ### Example 
 ```objc
 
-OAILoginDataSoMe* loginDataSoMe = [[OAILoginDataSoMe alloc] init]; // 
+OAILoginDataSoMe* body = [[OAILoginDataSoMe alloc] init]; // 
 
 OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 // Login with social media
-[apiInstance loginSomePostWithLoginDataSoMe:loginDataSoMe
+[apiInstance loginSomePostWithBody:body
           completionHandler: ^(OAILoginResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -89,7 +89,7 @@ OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginDataSoMe** | [**OAILoginDataSoMe***](OAILoginDataSoMe.md)|  | 
+ **body** | [**OAILoginDataSoMe***](OAILoginDataSoMe.md)|  | 
 
 ### Return type
 
@@ -108,7 +108,7 @@ No authorization required
 
 # **loginSsoPost**
 ```objc
--(NSURLSessionTask*) loginSsoPostWithLoginDataSSO: (OAILoginDataSSO*) loginDataSSO
+-(NSURLSessionTask*) loginSsoPostWithBody: (OAILoginDataSSO*) body
         completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 ```
 
@@ -117,12 +117,12 @@ Login with the AccessToken given by the SSO auth
 ### Example 
 ```objc
 
-OAILoginDataSSO* loginDataSSO = [[OAILoginDataSSO alloc] init]; // 
+OAILoginDataSSO* body = [[OAILoginDataSSO alloc] init]; // 
 
 OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 // Login with the AccessToken given by the SSO auth
-[apiInstance loginSsoPostWithLoginDataSSO:loginDataSSO
+[apiInstance loginSsoPostWithBody:body
           completionHandler: ^(OAILoginResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -137,7 +137,7 @@ OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginDataSSO** | [**OAILoginDataSSO***](OAILoginDataSSO.md)|  | 
+ **body** | [**OAILoginDataSSO***](OAILoginDataSSO.md)|  | 
 
 ### Return type
 
