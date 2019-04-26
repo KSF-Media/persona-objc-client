@@ -23,30 +23,30 @@
 @interface OAIPausedSubscription : OAIObject
 
 
-@property(nonatomic) NSNumber* pausedSubscriptionSubsno;
+@property(nonatomic) NSNumber* subsno;
 
-@property(nonatomic) NSDate* pausedSubscriptionSleepStartDate;
+@property(nonatomic) NSDate* sleepStartdate;
 
-@property(nonatomic) NSDate* pausedSubscriptionSleepEndDate;
+@property(nonatomic) NSDate* sleepEndDate;
 
-@property(nonatomic) NSString* pausedSubscriptionCreditType;
+@property(nonatomic) NSString* creditType;
 
-@property(nonatomic) NSNumber* pausedSubscriptionCreditAmount;
+@property(nonatomic) NSNumber* creditAmount;
 
-@property(nonatomic) NSString* pausedSubscriptionSleepType;
+@property(nonatomic) NSString* sleepType;
 
-@property(nonatomic) NSNumber* pausedSubscriptionCredited;
+@property(nonatomic) NSNumber* credited;
 
-@property(nonatomic) NSNumber* pausedSubscriptionCreditInvno;
+@property(nonatomic) NSNumber* creditInvno;
 
-@property(nonatomic) NSString* pausedSubscriptionBookingDate;
+@property(nonatomic) NSString* bookingDate;
 
-@property(nonatomic) NSNumber* pausedSubscriptionAllowWebpaper;
+@property(nonatomic) NSNumber* allowWebpaper;
 
-@property(nonatomic) NSString* pausedSubscriptionReceiveType;
+@property(nonatomic) NSString* receiveType;
 
-@property(nonatomic) NSString* pausedSubscriptionConfirmStatus;
+@property(nonatomic) NSString* confirmStatus;
 
-@property(nonatomic) NSString* pausedSubscriptionStampUser;
+@property(nonatomic) NSString* stampUser;
 
 @end

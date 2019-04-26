@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"pausedSubscriptionSubsno": @"pausedSubscriptionSubsno", @"pausedSubscriptionSleepStartDate": @"pausedSubscriptionSleepStartDate", @"pausedSubscriptionSleepEndDate": @"pausedSubscriptionSleepEndDate", @"pausedSubscriptionCreditType": @"pausedSubscriptionCreditType", @"pausedSubscriptionCreditAmount": @"pausedSubscriptionCreditAmount", @"pausedSubscriptionSleepType": @"pausedSubscriptionSleepType", @"pausedSubscriptionCredited": @"pausedSubscriptionCredited", @"pausedSubscriptionCreditInvno": @"pausedSubscriptionCreditInvno", @"pausedSubscriptionBookingDate": @"pausedSubscriptionBookingDate", @"pausedSubscriptionAllowWebpaper": @"pausedSubscriptionAllowWebpaper", @"pausedSubscriptionReceiveType": @"pausedSubscriptionReceiveType", @"pausedSubscriptionConfirmStatus": @"pausedSubscriptionConfirmStatus", @"pausedSubscriptionStampUser": @"pausedSubscriptionStampUser" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"subsno": @"subsno", @"sleepStartdate": @"sleepStartdate", @"sleepEndDate": @"sleepEndDate", @"creditType": @"creditType", @"creditAmount": @"creditAmount", @"sleepType": @"sleepType", @"credited": @"credited", @"creditInvno": @"creditInvno", @"bookingDate": @"bookingDate", @"allowWebpaper": @"allowWebpaper", @"receiveType": @"receiveType", @"confirmStatus": @"confirmStatus", @"stampUser": @"stampUser" }];
 }
 
 /**
