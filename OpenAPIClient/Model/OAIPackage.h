@@ -44,6 +44,8 @@
 
 @property(nonatomic) OAIPaper* paper;
 
+@property(nonatomic) NSNumber* digitalOnly;
+
 @property(nonatomic) NSArray<OAIProduct>* products;
 
 @property(nonatomic) NSArray<OAIPackageOffer>* offers;

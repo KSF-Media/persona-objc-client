@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **active** | [**OAIActiveDays***](OAIActiveDays.md) |  | 
 **nextDelivery** | **NSDate*** |  | [optional] 
 **paper** | [**OAIPaper***](OAIPaper.md) |  | 
+**digital** | **NSNumber*** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

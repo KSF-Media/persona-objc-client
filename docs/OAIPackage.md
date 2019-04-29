@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **_id** | **NSString*** |  | 
 **name** | **NSString*** |  | 
 **paper** | [**OAIPaper***](OAIPaper.md) |  | 
+**digitalOnly** | **NSNumber*** |  | 
 **products** | [**NSArray&lt;OAIProduct&gt;***](OAIProduct.md) |  | 
 **offers** | [**NSArray&lt;OAIPackageOffer&gt;***](OAIPackageOffer.md) |  | 
 **campaigns** | [**NSArray&lt;OAICampaign&gt;***](OAICampaign.md) |  | 

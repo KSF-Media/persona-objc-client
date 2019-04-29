@@ -23,30 +23,8 @@
 @interface OAIPausedSubscription : OAIObject
 
 
-@property(nonatomic) NSNumber* subsno;
+@property(nonatomic) NSDate* startDate;
 
-@property(nonatomic) NSDate* sleepStartdate;
-
-@property(nonatomic) NSDate* sleepEndDate;
-
-@property(nonatomic) NSString* creditType;
-
-@property(nonatomic) NSNumber* creditAmount;
-
-@property(nonatomic) NSString* sleepType;
-
-@property(nonatomic) NSNumber* credited;
-
-@property(nonatomic) NSNumber* creditInvno;
-
-@property(nonatomic) NSString* bookingDate;
-
-@property(nonatomic) NSNumber* allowWebpaper;
-
-@property(nonatomic) NSString* receiveType;
-
-@property(nonatomic) NSString* confirmStatus;
-
-@property(nonatomic) NSString* stampUser;
+@property(nonatomic) NSDate* endDate;
 
 @end

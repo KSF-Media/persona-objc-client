@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **dates** | [**OAISubscriptionDates***](OAISubscriptionDates.md) |  | 
 **extsubsexists** | **NSNumber*** |  | 
 **campaign** | [**OAICampaign***](OAICampaign.md) |  | [optional] 
+**paused** | [**NSArray&lt;OAIPausedSubscription&gt;***](OAIPausedSubscription.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

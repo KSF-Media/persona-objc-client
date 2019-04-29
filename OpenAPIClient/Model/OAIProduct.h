@@ -39,4 +39,6 @@
 
 @property(nonatomic) OAIPaper* paper;
 
+@property(nonatomic) NSNumber* digital;
+
 @end

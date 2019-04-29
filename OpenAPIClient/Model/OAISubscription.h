@@ -16,11 +16,14 @@
 
 #import "OAICampaign.h"
 #import "OAIPackage.h"
+#import "OAIPausedSubscription.h"
 #import "OAISubscriptionDates.h"
 @protocol OAICampaign;
 @class OAICampaign;
 @protocol OAIPackage;
 @class OAIPackage;
+@protocol OAIPausedSubscription;
+@class OAIPausedSubscription;
 @protocol OAISubscriptionDates;
 @class OAISubscriptionDates;
 
@@ -53,5 +56,7 @@
 @property(nonatomic) NSNumber* extsubsexists;
 
 @property(nonatomic) OAICampaign* campaign;
+
+@property(nonatomic) NSArray<OAIPausedSubscription>* paused;
 
 @end
