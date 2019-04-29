@@ -355,7 +355,7 @@ No authorization required
     subsno: (NSNumber*) subsno
     body: (OAISubscriptionPauseDates*) body
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(NSArray<OAIPausedSubscription>* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 ```
 
 Pause users subscription
@@ -375,7 +375,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
               subsno:subsno
               body:body
               authorization:authorization
-          completionHandler: ^(NSArray<OAIPausedSubscription>* output, NSError* error) {
+          completionHandler: ^(OAISubscription* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NSArray<OAIPausedSubscription>***](OAIPausedSubscription.md)
+[**OAISubscription***](OAISubscription.md)
 
 ### Authorization
 

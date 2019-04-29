@@ -7,7 +7,7 @@
 #import "OAILegalConsent.h"
 #import "OAILoginResponse.h"
 #import "OAINewUser.h"
-#import "OAIPausedSubscription.h"
+#import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
@@ -562,13 +562,13 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
-///  @returns NSArray<OAIPausedSubscription>*
+///  @returns OAISubscription*
 ///
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAISubscriptionPauseDates*) body
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSArray<OAIPausedSubscription>* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
         NSParameterAssert(uuid);
@@ -649,10 +649,10 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSArray<OAIPausedSubscription>*"
+                              responseType: @"OAISubscription*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSArray<OAIPausedSubscription>*)data, error);
+                                    handler((OAISubscription*)data, error);
                                 }
                             }];
 }

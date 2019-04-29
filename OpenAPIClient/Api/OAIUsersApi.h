@@ -5,7 +5,7 @@
 #import "OAILegalConsent.h"
 #import "OAILoginResponse.h"
 #import "OAINewUser.h"
-#import "OAIPausedSubscription.h"
+#import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
@@ -152,12 +152,12 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///  code:404 message:"`uuid` or `subsno` not found",
 ///  code:415 message:"Unsupported media type"
 ///
-/// @return NSArray<OAIPausedSubscription>*
+/// @return OAISubscription*
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAISubscriptionPauseDates*) body
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSArray<OAIPausedSubscription>* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 
 
