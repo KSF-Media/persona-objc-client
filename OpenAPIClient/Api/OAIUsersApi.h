@@ -7,6 +7,7 @@
 #import "OAINewUser.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
+#import "OAITemporaryAddressChange.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
 #import "OAIApi.h"
@@ -137,6 +138,27 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     body: (OAIUserUpdate*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Make a temporary address change for a subscription
+/// 
+///
+/// @param uuid 
+/// @param subsno 
+/// @param body 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` or `subsno` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAISubscription*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAITemporaryAddressChange*) body
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 
 /// Pause users subscription

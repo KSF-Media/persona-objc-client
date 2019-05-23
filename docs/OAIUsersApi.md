@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+[**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
@@ -337,6 +338,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAIUser***](OAIUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoAddressChangePost**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAITemporaryAddressChange*) body
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+```
+
+Make a temporary address change for a subscription
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+OAITemporaryAddressChange* body = [[OAITemporaryAddressChange alloc] init]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Make a temporary address change for a subscription
+[apiInstance usersUuidSubscriptionsSubsnoAddressChangePostWithUuid:uuid
+              subsno:subsno
+              body:body
+              authorization:authorization
+          completionHandler: ^(OAISubscription* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoAddressChangePost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **body** | [**OAITemporaryAddressChange***](OAITemporaryAddressChange.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAISubscription***](OAISubscription.md)
 
 ### Authorization
 

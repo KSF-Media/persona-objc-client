@@ -44,6 +44,7 @@ Import the following:
 #import <OpenAPIClient/OAIActiveDays.h>
 #import <OpenAPIClient/OAIAddress.h>
 #import <OpenAPIClient/OAICampaign.h>
+#import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
@@ -71,10 +72,12 @@ Import the following:
 #import <OpenAPIClient/OAIPackageOffer.h>
 #import <OpenAPIClient/OAIPaper.h>
 #import <OpenAPIClient/OAIPausedSubscription.h>
+#import <OpenAPIClient/OAIPendingAddressChange.h>
 #import <OpenAPIClient/OAIProduct.h>
 #import <OpenAPIClient/OAISubscription.h>
 #import <OpenAPIClient/OAISubscriptionDates.h>
 #import <OpenAPIClient/OAISubscriptionPauseDates.h>
+#import <OpenAPIClient/OAITemporaryAddressChange.h>
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
 #import <OpenAPIClient/OAIUserUpdateAddress.h>
@@ -129,6 +132,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 *OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 
 
@@ -137,6 +141,7 @@ Class | Method | HTTP request | Description
  - [OAIActiveDays](docs/OAIActiveDays.md)
  - [OAIAddress](docs/OAIAddress.md)
  - [OAICampaign](docs/OAICampaign.md)
+ - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
@@ -164,10 +169,12 @@ Class | Method | HTTP request | Description
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
  - [OAIPaper](docs/OAIPaper.md)
  - [OAIPausedSubscription](docs/OAIPausedSubscription.md)
+ - [OAIPendingAddressChange](docs/OAIPendingAddressChange.md)
  - [OAIProduct](docs/OAIProduct.md)
  - [OAISubscription](docs/OAISubscription.md)
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
  - [OAISubscriptionPauseDates](docs/OAISubscriptionPauseDates.md)
+ - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)
  - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)

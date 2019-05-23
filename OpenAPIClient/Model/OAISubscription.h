@@ -15,15 +15,21 @@
 
 
 #import "OAICampaign.h"
+#import "OAIDeliveryAddress.h"
 #import "OAIPackage.h"
 #import "OAIPausedSubscription.h"
+#import "OAIPendingAddressChange.h"
 #import "OAISubscriptionDates.h"
 @protocol OAICampaign;
 @class OAICampaign;
+@protocol OAIDeliveryAddress;
+@class OAIDeliveryAddress;
 @protocol OAIPackage;
 @class OAIPackage;
 @protocol OAIPausedSubscription;
 @class OAIPausedSubscription;
+@protocol OAIPendingAddressChange;
+@class OAIPendingAddressChange;
 @protocol OAISubscriptionDates;
 @class OAISubscriptionDates;
 
@@ -58,5 +64,9 @@
 @property(nonatomic) OAICampaign* campaign;
 
 @property(nonatomic) NSArray<OAIPausedSubscription>* paused;
+
+@property(nonatomic) OAIDeliveryAddress* deliveryAddress;
+
+@property(nonatomic) NSArray<OAIPendingAddressChange>* pendingAddressChanges;
 
 @end
