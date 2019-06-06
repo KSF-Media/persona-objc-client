@@ -32,4 +32,6 @@
 
 @property(nonatomic) NSDate* endDate;
 
+@property(nonatomic) NSString* type;
+
 @end
