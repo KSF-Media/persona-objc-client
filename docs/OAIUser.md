@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **subs** | [**NSArray&lt;OAISubscription&gt;***](OAISubscription.md) |  | 
 **consent** | [**NSArray&lt;OAIGdprConsent&gt;***](OAIGdprConsent.md) |  | 
 **legal** | [**NSArray&lt;OAILegalConsent&gt;***](OAILegalConsent.md) |  | 
+**pendingAddressChanges** | [**NSArray&lt;OAIPendingAddressChange&gt;***](OAIPendingAddressChange.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
