@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"city"];
+  NSArray *optionalProperties = @[@"streetAddress", @"city"];
   return [optionalProperties containsObject:propertyName];
 }
 

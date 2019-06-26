@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**streetAddress** | **NSString*** |  | 
+**streetAddress** | **NSString*** |  | [optional] 
 **zipcode** | **NSString*** |  | 
 **city** | **NSString*** |  | [optional] 
 
