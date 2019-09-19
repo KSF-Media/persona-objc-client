@@ -31,4 +31,6 @@
 
 @property(nonatomic) NSDate* endDate;
 
+@property(nonatomic) NSString* temporaryName;
+
 @end
