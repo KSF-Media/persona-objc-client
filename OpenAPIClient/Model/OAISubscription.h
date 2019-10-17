@@ -69,4 +69,8 @@
 
 @property(nonatomic) NSArray<OAIPendingAddressChange>* pendingAddressChanges;
 
+@property(nonatomic) NSString* orderNumber;
+
+@property(nonatomic) NSString* paymentMethod;
+
 @end

@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **paused** | [**NSArray&lt;OAIPausedSubscription&gt;***](OAIPausedSubscription.md) |  | [optional] 
 **deliveryAddress** | [**OAIDeliveryAddress***](OAIDeliveryAddress.md) |  | [optional] 
 **pendingAddressChanges** | [**NSArray&lt;OAIPendingAddressChange&gt;***](OAIPendingAddressChange.md) |  | [optional] 
+**orderNumber** | **NSString*** |  | [optional] 
+**paymentMethod** | **NSString*** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

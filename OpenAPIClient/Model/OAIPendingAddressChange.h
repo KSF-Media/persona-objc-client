@@ -34,6 +34,4 @@
 
 @property(nonatomic) NSString* type;
 
-@property(nonatomic) NSString* temporaryName;
-
 @end
