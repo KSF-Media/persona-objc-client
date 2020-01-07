@@ -44,8 +44,11 @@ Import the following:
 #import <OpenAPIClient/OAIActiveDays.h>
 #import <OpenAPIClient/OAIAddress.h>
 #import <OpenAPIClient/OAICampaign.h>
+#import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
+#import <OpenAPIClient/OAIForgotPasswordData.h>
+#import <OpenAPIClient/OAIForgotPasswordResponse.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
 #import <OpenAPIClient/OAIInlineResponse400InvalidRequestBody.h>
@@ -78,10 +81,13 @@ Import the following:
 #import <OpenAPIClient/OAISubscriptionDates.h>
 #import <OpenAPIClient/OAISubscriptionPauseDates.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
+#import <OpenAPIClient/OAITokenResponse.h>
+#import <OpenAPIClient/OAIUpdatePasswordData.h>
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
 #import <OpenAPIClient/OAIUserUpdateAddress.h>
 // load API classes for accessing endpoints
+#import <OpenAPIClient/OAIAccountApi.h>
 #import <OpenAPIClient/OAIEntitlementsApi.h>
 #import <OpenAPIClient/OAILoginApi.h>
 #import <OpenAPIClient/OAIUsersApi.h>
@@ -99,12 +105,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```objc
 
 
+OAICodeForTokenData* *body = [[OAICodeForTokenData alloc] init]; // 
 
-OAIEntitlementsApi *apiInstance = [[OAIEntitlementsApi alloc] init];
+OAIAccountApi *apiInstance = [[OAIAccountApi alloc] init];
 
-// List all entitlements
-[apiInstance entitlementsGetWithCompletionHandler: 
-              ^(NSDictionary<NSString*, NSArray<NSString*>*>* output, NSError* error) {
+// Get a password reset token
+[apiInstance accountCodeForTokenPostWithBody:body
+              completionHandler: ^(OAITokenResponse* output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -121,6 +128,9 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OAIAccountApi* | [**accountCodeForTokenPost**](docs/OAIAccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
+*OAIAccountApi* | [**accountForgotPassPost**](docs/OAIAccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
+*OAIAccountApi* | [**accountResetForgottenPasswordPost**](docs/OAIAccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAILoginApi* | [**loginPost**](docs/OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
 *OAILoginApi* | [**loginSomePost**](docs/OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
@@ -141,8 +151,11 @@ Class | Method | HTTP request | Description
  - [OAIActiveDays](docs/OAIActiveDays.md)
  - [OAIAddress](docs/OAIAddress.md)
  - [OAICampaign](docs/OAICampaign.md)
+ - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
+ - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
+ - [OAIForgotPasswordResponse](docs/OAIForgotPasswordResponse.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
  - [OAIInlineResponse400InvalidRequestBody](docs/OAIInlineResponse400InvalidRequestBody.md)
@@ -175,6 +188,8 @@ Class | Method | HTTP request | Description
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
  - [OAISubscriptionPauseDates](docs/OAISubscriptionPauseDates.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
+ - [OAITokenResponse](docs/OAITokenResponse.md)
+ - [OAIUpdatePasswordData](docs/OAIUpdatePasswordData.md)
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)
  - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)
