@@ -50,6 +50,7 @@ Import the following:
 #import <OpenAPIClient/OAIForgotPasswordData.h>
 #import <OpenAPIClient/OAIForgotPasswordResponse.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
+#import <OpenAPIClient/OAIGlobalEntitlementAccess.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
 #import <OpenAPIClient/OAIInlineResponse400InvalidRequestBody.h>
 #import <OpenAPIClient/OAIInlineResponse403.h>
@@ -131,6 +132,7 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountCodeForTokenPost**](docs/OAIAccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
 *OAIAccountApi* | [**accountForgotPassPost**](docs/OAIAccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *OAIAccountApi* | [**accountResetForgottenPasswordPost**](docs/OAIAccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAILoginApi* | [**loginPost**](docs/OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
 *OAILoginApi* | [**loginSomePost**](docs/OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
@@ -157,6 +159,7 @@ Class | Method | HTTP request | Description
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
  - [OAIForgotPasswordResponse](docs/OAIForgotPasswordResponse.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
+ - [OAIGlobalEntitlementAccess](docs/OAIGlobalEntitlementAccess.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
  - [OAIInlineResponse400InvalidRequestBody](docs/OAIInlineResponse400InvalidRequestBody.md)
  - [OAIInlineResponse403](docs/OAIInlineResponse403.md)
