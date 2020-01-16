@@ -27,6 +27,8 @@
 
 @property(nonatomic) NSString* streetAddress;
 
+@property(nonatomic) NSString* countryCode;
+
 @property(nonatomic) NSDate* startDate;
 
 @property(nonatomic) NSDate* endDate;

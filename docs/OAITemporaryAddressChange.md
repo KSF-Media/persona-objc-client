@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **zipCode** | **NSString*** |  | 
 **streetAddress** | **NSString*** |  | 
+**countryCode** | **NSString*** |  | 
 **startDate** | **NSDate*** |  | 
 **endDate** | **NSDate*** |  | 
 **temporaryName** | **NSString*** |  | [optional] 
