@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
+[**usersUuidSubscriptionsSubsnoReclamationPost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 
 
 # **usersPost**
@@ -458,6 +459,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAISubscription***](OAISubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoReclamationPost**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationPostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAINewDeliveryReclamation*) body
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
+```
+
+Create a new delivery reclamation for a subscription
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+OAINewDeliveryReclamation* body = [[OAINewDeliveryReclamation alloc] init]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Create a new delivery reclamation for a subscription
+[apiInstance usersUuidSubscriptionsSubsnoReclamationPostWithUuid:uuid
+              subsno:subsno
+              body:body
+              authorization:authorization
+          completionHandler: ^(OAIDeliveryReclamation* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoReclamationPost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **body** | [**OAINewDeliveryReclamation***](OAINewDeliveryReclamation.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAIDeliveryReclamation***](OAIDeliveryReclamation.md)
 
 ### Authorization
 

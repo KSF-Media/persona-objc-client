@@ -46,6 +46,7 @@ Import the following:
 #import <OpenAPIClient/OAICampaign.h>
 #import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
+#import <OpenAPIClient/OAIDeliveryReclamation.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
 #import <OpenAPIClient/OAIForgotPasswordResponse.h>
@@ -70,6 +71,7 @@ Import the following:
 #import <OpenAPIClient/OAILoginDataSSO.h>
 #import <OpenAPIClient/OAILoginDataSoMe.h>
 #import <OpenAPIClient/OAILoginResponse.h>
+#import <OpenAPIClient/OAINewDeliveryReclamation.h>
 #import <OpenAPIClient/OAINewUser.h>
 #import <OpenAPIClient/OAIPackage.h>
 #import <OpenAPIClient/OAIPackageDescription.h>
@@ -146,6 +148,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 
 
 ## Documentation For Models
@@ -155,6 +158,7 @@ Class | Method | HTTP request | Description
  - [OAICampaign](docs/OAICampaign.md)
  - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
+ - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
  - [OAIForgotPasswordResponse](docs/OAIForgotPasswordResponse.md)
@@ -179,6 +183,7 @@ Class | Method | HTTP request | Description
  - [OAILoginDataSSO](docs/OAILoginDataSSO.md)
  - [OAILoginDataSoMe](docs/OAILoginDataSoMe.md)
  - [OAILoginResponse](docs/OAILoginResponse.md)
+ - [OAINewDeliveryReclamation](docs/OAINewDeliveryReclamation.md)
  - [OAINewUser](docs/OAINewUser.md)
  - [OAIPackage](docs/OAIPackage.md)
  - [OAIPackageDescription](docs/OAIPackageDescription.md)

@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
+#import "OAIDeliveryReclamation.h"
 #import "OAIGdprConsent.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
 #import "OAILegalConsent.h"
 #import "OAILoginResponse.h"
+#import "OAINewDeliveryReclamation.h"
 #import "OAINewUser.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
@@ -180,6 +182,27 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     body: (OAISubscriptionPauseDates*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+
+
+/// Create a new delivery reclamation for a subscription
+/// 
+///
+/// @param uuid 
+/// @param subsno 
+/// @param body 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` or `subsno` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAIDeliveryReclamation*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationPostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAINewDeliveryReclamation*) body
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 
 
 
