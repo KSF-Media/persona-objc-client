@@ -205,5 +205,25 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 
 
+/// Get a delivery reclamation
+/// 
+///
+/// @param uuid 
+/// @param subsno 
+/// @param reclaimno 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization`",
+///  code:404 message:"`uuid` or `subsno` or `reclaimno` not found"
+///
+/// @return OAIDeliveryReclamation*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationReclaimnoGetWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    reclaimno: (NSNumber*) reclaimno
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
+
+
 
 @end

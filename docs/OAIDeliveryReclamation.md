@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **NSString*** |  | 
+**number** | **NSNumber*** |  | 
 **customerNumber** | **NSNumber*** |  | 
 **subscriptionNumber** | **NSNumber*** |  | 
 **date** | **NSDate*** |  | 

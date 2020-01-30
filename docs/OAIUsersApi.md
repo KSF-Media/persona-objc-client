@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
+[**usersUuidSubscriptionsSubsnoReclamationReclaimnoGet**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamation/{reclaimno} | Get a delivery reclamation
 
 
 # **usersPost**
@@ -527,6 +528,66 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoReclamationReclaimnoGet**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationReclaimnoGetWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    reclaimno: (NSNumber*) reclaimno
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
+```
+
+Get a delivery reclamation
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+NSNumber* reclaimno = @56; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Get a delivery reclamation
+[apiInstance usersUuidSubscriptionsSubsnoReclamationReclaimnoGetWithUuid:uuid
+              subsno:subsno
+              reclaimno:reclaimno
+              authorization:authorization
+          completionHandler: ^(OAIDeliveryReclamation* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoReclamationReclaimnoGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **reclaimno** | **NSNumber***|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAIDeliveryReclamation***](OAIDeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -23,7 +23,7 @@
 @interface OAIDeliveryReclamation : OAIObject
 
 
-@property(nonatomic) NSString* number;
+@property(nonatomic) NSNumber* number;
 
 @property(nonatomic) NSNumber* customerNumber;
 
