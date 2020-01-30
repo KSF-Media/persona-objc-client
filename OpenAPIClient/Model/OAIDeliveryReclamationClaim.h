@@ -14,20 +14,13 @@
 */
 
 
-#import "OAIDeliveryReclamationClaim.h"
-@protocol OAIDeliveryReclamationClaim;
-@class OAIDeliveryReclamationClaim;
 
 
 
-@protocol OAINewDeliveryReclamation
+@protocol OAIDeliveryReclamationClaim
 @end
 
-@interface OAINewDeliveryReclamation : OAIObject
+@interface OAIDeliveryReclamationClaim : OAIObject
 
-
-@property(nonatomic) NSDate* publicationDate;
-
-@property(nonatomic) OAIDeliveryReclamationClaim* claim;
 
 @end

@@ -47,6 +47,7 @@ Import the following:
 #import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
+#import <OpenAPIClient/OAIDeliveryReclamationClaim.h>
 #import <OpenAPIClient/OAIDeliveryReclamationUpdate.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
@@ -162,6 +163,7 @@ Class | Method | HTTP request | Description
  - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
+ - [OAIDeliveryReclamationClaim](docs/OAIDeliveryReclamationClaim.md)
  - [OAIDeliveryReclamationUpdate](docs/OAIDeliveryReclamationUpdate.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
