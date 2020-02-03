@@ -263,10 +263,13 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
+///  @param everywhere  (optional, default to @(NO))
+///
 ///  @returns NSArray<NSObject*>*
 ///
 -(NSURLSessionTask*) loginUuidDeleteWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
+    everywhere: (NSNumber*) everywhere
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
@@ -287,6 +290,9 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (everywhere != nil) {
+        queryParams[@"everywhere"] = [everywhere isEqual:@(YES)] ? @"true" : @"false";
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     if (authorization != nil) {

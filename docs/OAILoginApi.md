@@ -158,6 +158,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) loginUuidDeleteWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
+    everywhere: (NSNumber*) everywhere
         completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 ```
 
@@ -170,12 +171,14 @@ Authorization header expects the following format ‘OAuth {token}’
 
 NSString* uuid = @"uuid_example"; // 
 NSString* authorization = @"authorization_example"; //  (optional)
+NSNumber* everywhere = @(NO); //  (optional) (default to @(NO))
 
 OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 // Logout
 [apiInstance loginUuidDeleteWithUuid:uuid
               authorization:authorization
+              everywhere:everywhere
           completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -192,6 +195,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **authorization** | **NSString***|  | [optional] 
+ **everywhere** | **NSNumber***|  | [optional] [default to @(NO)]
 
 ### Return type
 
