@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usersPost**](OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
+[**usersTemporaryPost**](OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
 [**usersUuidEntitlementGet**](OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
@@ -49,6 +50,54 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OAINewUser***](OAINewUser.md)|  | 
+
+### Return type
+
+[**OAILoginResponse***](OAILoginResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersTemporaryPost**
+```objc
+-(NSURLSessionTask*) usersTemporaryPostWithBody: (OAINewTemporaryUser*) body
+        completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+```
+
+Create a new user with email.
+
+### Example 
+```objc
+
+OAINewTemporaryUser* body = [[OAINewTemporaryUser alloc] init]; // 
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Create a new user with email.
+[apiInstance usersTemporaryPostWithBody:body
+          completionHandler: ^(OAILoginResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersTemporaryPost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OAINewTemporaryUser***](OAINewTemporaryUser.md)|  | 
 
 ### Return type
 

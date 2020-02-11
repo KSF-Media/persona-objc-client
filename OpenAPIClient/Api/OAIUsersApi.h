@@ -7,6 +7,7 @@
 #import "OAILegalConsent.h"
 #import "OAILoginResponse.h"
 #import "OAINewDeliveryReclamation.h"
+#import "OAINewTemporaryUser.h"
 #import "OAINewUser.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
@@ -47,6 +48,20 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @return OAILoginResponse*
 -(NSURLSessionTask*) usersPostWithBody: (OAINewUser*) body
+    completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+
+
+/// Create a new user with email.
+/// 
+///
+/// @param body 
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body`",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAILoginResponse*
+-(NSURLSessionTask*) usersTemporaryPostWithBody: (OAINewTemporaryUser*) body
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 

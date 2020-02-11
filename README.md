@@ -74,6 +74,7 @@ Import the following:
 #import <OpenAPIClient/OAILoginDataSoMe.h>
 #import <OpenAPIClient/OAILoginResponse.h>
 #import <OpenAPIClient/OAINewDeliveryReclamation.h>
+#import <OpenAPIClient/OAINewTemporaryUser.h>
 #import <OpenAPIClient/OAINewUser.h>
 #import <OpenAPIClient/OAIPackage.h>
 #import <OpenAPIClient/OAIPackageDescription.h>
@@ -143,6 +144,7 @@ Class | Method | HTTP request | Description
 *OAILoginApi* | [**loginSsoPost**](docs/OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *OAILoginApi* | [**loginUuidDelete**](docs/OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
 *OAIUsersApi* | [**usersPost**](docs/OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
+*OAIUsersApi* | [**usersTemporaryPost**](docs/OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
 *OAIUsersApi* | [**usersUuidEntitlementGet**](docs/OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 *OAIUsersApi* | [**usersUuidGdprPut**](docs/OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
@@ -190,6 +192,7 @@ Class | Method | HTTP request | Description
  - [OAILoginDataSoMe](docs/OAILoginDataSoMe.md)
  - [OAILoginResponse](docs/OAILoginResponse.md)
  - [OAINewDeliveryReclamation](docs/OAINewDeliveryReclamation.md)
+ - [OAINewTemporaryUser](docs/OAINewTemporaryUser.md)
  - [OAINewUser](docs/OAINewUser.md)
  - [OAIPackage](docs/OAIPackage.md)
  - [OAIPackageDescription](docs/OAIPackageDescription.md)

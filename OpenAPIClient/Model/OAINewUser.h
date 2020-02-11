@@ -23,24 +23,24 @@
 @interface OAINewUser : OAIObject
 
 
-@property(nonatomic) NSString* firstName;
+@property(nonatomic) NSString* varNewUserFirstName;
 
-@property(nonatomic) NSString* lastName;
+@property(nonatomic) NSString* varNewUserLastName;
 
-@property(nonatomic) NSString* emailAddress;
+@property(nonatomic) NSString* varNewUserEmailAddress;
 
-@property(nonatomic) NSString* password;
+@property(nonatomic) NSString* varNewUserPassword;
 
-@property(nonatomic) NSString* confirmPassword;
+@property(nonatomic) NSString* varNewUserConfirmPassword;
 
-@property(nonatomic) NSString* streetAddress;
+@property(nonatomic) NSString* varNewUserStreetAddress;
 
-@property(nonatomic) NSString* zipCode;
+@property(nonatomic) NSString* varNewUserZipCode;
 
-@property(nonatomic) NSString* city;
+@property(nonatomic) NSString* varNewUserCity;
 
-@property(nonatomic) NSString* country;
+@property(nonatomic) NSString* varNewUserCountry;
 
-@property(nonatomic) NSString* phone;
+@property(nonatomic) NSString* varNewUserPhone;
 
 @end

@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"firstName": @"firstName", @"lastName": @"lastName", @"emailAddress": @"emailAddress", @"password": @"password", @"confirmPassword": @"confirmPassword", @"streetAddress": @"streetAddress", @"zipCode": @"zipCode", @"city": @"city", @"country": @"country", @"phone": @"phone" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"varNewUserFirstName": @"newUserFirstName", @"varNewUserLastName": @"newUserLastName", @"varNewUserEmailAddress": @"newUserEmailAddress", @"varNewUserPassword": @"newUserPassword", @"varNewUserConfirmPassword": @"newUserConfirmPassword", @"varNewUserStreetAddress": @"newUserStreetAddress", @"varNewUserZipCode": @"newUserZipCode", @"varNewUserCity": @"newUserCity", @"varNewUserCountry": @"newUserCountry", @"varNewUserPhone": @"newUserPhone" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"streetAddress", @"zipCode", @"city", @"country", @"phone"];
+  NSArray *optionalProperties = @[@"varNewUserFirstName", @"varNewUserLastName", @"varNewUserStreetAddress", @"varNewUserZipCode", @"varNewUserCity", @"varNewUserCountry", @"varNewUserPhone"];
   return [optionalProperties containsObject:propertyName];
 }
 
