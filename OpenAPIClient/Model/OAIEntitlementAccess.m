@@ -1,6 +1,6 @@
-#import "OAIGlobalEntitlementAccess.h"
+#import "OAIEntitlementAccess.h"
 
-@implementation OAIGlobalEntitlementAccess
+@implementation OAIEntitlementAccess
 
 - (instancetype)init {
   self = [super init];

@@ -17,10 +17,10 @@
 
 
 
-@protocol OAIGlobalEntitlementAccess
+@protocol OAIEntitlementAccess
 @end
 
-@interface OAIGlobalEntitlementAccess : OAIObject
+@interface OAIEntitlementAccess : OAIObject
 
 
 @property(nonatomic) NSString* userUuid;

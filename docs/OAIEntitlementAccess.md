@@ -1,4 +1,4 @@
-# OAIGlobalEntitlementAccess
+# OAIEntitlementAccess
 
 ## Properties
 Name | Type | Description | Notes

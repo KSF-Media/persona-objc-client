@@ -50,10 +50,10 @@ Import the following:
 #import <OpenAPIClient/OAIDeliveryReclamationClaim.h>
 #import <OpenAPIClient/OAIDeliveryReclamationUpdate.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
+#import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
 #import <OpenAPIClient/OAIForgotPasswordResponse.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
-#import <OpenAPIClient/OAIGlobalEntitlementAccess.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
 #import <OpenAPIClient/OAIInlineResponse400InvalidRequestBody.h>
 #import <OpenAPIClient/OAIInlineResponse403.h>
@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountForgotPassPost**](docs/OAIAccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *OAIAccountApi* | [**accountResetForgottenPasswordPost**](docs/OAIAccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
+*OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAILoginApi* | [**loginPost**](docs/OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
 *OAILoginApi* | [**loginSomePost**](docs/OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
@@ -168,10 +169,10 @@ Class | Method | HTTP request | Description
  - [OAIDeliveryReclamationClaim](docs/OAIDeliveryReclamationClaim.md)
  - [OAIDeliveryReclamationUpdate](docs/OAIDeliveryReclamationUpdate.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
+ - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
  - [OAIForgotPasswordResponse](docs/OAIForgotPasswordResponse.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
- - [OAIGlobalEntitlementAccess](docs/OAIGlobalEntitlementAccess.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
  - [OAIInlineResponse400InvalidRequestBody](docs/OAIInlineResponse400InvalidRequestBody.md)
  - [OAIInlineResponse403](docs/OAIInlineResponse403.md)

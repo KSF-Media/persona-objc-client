@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "OAIGlobalEntitlementAccess.h"
+#import "OAIEntitlementAccess.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
 #import "OAIApi.h"
@@ -36,7 +36,26 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return NSArray<NSObject*>*
--(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIGlobalEntitlementAccess*) body
+-(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIEntitlementAccess*) body
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+
+
+/// Grant product access to a customer
+/// 
+///
+/// @param uuid 
+/// @param body 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return NSArray<NSObject*>*
+-(NSURLSessionTask*) entitlementsAllowUuidPostWithUuid: (NSString*) uuid
+    body: (OAIEntitlementAccess*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 

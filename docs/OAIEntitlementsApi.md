@@ -5,12 +5,13 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**entitlementsAllowPost**](OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
+[**entitlementsAllowUuidPost**](OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 
 
 # **entitlementsAllowPost**
 ```objc
--(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIGlobalEntitlementAccess*) body
+-(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIEntitlementAccess*) body
     authorization: (NSString*) authorization
         completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 ```
@@ -20,7 +21,7 @@ Method | HTTP request | Description
 ### Example 
 ```objc
 
-OAIGlobalEntitlementAccess* body = [[OAIGlobalEntitlementAccess alloc] init]; // 
+OAIEntitlementAccess* body = [[OAIEntitlementAccess alloc] init]; // 
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
@@ -41,7 +42,63 @@ OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OAIGlobalEntitlementAccess***](OAIGlobalEntitlementAccess.md)|  | 
+ **body** | [**OAIEntitlementAccess***](OAIEntitlementAccess.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+**NSArray<NSObject*>***
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **entitlementsAllowUuidPost**
+```objc
+-(NSURLSessionTask*) entitlementsAllowUuidPostWithUuid: (NSString*) uuid
+    body: (OAIEntitlementAccess*) body
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+```
+
+Grant product access to a customer
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+OAIEntitlementAccess* body = [[OAIEntitlementAccess alloc] init]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
+
+// Grant product access to a customer
+[apiInstance entitlementsAllowUuidPostWithUuid:uuid
+              body:body
+              authorization:authorization
+          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIEntitlementsApi->entitlementsAllowUuidPost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **body** | [**OAIEntitlementAccess***](OAIEntitlementAccess.md)|  | 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
