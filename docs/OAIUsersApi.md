@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 [**usersUuidGet**](OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 [**usersUuidLegalPut**](OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
+[**usersUuidPasswordPut**](OAIUsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
@@ -332,6 +333,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAIUser***](OAIUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidPasswordPut**
+```objc
+-(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
+    body: (OAIUserUpdatePassword*) body
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+```
+
+Set / Change user password
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+OAIUserUpdatePassword* body = [[OAIUserUpdatePassword alloc] init]; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Set / Change user password
+[apiInstance usersUuidPasswordPutWithUuid:uuid
+              body:body
+              authorization:authorization
+          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidPasswordPut: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **body** | [**OAIUserUpdatePassword***](OAIUserUpdatePassword.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+**NSArray<NSObject*>***
 
 ### Authorization
 

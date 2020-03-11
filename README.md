@@ -52,7 +52,6 @@ Import the following:
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
-#import <OpenAPIClient/OAIForgotPasswordResponse.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
 #import <OpenAPIClient/OAIInlineResponse400InvalidRequestBody.h>
@@ -92,6 +91,7 @@ Import the following:
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
 #import <OpenAPIClient/OAIUserUpdateAddress.h>
+#import <OpenAPIClient/OAIUserUpdatePassword.h>
 // load API classes for accessing endpoints
 #import <OpenAPIClient/OAIAccountApi.h>
 #import <OpenAPIClient/OAIEntitlementsApi.h>
@@ -150,6 +150,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidGdprPut**](docs/OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 *OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
+*OAIUsersApi* | [**usersUuidPasswordPut**](docs/OAIUsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
@@ -171,7 +172,6 @@ Class | Method | HTTP request | Description
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
- - [OAIForgotPasswordResponse](docs/OAIForgotPasswordResponse.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
  - [OAIInlineResponse400InvalidRequestBody](docs/OAIInlineResponse400InvalidRequestBody.md)
@@ -211,6 +211,7 @@ Class | Method | HTTP request | Description
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)
  - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)
+ - [OAIUserUpdatePassword](docs/OAIUserUpdatePassword.md)
 
 
 ## Documentation For Authorization

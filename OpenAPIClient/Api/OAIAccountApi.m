@@ -3,7 +3,6 @@
 #import "OAIApiClient.h"
 #import "OAICodeForTokenData.h"
 #import "OAIForgotPasswordData.h"
-#import "OAIForgotPasswordResponse.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
 #import "OAITokenResponse.h"
@@ -126,10 +125,10 @@ NSInteger kOAIAccountApiMissingParamErrorCode = 234513;
 /// 
 ///  @param body  
 ///
-///  @returns OAIForgotPasswordResponse*
+///  @returns NSArray<NSObject*>*
 ///
 -(NSURLSessionTask*) accountForgotPassPostWithBody: (OAIForgotPasswordData*) body
-    completionHandler: (void (^)(OAIForgotPasswordResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
     if (body == nil) {
         NSParameterAssert(body);
@@ -179,10 +178,10 @@ NSInteger kOAIAccountApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIForgotPasswordResponse*"
+                              responseType: @"NSArray<NSObject*>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIForgotPasswordResponse*)data, error);
+                                    handler((NSArray<NSObject*>*)data, error);
                                 }
                             }];
 }
@@ -192,10 +191,10 @@ NSInteger kOAIAccountApiMissingParamErrorCode = 234513;
 /// 
 ///  @param body  
 ///
-///  @returns OAIForgotPasswordResponse*
+///  @returns NSArray<NSObject*>*
 ///
 -(NSURLSessionTask*) accountResetForgottenPasswordPostWithBody: (OAIUpdatePasswordData*) body
-    completionHandler: (void (^)(OAIForgotPasswordResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
     if (body == nil) {
         NSParameterAssert(body);
@@ -245,10 +244,10 @@ NSInteger kOAIAccountApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIForgotPasswordResponse*"
+                              responseType: @"NSArray<NSObject*>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIForgotPasswordResponse*)data, error);
+                                    handler((NSArray<NSObject*>*)data, error);
                                 }
                             }];
 }

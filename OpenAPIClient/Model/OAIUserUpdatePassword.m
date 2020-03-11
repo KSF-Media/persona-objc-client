@@ -1,6 +1,6 @@
-#import "OAIForgotPasswordResponse.h"
+#import "OAIUserUpdatePassword.h"
 
-@implementation OAIForgotPasswordResponse
+@implementation OAIUserUpdatePassword
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"status": @"status" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"password": @"password", @"confirmPassword": @"confirmPassword" }];
 }
 
 /**

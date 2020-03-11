@@ -17,12 +17,14 @@
 
 
 
-@protocol OAIForgotPasswordResponse
+@protocol OAIUserUpdatePassword
 @end
 
-@interface OAIForgotPasswordResponse : OAIObject
+@interface OAIUserUpdatePassword : OAIObject
 
 
-@property(nonatomic) NSString* status;
+@property(nonatomic) NSString* password;
+
+@property(nonatomic) NSString* confirmPassword;
 
 @end

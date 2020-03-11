@@ -14,6 +14,7 @@
 #import "OAITemporaryAddressChange.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
+#import "OAIUserUpdatePassword.h"
 #import "OAIApi.h"
 
 /**
@@ -137,6 +138,25 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     body: (NSArray<OAILegalConsent>*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Set / Change user password
+/// Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param body 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return NSArray<NSObject*>*
+-(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
+    body: (OAIUserUpdatePassword*) body
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 
 
 /// Update a user

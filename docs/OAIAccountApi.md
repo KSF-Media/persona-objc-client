@@ -60,7 +60,7 @@ No authorization required
 # **accountForgotPassPost**
 ```objc
 -(NSURLSessionTask*) accountForgotPassPostWithBody: (OAIForgotPasswordData*) body
-        completionHandler: (void (^)(OAIForgotPasswordResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 ```
 
 Forgot Password
@@ -74,7 +74,7 @@ OAIAccountApi*apiInstance = [[OAIAccountApi alloc] init];
 
 // Forgot Password
 [apiInstance accountForgotPassPostWithBody:body
-          completionHandler: ^(OAIForgotPasswordResponse* output, NSError* error) {
+          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIForgotPasswordResponse***](OAIForgotPasswordResponse.md)
+**NSArray<NSObject*>***
 
 ### Authorization
 
@@ -108,7 +108,7 @@ No authorization required
 # **accountResetForgottenPasswordPost**
 ```objc
 -(NSURLSessionTask*) accountResetForgottenPasswordPostWithBody: (OAIUpdatePasswordData*) body
-        completionHandler: (void (^)(OAIForgotPasswordResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 ```
 
 Reset a forgotten password with a token
@@ -122,7 +122,7 @@ OAIAccountApi*apiInstance = [[OAIAccountApi alloc] init];
 
 // Reset a forgotten password with a token
 [apiInstance accountResetForgottenPasswordPostWithBody:body
-          completionHandler: ^(OAIForgotPasswordResponse* output, NSError* error) {
+          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIForgotPasswordResponse***](OAIForgotPasswordResponse.md)
+**NSArray<NSObject*>***
 
 ### Authorization
 
