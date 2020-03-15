@@ -58,4 +58,6 @@
 
 @property(nonatomic) NSArray<OAIPendingAddressChange>* pendingAddressChanges;
 
+@property(nonatomic) NSNumber* hasCompletedRegistration;
+
 @end

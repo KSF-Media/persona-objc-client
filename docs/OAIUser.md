@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **consent** | [**NSArray&lt;OAIGdprConsent&gt;***](OAIGdprConsent.md) |  | 
 **legal** | [**NSArray&lt;OAILegalConsent&gt;***](OAILegalConsent.md) |  | 
 **pendingAddressChanges** | [**NSArray&lt;OAIPendingAddressChange&gt;***](OAIPendingAddressChange.md) |  | [optional] 
+**hasCompletedRegistration** | **NSNumber*** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
