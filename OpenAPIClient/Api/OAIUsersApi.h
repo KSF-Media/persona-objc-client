@@ -152,11 +152,11 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
-/// @return NSArray<NSObject*>*
+/// @return OAIUser*
 -(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
     body: (OAIUserUpdatePassword*) body
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
 
 /// Update a user

@@ -350,7 +350,7 @@ No authorization required
 -(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
     body: (OAIUserUpdatePassword*) body
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
 
 Set / Change user password
@@ -370,7 +370,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidPasswordPutWithUuid:uuid
               body:body
               authorization:authorization
-          completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
+          completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**NSArray<NSObject*>***
+[**OAIUser***](OAIUser.md)
 
 ### Authorization
 
