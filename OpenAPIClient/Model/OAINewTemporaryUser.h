@@ -14,6 +14,9 @@
 */
 
 
+#import "OAILegalConsent.h"
+@protocol OAILegalConsent;
+@class OAILegalConsent;
 
 
 
@@ -24,5 +27,7 @@
 
 
 @property(nonatomic) NSString* emailAddress;
+
+@property(nonatomic) NSArray<OAILegalConsent>* legalConsents;
 
 @end

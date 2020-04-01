@@ -14,6 +14,9 @@
 */
 
 
+#import "OAILegalConsent.h"
+@protocol OAILegalConsent;
+@class OAILegalConsent;
 
 
 
@@ -42,5 +45,7 @@
 @property(nonatomic) NSString* country;
 
 @property(nonatomic) NSString* phone;
+
+@property(nonatomic) NSArray<OAILegalConsent>* legalConsents;
 
 @end
