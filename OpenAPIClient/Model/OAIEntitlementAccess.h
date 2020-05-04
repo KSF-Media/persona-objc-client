@@ -23,8 +23,6 @@
 @interface OAIEntitlementAccess : OAIObject
 
 
-@property(nonatomic) NSString* userUuid;
-
 @property(nonatomic) NSString* startAt;
 
 @property(nonatomic) NSString* endAt;

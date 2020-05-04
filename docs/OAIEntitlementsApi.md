@@ -12,6 +12,7 @@ Method | HTTP request | Description
 # **entitlementsAllowPost**
 ```objc
 -(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIEntitlementAccess*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 ```
@@ -22,11 +23,13 @@ Method | HTTP request | Description
 ```objc
 
 OAIEntitlementAccess* body = [[OAIEntitlementAccess alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
 
 [apiInstance entitlementsAllowPostWithBody:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                         if (output) {
@@ -43,6 +46,7 @@ OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OAIEntitlementAccess***](OAIEntitlementAccess.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -64,6 +68,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) entitlementsAllowUuidPostWithUuid: (NSString*) uuid
     body: (OAIEntitlementAccess*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 ```
@@ -75,6 +80,7 @@ Grant product access to a customer
 
 NSString* uuid = @"uuid_example"; // 
 OAIEntitlementAccess* body = [[OAIEntitlementAccess alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
@@ -82,6 +88,7 @@ OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
 // Grant product access to a customer
 [apiInstance entitlementsAllowUuidPostWithUuid:uuid
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                         if (output) {
@@ -99,6 +106,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **body** | [**OAIEntitlementAccess***](OAIEntitlementAccess.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type

@@ -56,11 +56,14 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
 /// 
 ///  @param body  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @returns NSArray<NSObject*>*
 ///
 -(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIEntitlementAccess*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler {
     // verify the required parameter 'body' is set
@@ -81,6 +84,9 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -130,12 +136,15 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
 ///
 ///  @param body  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @returns NSArray<NSObject*>*
 ///
 -(NSURLSessionTask*) entitlementsAllowUuidPostWithUuid: (NSString*) uuid
     body: (OAIEntitlementAccess*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -170,6 +179,9 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }

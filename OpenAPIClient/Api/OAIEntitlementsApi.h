@@ -29,14 +29,16 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 /// 
 ///
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return NSArray<NSObject*>*
 -(NSURLSessionTask*) entitlementsAllowPostWithBody: (OAIEntitlementAccess*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 
@@ -46,16 +48,18 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 ///
 /// @param uuid 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return NSArray<NSObject*>*
 -(NSURLSessionTask*) entitlementsAllowUuidPostWithUuid: (NSString*) uuid
     body: (OAIEntitlementAccess*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 
