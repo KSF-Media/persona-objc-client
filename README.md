@@ -48,7 +48,6 @@ Import the following:
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
 #import <OpenAPIClient/OAIDeliveryReclamationClaim.h>
-#import <OpenAPIClient/OAIDeliveryReclamationUpdate.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
@@ -158,7 +157,6 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnopatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Update a delivery reclamation
 
 
 ## Documentation For Models
@@ -170,7 +168,6 @@ Class | Method | HTTP request | Description
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
  - [OAIDeliveryReclamationClaim](docs/OAIDeliveryReclamationClaim.md)
- - [OAIDeliveryReclamationUpdate](docs/OAIDeliveryReclamationUpdate.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)

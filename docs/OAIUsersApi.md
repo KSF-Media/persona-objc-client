@@ -16,7 +16,6 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-[**usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnopatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Update a delivery reclamation
 
 
 # **usersPost**
@@ -697,70 +696,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch**
-```objc
--(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchWithUuid: (NSString*) uuid
-    subsno: (NSNumber*) subsno
-    reclaimno: (NSNumber*) reclaimno
-    body: (OAIDeliveryReclamationUpdate*) body
-    authorization: (NSString*) authorization
-        completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
-```
-
-Update a delivery reclamation
-
-### Example 
-```objc
-
-NSString* uuid = @"uuid_example"; // 
-NSNumber* subsno = @56; // 
-NSNumber* reclaimno = @56; // 
-OAIDeliveryReclamationUpdate* body = [[OAIDeliveryReclamationUpdate alloc] init]; // 
-NSString* authorization = @"authorization_example"; //  (optional)
-
-OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
-
-// Update a delivery reclamation
-[apiInstance usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatchWithUuid:uuid
-              subsno:subsno
-              reclaimno:reclaimno
-              body:body
-              authorization:authorization
-          completionHandler: ^(OAIDeliveryReclamation* output, NSError* error) {
-                        if (output) {
-                            NSLog(@"%@", output);
-                        }
-                        if (error) {
-                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoReclamationsReclaimnoPatch: %@", error);
-                        }
-                    }];
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | [**NSString***](.md)|  | 
- **subsno** | **NSNumber***|  | 
- **reclaimno** | **NSNumber***|  | 
- **body** | [**OAIDeliveryReclamationUpdate***](OAIDeliveryReclamationUpdate.md)|  | 
- **authorization** | **NSString***|  | [optional] 
-
-### Return type
-
-[**OAIDeliveryReclamation***](OAIDeliveryReclamation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

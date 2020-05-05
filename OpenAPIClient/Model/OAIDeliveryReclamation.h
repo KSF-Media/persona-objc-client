@@ -35,6 +35,4 @@
 
 @property(nonatomic) NSString* claim;
 
-@property(nonatomic) NSString* status;
-
 @end
