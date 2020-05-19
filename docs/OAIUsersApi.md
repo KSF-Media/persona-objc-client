@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
+[**usersUuidSubscriptionsSubsnoUnpausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnounpausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
 
 
 # **usersPost**
@@ -688,6 +689,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAIDeliveryReclamation***](OAIDeliveryReclamation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoUnpausePost**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoUnpausePostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+```
+
+Pause users subscription
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Pause users subscription
+[apiInstance usersUuidSubscriptionsSubsnoUnpausePostWithUuid:uuid
+              subsno:subsno
+              authorization:authorization
+          completionHandler: ^(OAISubscription* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoUnpausePost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAISubscription***](OAISubscription.md)
 
 ### Authorization
 

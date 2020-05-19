@@ -260,5 +260,23 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 
 
+/// Pause users subscription
+/// 
+///
+/// @param uuid 
+/// @param subsno 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization`",
+///  code:404 message:"`uuid` or `subsno` not found"
+///
+/// @return OAISubscription*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoUnpausePostWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+
+
 
 @end
