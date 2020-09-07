@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"temporaryName"];
+  NSArray *optionalProperties = @[@"endDate", @"temporaryName"];
   return [optionalProperties containsObject:propertyName];
 }
 

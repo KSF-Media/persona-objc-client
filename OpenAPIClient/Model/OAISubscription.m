@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"subsno": @"subsno", @"extno": @"extno", @"cusno": @"cusno", @"paycusno": @"paycusno", @"kind": @"kind", @"state": @"state", @"pricegroup": @"pricegroup", @"package": @"package", @"dates": @"dates", @"extsubsexists": @"extsubsexists", @"campaign": @"campaign", @"paused": @"paused", @"deliveryAddress": @"deliveryAddress", @"pendingAddressChanges": @"pendingAddressChanges", @"orderNumber": @"orderNumber", @"paymentMethod": @"paymentMethod" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"subsno": @"subsno", @"extno": @"extno", @"cusno": @"cusno", @"paycusno": @"paycusno", @"kind": @"kind", @"state": @"state", @"pricegroup": @"pricegroup", @"package": @"package", @"dates": @"dates", @"extsubsexists": @"extsubsexists", @"campaign": @"campaign", @"paused": @"paused", @"deliveryAddress": @"deliveryAddress", @"pendingAddressChanges": @"pendingAddressChanges", @"orderNumber": @"orderNumber", @"paymentMethod": @"paymentMethod", @"paymentMethodId": @"paymentMethodId" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"pricegroup", @"campaign", @"paused", @"deliveryAddress", @"pendingAddressChanges", @"orderNumber", @"paymentMethod"];
+  NSArray *optionalProperties = @[@"pricegroup", @"campaign", @"paused", @"deliveryAddress", @"pendingAddressChanges", @"orderNumber", @"paymentMethod", @"paymentMethodId"];
   return [optionalProperties containsObject:propertyName];
 }
 
