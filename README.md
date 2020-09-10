@@ -45,6 +45,7 @@ Import the following:
 #import <OpenAPIClient/OAIAddress.h>
 #import <OpenAPIClient/OAICampaign.h>
 #import <OpenAPIClient/OAICodeForTokenData.h>
+#import <OpenAPIClient/OAIDeleteTempAddressChangeDates.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
 #import <OpenAPIClient/OAIDeliveryReclamationClaim.h>
@@ -153,6 +154,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *OAIUsersApi* | [**usersUuidPasswordPut**](docs/OAIUsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
@@ -166,6 +168,7 @@ Class | Method | HTTP request | Description
  - [OAIAddress](docs/OAIAddress.md)
  - [OAICampaign](docs/OAICampaign.md)
  - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
+ - [OAIDeleteTempAddressChangeDates](docs/OAIDeleteTempAddressChangeDates.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
  - [OAIDeliveryReclamationClaim](docs/OAIDeliveryReclamationClaim.md)

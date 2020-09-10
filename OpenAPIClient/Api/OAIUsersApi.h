@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "OAIDeleteTempAddressChangeDates.h"
 #import "OAIDeliveryReclamation.h"
 #import "OAIGdprConsent.h"
 #import "OAIInlineResponse400.h"
@@ -175,6 +176,27 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     body: (OAIUserUpdate*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Delete temporary address change for subscription
+/// 
+///
+/// @param uuid 
+/// @param subsno 
+/// @param body 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:404 message:"`uuid` or `subsno` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAISubscription*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangeDeleteWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAIDeleteTempAddressChangeDates*) body
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 
 /// Make a temporary address change for a subscription
