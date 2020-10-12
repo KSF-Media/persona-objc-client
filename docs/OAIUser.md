@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **firstName** | **NSString*** |  | [optional] 
 **lastName** | **NSString*** |  | [optional] 
 **address** | [**OAIAddress***](OAIAddress.md) |  | [optional] 
-**cusno** | **NSString*** |  | 
+**cusno** | **NSNumber*** |  | 
 **subs** | [**NSArray&lt;OAISubscription&gt;***](OAISubscription.md) |  | 
 **consent** | [**NSArray&lt;OAIGdprConsent&gt;***](OAIGdprConsent.md) |  | 
 **legal** | [**NSArray&lt;OAILegalConsent&gt;***](OAILegalConsent.md) |  | 

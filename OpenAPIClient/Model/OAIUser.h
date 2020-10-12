@@ -48,7 +48,7 @@
 
 @property(nonatomic) OAIAddress* address;
 
-@property(nonatomic) NSString* cusno;
+@property(nonatomic) NSNumber* cusno;
 
 @property(nonatomic) NSArray<OAISubscription>* subs;
 
