@@ -14,25 +14,26 @@
 */
 
 
+#import "OAIPayment.h"
+@protocol OAIPayment;
+@class OAIPayment;
 
 
 
-@protocol OAICampaign
+@protocol OAISubscriptionPayments
 @end
 
-@interface OAICampaign : OAIObject
+@interface OAISubscriptionPayments : OAIObject
 
 
-@property(nonatomic) NSNumber* no;
-
-@property(nonatomic) NSString* _id;
+@property(nonatomic) NSNumber* subsno;
 
 @property(nonatomic) NSString* name;
 
-@property(nonatomic) NSNumber* priceEur;
+@property(nonatomic) NSDate* startDate;
 
-@property(nonatomic) NSNumber* length;
+@property(nonatomic) NSDate* lastDate;
 
-@property(nonatomic) NSString* lengthUnit;
+@property(nonatomic) NSArray<OAIPayment>* payments;
 
 @end

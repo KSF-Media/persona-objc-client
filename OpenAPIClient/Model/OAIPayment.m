@@ -1,6 +1,6 @@
-#import "OAICampaign.h"
+#import "OAIPayment.h"
 
-@implementation OAICampaign
+@implementation OAIPayment
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"no": @"no", @"_id": @"id", @"name": @"name", @"priceEur": @"priceEur", @"length": @"length", @"lengthUnit": @"lengthUnit" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"invno": @"invno", @"date": @"date", @"dueDate": @"dueDate", @"expenses": @"expenses", @"interest": @"interest", @"vat": @"vat", @"amount": @"amount", @"openAmount": @"openAmount", @"type": @"type", @"state": @"state", @"discPercent": @"discPercent", @"discAmount": @"discAmount" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"discPercent", @"discAmount"];
   return [optionalProperties containsObject:propertyName];
 }
 

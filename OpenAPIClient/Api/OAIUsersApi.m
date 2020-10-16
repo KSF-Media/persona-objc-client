@@ -13,6 +13,7 @@
 #import "OAINewUser.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
+#import "OAISubscriptionPayments.h"
 #import "OAITemporaryAddressChange.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
@@ -708,6 +709,80 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((OAIUser*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Get user's subscriptions and payment events
+/// 
+///  @param uuid  
+///
+///  @param authorization  (optional)
+///
+///  @returns NSArray<OAISubscriptionPayments>*
+///
+-(NSURLSessionTask*) usersUuidPaymentsGetWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<OAISubscriptionPayments>* output, NSError* error)) handler {
+    // verify the required parameter 'uuid' is set
+    if (uuid == nil) {
+        NSParameterAssert(uuid);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"uuid"] };
+            NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{uuid}/payments"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (uuid != nil) {
+        pathParams[@"uuid"] = uuid;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authorization != nil) {
+        headerParams[@"Authorization"] = authorization;
+    }
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSArray<OAISubscriptionPayments>*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((NSArray<OAISubscriptionPayments>*)data, error);
                                 }
                             }];
 }

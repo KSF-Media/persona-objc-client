@@ -80,11 +80,13 @@ Import the following:
 #import <OpenAPIClient/OAIPackageOffer.h>
 #import <OpenAPIClient/OAIPaper.h>
 #import <OpenAPIClient/OAIPausedSubscription.h>
+#import <OpenAPIClient/OAIPayment.h>
 #import <OpenAPIClient/OAIPendingAddressChange.h>
 #import <OpenAPIClient/OAIProduct.h>
 #import <OpenAPIClient/OAISubscription.h>
 #import <OpenAPIClient/OAISubscriptionDates.h>
 #import <OpenAPIClient/OAISubscriptionPauseDates.h>
+#import <OpenAPIClient/OAISubscriptionPayments.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
 #import <OpenAPIClient/OAITokenResponse.h>
 #import <OpenAPIClient/OAIUpdatePasswordData.h>
@@ -154,6 +156,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
 *OAIUsersApi* | [**usersUuidPasswordPut**](docs/OAIUsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
+*OAIUsersApi* | [**usersUuidPaymentsGet**](docs/OAIUsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
@@ -203,11 +206,13 @@ Class | Method | HTTP request | Description
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
  - [OAIPaper](docs/OAIPaper.md)
  - [OAIPausedSubscription](docs/OAIPausedSubscription.md)
+ - [OAIPayment](docs/OAIPayment.md)
  - [OAIPendingAddressChange](docs/OAIPendingAddressChange.md)
  - [OAIProduct](docs/OAIProduct.md)
  - [OAISubscription](docs/OAISubscription.md)
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
  - [OAISubscriptionPauseDates](docs/OAISubscriptionPauseDates.md)
+ - [OAISubscriptionPayments](docs/OAISubscriptionPayments.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
  - [OAITokenResponse](docs/OAITokenResponse.md)
  - [OAIUpdatePasswordData](docs/OAIUpdatePasswordData.md)

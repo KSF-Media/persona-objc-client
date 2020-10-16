@@ -1,6 +1,6 @@
-#import "OAICampaign.h"
+#import "OAISubscriptionPayments.h"
 
-@implementation OAICampaign
+@implementation OAISubscriptionPayments
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"no": @"no", @"_id": @"id", @"name": @"name", @"priceEur": @"priceEur", @"length": @"length", @"lengthUnit": @"lengthUnit" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"subsno": @"subsno", @"name": @"name", @"startDate": @"startDate", @"lastDate": @"lastDate", @"payments": @"payments" }];
 }
 
 /**

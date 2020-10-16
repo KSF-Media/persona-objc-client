@@ -11,6 +11,7 @@
 #import "OAINewUser.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
+#import "OAISubscriptionPayments.h"
 #import "OAITemporaryAddressChange.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
@@ -176,6 +177,22 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     body: (OAIUserUpdate*) body
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Get user's subscriptions and payment events
+/// 
+///
+/// @param uuid 
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization`",
+///  code:404 message:"`uuid` not found"
+///
+/// @return NSArray<OAISubscriptionPayments>*
+-(NSURLSessionTask*) usersUuidPaymentsGetWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<OAISubscriptionPayments>* output, NSError* error)) handler;
 
 
 /// Delete temporary address change for subscription
