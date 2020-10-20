@@ -79,6 +79,7 @@ Import the following:
 #import <OpenAPIClient/OAIPackageDescription.h>
 #import <OpenAPIClient/OAIPackageOffer.h>
 #import <OpenAPIClient/OAIPaper.h>
+#import <OpenAPIClient/OAIPastTemporaryAddress.h>
 #import <OpenAPIClient/OAIPausedSubscription.h>
 #import <OpenAPIClient/OAIPayment.h>
 #import <OpenAPIClient/OAIPendingAddressChange.h>
@@ -205,6 +206,7 @@ Class | Method | HTTP request | Description
  - [OAIPackageDescription](docs/OAIPackageDescription.md)
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
  - [OAIPaper](docs/OAIPaper.md)
+ - [OAIPastTemporaryAddress](docs/OAIPastTemporaryAddress.md)
  - [OAIPausedSubscription](docs/OAIPausedSubscription.md)
  - [OAIPayment](docs/OAIPayment.md)
  - [OAIPendingAddressChange](docs/OAIPendingAddressChange.md)
