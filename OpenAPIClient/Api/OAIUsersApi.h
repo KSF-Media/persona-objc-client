@@ -68,18 +68,20 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 
 
 /// Get users entitlements.
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// @param cacheControl  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Cache-Control` or `Authorization`",
+///  code:400 message:"Invalid `Cache-Control` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found"
 ///
 /// @return NSArray<NSString*>*
 -(NSURLSessionTask*) usersUuidEntitlementGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
     completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
@@ -90,16 +92,18 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @param uuid 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
     body: (NSArray<OAIGdprConsent>*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
@@ -108,15 +112,17 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// @param cacheControl  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Cache-Control` or `Authorization`",
+///  code:400 message:"Invalid `Cache-Control` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found"
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
@@ -127,16 +133,18 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @param uuid 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
     body: (NSArray<OAILegalConsent>*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
@@ -146,16 +154,18 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @param uuid 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
     body: (OAIUserUpdatePassword*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
@@ -165,46 +175,51 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @param uuid 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return OAIUser*
 -(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
     body: (OAIUserUpdate*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 
 
 /// Get user's subscriptions and payment events
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Authorization`",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` not found"
 ///
 /// @return NSArray<OAISubscriptionPayments>*
 -(NSURLSessionTask*) usersUuidPaymentsGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<OAISubscriptionPayments>* output, NSError* error)) handler;
 
 
 /// Delete temporary address change for subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` not found",
 ///  code:415 message:"Unsupported media type"
 ///
@@ -212,20 +227,22 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangeDeleteWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAIDeleteTempAddressChangeDates*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 
 /// Make a temporary address change for a subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` not found",
 ///  code:415 message:"Unsupported media type"
 ///
@@ -233,20 +250,22 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAITemporaryAddressChange*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 
 /// Pause users subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` not found",
 ///  code:415 message:"Unsupported media type"
 ///
@@ -254,20 +273,22 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAISubscriptionPauseDates*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 
 /// Create a new delivery reclamation for a subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
 /// @param body 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization`",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` not found",
 ///  code:415 message:"Unsupported media type"
 ///
@@ -275,44 +296,49 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationPostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAINewDeliveryReclamation*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 
 
 /// Get a delivery reclamation
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
 /// @param reclaimno 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Authorization`",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` or `reclaimno` not found"
 ///
 /// @return OAIDeliveryReclamation*
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     reclaimno: (NSNumber*) reclaimno
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 
 
 /// Pause users subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
+/// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Authorization`",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` not found"
 ///
 /// @return OAISubscription*
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoUnpausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 

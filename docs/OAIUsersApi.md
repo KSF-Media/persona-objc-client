@@ -120,6 +120,7 @@ No authorization required
 # **usersUuidEntitlementGet**
 ```objc
 -(NSURLSessionTask*) usersUuidEntitlementGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
         completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
@@ -127,10 +128,13 @@ No authorization required
 
 Get users entitlements.
 
+Authorization header expects the following format ‘OAuth {token}’
+
 ### Example 
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 NSString* cacheControl = @"cacheControl_example"; //  (optional)
 
@@ -138,6 +142,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Get users entitlements.
 [apiInstance usersUuidEntitlementGetWithUuid:uuid
+              authUser:authUser
               authorization:authorization
               cacheControl:cacheControl
           completionHandler: ^(NSArray<NSString*>* output, NSError* error) {
@@ -155,6 +160,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
  **cacheControl** | **NSString***|  | [optional] 
 
@@ -177,6 +183,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
     body: (NSArray<OAIGdprConsent>*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -190,6 +197,7 @@ Authorization header expects the following format ‘OAuth {token}’
 
 NSString* uuid = @"uuid_example"; // 
 NSArray<OAIGdprConsent>* body = @[[[NSArray alloc] init]]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -197,6 +205,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 // Updates the GDPR consent settings for a given user.
 [apiInstance usersUuidGdprPutWithUuid:uuid
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -214,6 +223,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **body** | [**NSArray&lt;OAIGdprConsent&gt;***](NSArray.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -234,6 +244,7 @@ No authorization required
 # **usersUuidGet**
 ```objc
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
@@ -247,6 +258,7 @@ Authorization header expects the following format ‘OAuth {token}’
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 NSString* cacheControl = @"cacheControl_example"; //  (optional)
 
@@ -254,6 +266,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Get user by UUID.
 [apiInstance usersUuidGetWithUuid:uuid
+              authUser:authUser
               authorization:authorization
               cacheControl:cacheControl
           completionHandler: ^(OAIUser* output, NSError* error) {
@@ -271,6 +284,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
  **cacheControl** | **NSString***|  | [optional] 
 
@@ -293,6 +307,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
     body: (NSArray<OAILegalConsent>*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -306,6 +321,7 @@ Authorization header expects the following format ‘OAuth {token}’
 
 NSString* uuid = @"uuid_example"; // 
 NSArray<OAILegalConsent>* body = @[[[NSArray alloc] init]]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -313,6 +329,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 // Updates the legal consent settings for a given user.
 [apiInstance usersUuidLegalPutWithUuid:uuid
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -330,6 +347,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **body** | [**NSArray&lt;OAILegalConsent&gt;***](NSArray.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -351,6 +369,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
     body: (OAIUserUpdatePassword*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -364,6 +383,7 @@ Authorization header expects the following format ‘OAuth {token}’
 
 NSString* uuid = @"uuid_example"; // 
 OAIUserUpdatePassword* body = [[OAIUserUpdatePassword alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -371,6 +391,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 // Set / Change user password
 [apiInstance usersUuidPasswordPutWithUuid:uuid
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -388,6 +409,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **body** | [**OAIUserUpdatePassword***](OAIUserUpdatePassword.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -409,6 +431,7 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
     body: (OAIUserUpdate*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
 ```
@@ -422,6 +445,7 @@ Authorization header expects the following format ‘OAuth {token}’
 
 NSString* uuid = @"uuid_example"; // 
 OAIUserUpdate* body = [[OAIUserUpdate alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -429,6 +453,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 // Update a user
 [apiInstance usersUuidPatchWithUuid:uuid
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAIUser* output, NSError* error) {
                         if (output) {
@@ -446,6 +471,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **body** | [**OAIUserUpdate***](OAIUserUpdate.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -466,22 +492,27 @@ No authorization required
 # **usersUuidPaymentsGet**
 ```objc
 -(NSURLSessionTask*) usersUuidPaymentsGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(NSArray<OAISubscriptionPayments>* output, NSError* error)) handler;
 ```
 
 Get user's subscriptions and payment events
 
+Authorization header expects the following format ‘OAuth {token}’
+
 ### Example 
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Get user's subscriptions and payment events
 [apiInstance usersUuidPaymentsGetWithUuid:uuid
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(NSArray<OAISubscriptionPayments>* output, NSError* error) {
                         if (output) {
@@ -498,6 +529,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -520,11 +552,14 @@ No authorization required
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangeDeleteWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAIDeleteTempAddressChangeDates*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 ```
 
 Delete temporary address change for subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example 
 ```objc
@@ -532,6 +567,7 @@ Delete temporary address change for subscription
 NSString* uuid = @"uuid_example"; // 
 NSNumber* subsno = @56; // 
 OAIDeleteTempAddressChangeDates* body = [[OAIDeleteTempAddressChangeDates alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -540,6 +576,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidSubscriptionsSubsnoAddressChangeDeleteWithUuid:uuid
               subsno:subsno
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAISubscription* output, NSError* error) {
                         if (output) {
@@ -558,6 +595,7 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **body** | [**OAIDeleteTempAddressChangeDates***](OAIDeleteTempAddressChangeDates.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -580,11 +618,14 @@ No authorization required
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAITemporaryAddressChange*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 ```
 
 Make a temporary address change for a subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example 
 ```objc
@@ -592,6 +633,7 @@ Make a temporary address change for a subscription
 NSString* uuid = @"uuid_example"; // 
 NSNumber* subsno = @56; // 
 OAITemporaryAddressChange* body = [[OAITemporaryAddressChange alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -600,6 +642,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidSubscriptionsSubsnoAddressChangePostWithUuid:uuid
               subsno:subsno
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAISubscription* output, NSError* error) {
                         if (output) {
@@ -618,6 +661,7 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **body** | [**OAITemporaryAddressChange***](OAITemporaryAddressChange.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -640,11 +684,14 @@ No authorization required
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAISubscriptionPauseDates*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 ```
 
 Pause users subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example 
 ```objc
@@ -652,6 +699,7 @@ Pause users subscription
 NSString* uuid = @"uuid_example"; // 
 NSNumber* subsno = @56; // 
 OAISubscriptionPauseDates* body = [[OAISubscriptionPauseDates alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -660,6 +708,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidSubscriptionsSubsnoPausePostWithUuid:uuid
               subsno:subsno
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAISubscription* output, NSError* error) {
                         if (output) {
@@ -678,6 +727,7 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **body** | [**OAISubscriptionPauseDates***](OAISubscriptionPauseDates.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -700,11 +750,14 @@ No authorization required
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationPostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAINewDeliveryReclamation*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 ```
 
 Create a new delivery reclamation for a subscription
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example 
 ```objc
@@ -712,6 +765,7 @@ Create a new delivery reclamation for a subscription
 NSString* uuid = @"uuid_example"; // 
 NSNumber* subsno = @56; // 
 OAINewDeliveryReclamation* body = [[OAINewDeliveryReclamation alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -720,6 +774,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidSubscriptionsSubsnoReclamationPostWithUuid:uuid
               subsno:subsno
               body:body
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAIDeliveryReclamation* output, NSError* error) {
                         if (output) {
@@ -738,6 +793,7 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **body** | [**OAINewDeliveryReclamation***](OAINewDeliveryReclamation.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -760,11 +816,14 @@ No authorization required
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     reclaimno: (NSNumber*) reclaimno
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 ```
 
 Get a delivery reclamation
+
+Authorization header expects the following format ‘OAuth {token}’
 
 ### Example 
 ```objc
@@ -772,6 +831,7 @@ Get a delivery reclamation
 NSString* uuid = @"uuid_example"; // 
 NSNumber* subsno = @56; // 
 NSNumber* reclaimno = @56; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -780,6 +840,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithUuid:uuid
               subsno:subsno
               reclaimno:reclaimno
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAIDeliveryReclamation* output, NSError* error) {
                         if (output) {
@@ -798,6 +859,7 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **reclaimno** | **NSNumber***|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
@@ -819,17 +881,21 @@ No authorization required
 ```objc
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoUnpausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 ```
 
 Pause users subscription
 
+Authorization header expects the following format ‘OAuth {token}’
+
 ### Example 
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
 NSNumber* subsno = @56; // 
+NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
@@ -837,6 +903,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 // Pause users subscription
 [apiInstance usersUuidSubscriptionsSubsnoUnpausePostWithUuid:uuid
               subsno:subsno
+              authUser:authUser
               authorization:authorization
           completionHandler: ^(OAISubscription* output, NSError* error) {
                         if (output) {
@@ -854,6 +921,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type

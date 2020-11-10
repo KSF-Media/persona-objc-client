@@ -199,8 +199,10 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Get users entitlements.
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -209,6 +211,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///  @returns NSArray<NSString*>*
 ///
 -(NSURLSessionTask*) usersUuidEntitlementGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
     completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler {
@@ -233,6 +236,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -284,12 +290,15 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param body  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidGdprPutWithUuid: (NSString*) uuid
     body: (NSArray<OAIGdprConsent>*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -324,6 +333,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -371,6 +383,8 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @param cacheControl  (optional)
@@ -378,6 +392,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     cacheControl: (NSString*) cacheControl
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
@@ -402,6 +417,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -453,12 +471,15 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param body  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidLegalPutWithUuid: (NSString*) uuid
     body: (NSArray<OAILegalConsent>*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -493,6 +514,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -542,12 +566,15 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param body  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidPasswordPutWithUuid: (NSString*) uuid
     body: (OAIUserUpdatePassword*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -582,6 +609,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -631,12 +661,15 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param body  
 ///
+///  @param authUser  (optional)
+///
 ///  @param authorization  (optional)
 ///
 ///  @returns OAIUser*
 ///
 -(NSURLSessionTask*) usersUuidPatchWithUuid: (NSString*) uuid
     body: (OAIUserUpdate*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -671,6 +704,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -715,14 +751,17 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Get user's subscriptions and payment events
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
 ///  @returns NSArray<OAISubscriptionPayments>*
 ///
 -(NSURLSessionTask*) usersUuidPaymentsGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSArray<OAISubscriptionPayments>* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -746,6 +785,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -789,12 +831,14 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Delete temporary address change for subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
 ///  @param subsno  
 ///
 ///  @param body  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -803,6 +847,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangeDeleteWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAIDeleteTempAddressChangeDates*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -851,6 +896,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -895,12 +943,14 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Make a temporary address change for a subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
 ///  @param subsno  
 ///
 ///  @param body  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -909,6 +959,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAITemporaryAddressChange*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -957,6 +1008,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -1001,12 +1055,14 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Pause users subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
 ///  @param subsno  
 ///
 ///  @param body  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -1015,6 +1071,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAISubscriptionPauseDates*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -1063,6 +1120,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -1107,12 +1167,14 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Create a new delivery reclamation for a subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
 ///  @param subsno  
 ///
 ///  @param body  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -1121,6 +1183,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationPostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAINewDeliveryReclamation*) body
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -1169,6 +1232,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -1213,12 +1279,14 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Get a delivery reclamation
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
 ///  @param subsno  
 ///
 ///  @param reclaimno  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -1227,6 +1295,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoReclamationsReclaimnoGetWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     reclaimno: (NSNumber*) reclaimno
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -1278,6 +1347,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
@@ -1321,10 +1393,12 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Pause users subscription
-/// 
+/// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
 ///  @param subsno  
+///
+///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
@@ -1332,6 +1406,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoUnpausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
+    authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
@@ -1369,6 +1444,9 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
     }
