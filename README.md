@@ -141,6 +141,7 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountCodeForTokenPost**](docs/OAIAccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
 *OAIAccountApi* | [**accountForgotPassPost**](docs/OAIAccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *OAIAccountApi* | [**accountResetForgottenPasswordPost**](docs/OAIAccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*OAIAdminApi* | [**adminSearchGet**](docs/OAIAdminApi.md#adminsearchget) | **GET** /admin/search | Search for users
 *OAIAdminApi* | [**adminUuidGet**](docs/OAIAdminApi.md#adminuuidget) | **GET** /admin/{uuid} | Get user by admin credentials.
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
