@@ -29,4 +29,6 @@
 
 @property(nonatomic) NSString* uuid;
 
+@property(nonatomic) NSNumber* isAdmin;
+
 @end
