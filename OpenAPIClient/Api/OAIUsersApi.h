@@ -53,6 +53,23 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 
+/// Search for users
+/// 
+///
+/// @param query 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `query` or `Authorization` or `AuthUser`"
+///
+/// @return NSArray<OAIUser>*
+-(NSURLSessionTask*) usersSearchGetWithQuery: (NSString*) query
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<OAIUser>* output, NSError* error)) handler;
+
+
 /// Create a new user with email.
 /// 
 ///

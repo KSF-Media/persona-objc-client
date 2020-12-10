@@ -23,23 +23,6 @@ extern NSInteger kOAIAdminApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Search for users
-/// 
-///
-/// @param query 
-/// @param authUser  (optional)
-/// @param authorization  (optional)
-/// 
-///  code:200 message:"",
-///  code:400 message:"Invalid `query` or `Authorization` or `AuthUser`"
-///
-/// @return NSArray<OAIUser>*
--(NSURLSessionTask*) adminSearchGetWithQuery: (NSString*) query
-    authUser: (NSString*) authUser
-    authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSArray<OAIUser>* output, NSError* error)) handler;
-
-
 /// Get user by admin credentials.
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
