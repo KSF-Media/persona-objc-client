@@ -1,6 +1,7 @@
 #import "OAIUsersApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
+#import "OAICancelSubscriptionReason.h"
 #import "OAIDeleteTempAddressChangeDates.h"
 #import "OAIDeliveryReclamation.h"
 #import "OAIGdprConsent.h"
@@ -1116,6 +1117,118 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"OAISubscription*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((OAISubscription*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Cancels user subscription
+/// The subscription continues to be valid until the end of the billing period. Authorization header expects the following format ‘OAuth {token}’
+///  @param uuid  
+///
+///  @param subsno  
+///
+///  @param body  
+///
+///  @param authUser  (optional)
+///
+///  @param authorization  (optional)
+///
+///  @returns OAISubscription*
+///
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoCancelPutWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAICancelSubscriptionReason*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
+    // verify the required parameter 'uuid' is set
+    if (uuid == nil) {
+        NSParameterAssert(uuid);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"uuid"] };
+            NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'subsno' is set
+    if (subsno == nil) {
+        NSParameterAssert(subsno);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"subsno"] };
+            NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{uuid}/subscriptions/{subsno}/cancel"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (uuid != nil) {
+        pathParams[@"uuid"] = uuid;
+    }
+    if (subsno != nil) {
+        pathParams[@"subsno"] = subsno;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
+    if (authorization != nil) {
+        headerParams[@"Authorization"] = authorization;
+    }
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json;charset=utf-8"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

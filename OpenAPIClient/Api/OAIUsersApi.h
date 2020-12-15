@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "OAICancelSubscriptionReason.h"
 #import "OAIDeleteTempAddressChangeDates.h"
 #import "OAIDeliveryReclamation.h"
 #import "OAIGdprConsent.h"
@@ -267,6 +268,29 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAITemporaryAddressChange*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+
+
+/// Cancels user subscription
+/// The subscription continues to be valid until the end of the billing period. Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param subsno 
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
+///  code:404 message:"`uuid` or `subsno` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAISubscription*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoCancelPutWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAICancelSubscriptionReason*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
