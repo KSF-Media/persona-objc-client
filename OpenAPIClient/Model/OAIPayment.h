@@ -47,4 +47,6 @@
 
 @property(nonatomic) NSNumber* discAmount;
 
+@property(nonatomic) NSString* reference;
+
 @end
