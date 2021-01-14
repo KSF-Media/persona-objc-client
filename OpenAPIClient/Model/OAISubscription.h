@@ -65,6 +65,8 @@
 
 @property(nonatomic) NSArray<OAIPausedSubscription>* paused;
 
+@property(nonatomic) NSString* receiver;
+
 @property(nonatomic) OAIDeliveryAddress* deliveryAddress;
 
 @property(nonatomic) NSArray<OAIPendingAddressChange>* pendingAddressChanges;

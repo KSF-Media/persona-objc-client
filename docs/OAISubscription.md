@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **extsubsexists** | **NSNumber*** |  | 
 **campaign** | [**OAICampaign***](OAICampaign.md) |  | [optional] 
 **paused** | [**NSArray&lt;OAIPausedSubscription&gt;***](OAIPausedSubscription.md) |  | [optional] 
+**receiver** | **NSString*** |  | [optional] 
 **deliveryAddress** | [**OAIDeliveryAddress***](OAIDeliveryAddress.md) |  | [optional] 
 **pendingAddressChanges** | [**NSArray&lt;OAIPendingAddressChange&gt;***](OAIPendingAddressChange.md) |  | [optional] 
 **orderNumber** | **NSString*** |  | [optional] 
