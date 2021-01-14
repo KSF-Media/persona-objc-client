@@ -32,4 +32,6 @@
 
 @property(nonatomic) OAIUserUpdateAddress* address;
 
+@property(nonatomic) NSArray<NSObject*>* pendingAddressChanges;
+
 @end
