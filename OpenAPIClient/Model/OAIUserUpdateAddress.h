@@ -29,4 +29,6 @@
 
 @property(nonatomic) NSString* streetAddress;
 
+@property(nonatomic) NSDate* validFrom;
+
 @end
