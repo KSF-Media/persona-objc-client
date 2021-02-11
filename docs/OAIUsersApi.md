@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoCancelPut**](OAIUsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
+[**usersUuidSubscriptionsSubsnoPausePatch**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
@@ -785,6 +786,72 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **body** | [**OAICancelSubscriptionReason***](OAICancelSubscriptionReason.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAISubscription***](OAISubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoPausePatch**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoPausePatchWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAISubscriptionPauseEdit*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+```
+
+Edit pause duration
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+OAISubscriptionPauseEdit* body = [[OAISubscriptionPauseEdit alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Edit pause duration
+[apiInstance usersUuidSubscriptionsSubsnoPausePatchWithUuid:uuid
+              subsno:subsno
+              body:body
+              authUser:authUser
+              authorization:authorization
+          completionHandler: ^(OAISubscription* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoPausePatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **body** | [**OAISubscriptionPauseEdit***](OAISubscriptionPauseEdit.md)|  | 
  **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 

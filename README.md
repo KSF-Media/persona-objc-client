@@ -88,6 +88,7 @@ Import the following:
 #import <OpenAPIClient/OAISubscription.h>
 #import <OpenAPIClient/OAISubscriptionDates.h>
 #import <OpenAPIClient/OAISubscriptionPauseDates.h>
+#import <OpenAPIClient/OAISubscriptionPauseEdit.h>
 #import <OpenAPIClient/OAISubscriptionPayments.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
 #import <OpenAPIClient/OAITokenResponse.h>
@@ -163,6 +164,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoCancelPut**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePatch**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
@@ -218,6 +220,7 @@ Class | Method | HTTP request | Description
  - [OAISubscription](docs/OAISubscription.md)
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
  - [OAISubscriptionPauseDates](docs/OAISubscriptionPauseDates.md)
+ - [OAISubscriptionPauseEdit](docs/OAISubscriptionPauseEdit.md)
  - [OAISubscriptionPayments](docs/OAISubscriptionPayments.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
  - [OAITokenResponse](docs/OAITokenResponse.md)
