@@ -17,22 +17,16 @@
 
 
 
-@protocol OAICampaign
+@protocol OAITemporaryAddressChangeDates
 @end
 
-@interface OAICampaign : OAIObject
+@interface OAITemporaryAddressChangeDates : OAIObject
 
 
-@property(nonatomic) NSNumber* no;
+@property(nonatomic) NSDate* oldStartDate;
 
-@property(nonatomic) NSString* _id;
+@property(nonatomic) NSDate* varNewStartDate;
 
-@property(nonatomic) NSString* name;
-
-@property(nonatomic) NSNumber* priceEur;
-
-@property(nonatomic) NSNumber* length;
-
-@property(nonatomic) NSString* lengthUnit;
+@property(nonatomic) NSDate* varNewEndDate;
 
 @end

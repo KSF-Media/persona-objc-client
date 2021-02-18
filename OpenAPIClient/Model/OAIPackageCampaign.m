@@ -1,6 +1,6 @@
-#import "OAICampaign.h"
+#import "OAIPackageCampaign.h"
 
-@implementation OAICampaign
+@implementation OAIPackageCampaign
 
 - (instancetype)init {
   self = [super init];

@@ -14,13 +14,13 @@
 */
 
 
-#import "OAICampaign.h"
+#import "OAIPackageCampaign.h"
 #import "OAIPackageDescription.h"
 #import "OAIPackageOffer.h"
 #import "OAIPaper.h"
 #import "OAIProduct.h"
-@protocol OAICampaign;
-@class OAICampaign;
+@protocol OAIPackageCampaign;
+@class OAIPackageCampaign;
 @protocol OAIPackageDescription;
 @class OAIPackageDescription;
 @protocol OAIPackageOffer;
@@ -50,7 +50,7 @@
 
 @property(nonatomic) NSArray<OAIPackageOffer>* offers;
 
-@property(nonatomic) NSArray<OAICampaign>* campaigns;
+@property(nonatomic) NSArray<OAIPackageCampaign>* campaigns;
 
 @property(nonatomic) NSDate* nextDelivery;
 

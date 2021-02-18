@@ -14,18 +14,18 @@
 */
 
 
-#import "OAICampaign.h"
 #import "OAIDeliveryAddress.h"
 #import "OAIPackage.h"
+#import "OAIPackageCampaign.h"
 #import "OAIPausedSubscription.h"
 #import "OAIPendingAddressChange.h"
 #import "OAISubscriptionDates.h"
-@protocol OAICampaign;
-@class OAICampaign;
 @protocol OAIDeliveryAddress;
 @class OAIDeliveryAddress;
 @protocol OAIPackage;
 @class OAIPackage;
+@protocol OAIPackageCampaign;
+@class OAIPackageCampaign;
 @protocol OAIPausedSubscription;
 @class OAIPausedSubscription;
 @protocol OAIPendingAddressChange;
@@ -61,7 +61,7 @@
 
 @property(nonatomic) NSNumber* extsubsexists;
 
-@property(nonatomic) OAICampaign* campaign;
+@property(nonatomic) OAIPackageCampaign* campaign;
 
 @property(nonatomic) NSArray<OAIPausedSubscription>* paused;
 

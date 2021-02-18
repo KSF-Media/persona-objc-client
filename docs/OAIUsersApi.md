@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 [**usersUuidPaymentsGet**](OAIUsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
+[**usersUuidSubscriptionsSubsnoAddressChangePatch**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/addressChange | Edit temporary address change dates of a subscription
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 [**usersUuidSubscriptionsSubsnoCancelPut**](OAIUsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
 [**usersUuidSubscriptionsSubsnoPausePatch**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
@@ -654,6 +655,72 @@ Name | Type | Description  | Notes
  **uuid** | [**NSString***](.md)|  | 
  **subsno** | **NSNumber***|  | 
  **body** | [**OAIDeleteTempAddressChangeDates***](OAIDeleteTempAddressChangeDates.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAISubscription***](OAISubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidSubscriptionsSubsnoAddressChangePatch**
+```objc
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePatchWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAITemporaryAddressChangeDates*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+```
+
+Edit temporary address change dates of a subscription
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSNumber* subsno = @56; // 
+OAITemporaryAddressChangeDates* body = [[OAITemporaryAddressChangeDates alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Edit temporary address change dates of a subscription
+[apiInstance usersUuidSubscriptionsSubsnoAddressChangePatchWithUuid:uuid
+              subsno:subsno
+              body:body
+              authUser:authUser
+              authorization:authorization
+          completionHandler: ^(OAISubscription* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidSubscriptionsSubsnoAddressChangePatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **subsno** | **NSNumber***|  | 
+ **body** | [**OAITemporaryAddressChangeDates***](OAITemporaryAddressChangeDates.md)|  | 
  **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 

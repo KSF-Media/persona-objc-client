@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **package** | [**OAIPackage***](OAIPackage.md) |  | 
 **dates** | [**OAISubscriptionDates***](OAISubscriptionDates.md) |  | 
 **extsubsexists** | **NSNumber*** |  | 
-**campaign** | [**OAICampaign***](OAICampaign.md) |  | [optional] 
+**campaign** | [**OAIPackageCampaign***](OAIPackageCampaign.md) |  | [optional] 
 **paused** | [**NSArray&lt;OAIPausedSubscription&gt;***](OAIPausedSubscription.md) |  | [optional] 
 **receiver** | **NSString*** |  | [optional] 
 **deliveryAddress** | [**OAIDeliveryAddress***](OAIDeliveryAddress.md) |  | [optional] 

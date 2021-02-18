@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **digitalOnly** | **NSNumber*** |  | 
 **products** | [**NSArray&lt;OAIProduct&gt;***](OAIProduct.md) |  | 
 **offers** | [**NSArray&lt;OAIPackageOffer&gt;***](OAIPackageOffer.md) |  | 
-**campaigns** | [**NSArray&lt;OAICampaign&gt;***](OAICampaign.md) |  | 
+**campaigns** | [**NSArray&lt;OAIPackageCampaign&gt;***](OAIPackageCampaign.md) |  | 
 **nextDelivery** | **NSDate*** |  | [optional] 
 **_description** | [**OAIPackageDescription***](OAIPackageDescription.md) |  | [optional] 
 

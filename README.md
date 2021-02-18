@@ -43,7 +43,6 @@ Import the following:
 // load models
 #import <OpenAPIClient/OAIActiveDays.h>
 #import <OpenAPIClient/OAIAddress.h>
-#import <OpenAPIClient/OAICampaign.h>
 #import <OpenAPIClient/OAICancelSubscriptionReason.h>
 #import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeleteTempAddressChangeDates.h>
@@ -77,6 +76,7 @@ Import the following:
 #import <OpenAPIClient/OAINewTemporaryUser.h>
 #import <OpenAPIClient/OAINewUser.h>
 #import <OpenAPIClient/OAIPackage.h>
+#import <OpenAPIClient/OAIPackageCampaign.h>
 #import <OpenAPIClient/OAIPackageDescription.h>
 #import <OpenAPIClient/OAIPackageOffer.h>
 #import <OpenAPIClient/OAIPaper.h>
@@ -91,6 +91,7 @@ Import the following:
 #import <OpenAPIClient/OAISubscriptionPauseEdit.h>
 #import <OpenAPIClient/OAISubscriptionPayments.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
+#import <OpenAPIClient/OAITemporaryAddressChangeDates.h>
 #import <OpenAPIClient/OAITokenResponse.h>
 #import <OpenAPIClient/OAIUpdatePasswordData.h>
 #import <OpenAPIClient/OAIUser.h>
@@ -162,6 +163,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *OAIUsersApi* | [**usersUuidPaymentsGet**](docs/OAIUsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePatch**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/addressChange | Edit temporary address change dates of a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoAddressChangePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoCancelPut**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnocancelput) | **PUT** /users/{uuid}/subscriptions/{subsno}/cancel | Cancels user subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePatch**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/pause | Edit pause duration
@@ -175,7 +177,6 @@ Class | Method | HTTP request | Description
 
  - [OAIActiveDays](docs/OAIActiveDays.md)
  - [OAIAddress](docs/OAIAddress.md)
- - [OAICampaign](docs/OAICampaign.md)
  - [OAICancelSubscriptionReason](docs/OAICancelSubscriptionReason.md)
  - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeleteTempAddressChangeDates](docs/OAIDeleteTempAddressChangeDates.md)
@@ -209,6 +210,7 @@ Class | Method | HTTP request | Description
  - [OAINewTemporaryUser](docs/OAINewTemporaryUser.md)
  - [OAINewUser](docs/OAINewUser.md)
  - [OAIPackage](docs/OAIPackage.md)
+ - [OAIPackageCampaign](docs/OAIPackageCampaign.md)
  - [OAIPackageDescription](docs/OAIPackageDescription.md)
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
  - [OAIPaper](docs/OAIPaper.md)
@@ -223,6 +225,7 @@ Class | Method | HTTP request | Description
  - [OAISubscriptionPauseEdit](docs/OAISubscriptionPauseEdit.md)
  - [OAISubscriptionPayments](docs/OAISubscriptionPayments.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
+ - [OAITemporaryAddressChangeDates](docs/OAITemporaryAddressChangeDates.md)
  - [OAITokenResponse](docs/OAITokenResponse.md)
  - [OAIUpdatePasswordData](docs/OAIUpdatePasswordData.md)
  - [OAIUser](docs/OAIUser.md)

@@ -15,6 +15,7 @@
 #import "OAISubscriptionPauseEdit.h"
 #import "OAISubscriptionPayments.h"
 #import "OAITemporaryAddressChange.h"
+#import "OAITemporaryAddressChangeDates.h"
 #import "OAIUser.h"
 #import "OAIUserUpdate.h"
 #import "OAIUserUpdatePassword.h"
@@ -246,6 +247,29 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangeDeleteWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     body: (OAIDeleteTempAddressChangeDates*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
+
+
+/// Edit temporary address change dates of a subscription
+/// Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param subsno 
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
+///  code:404 message:"`uuid` or `subsno` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAISubscription*
+-(NSURLSessionTask*) usersUuidSubscriptionsSubsnoAddressChangePatchWithUuid: (NSString*) uuid
+    subsno: (NSNumber*) subsno
+    body: (OAITemporaryAddressChangeDates*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
