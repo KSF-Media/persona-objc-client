@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **offers** | [**NSArray&lt;OAIPackageOffer&gt;***](OAIPackageOffer.md) |  | 
 **campaigns** | [**NSArray&lt;OAIPackageCampaign&gt;***](OAIPackageCampaign.md) |  | 
 **nextDelivery** | **NSDate*** |  | [optional] 
+**canPause** | **NSNumber*** |  | 
+**canTempAddr** | **NSNumber*** |  | 
 **_description** | [**OAIPackageDescription***](OAIPackageDescription.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

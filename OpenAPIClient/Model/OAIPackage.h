@@ -54,6 +54,10 @@
 
 @property(nonatomic) NSDate* nextDelivery;
 
+@property(nonatomic) NSNumber* canPause;
+
+@property(nonatomic) NSNumber* canTempAddr;
+
 @property(nonatomic) OAIPackageDescription* _description;
 
 @end
