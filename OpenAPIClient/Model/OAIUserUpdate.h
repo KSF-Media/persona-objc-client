@@ -32,6 +32,8 @@
 
 @property(nonatomic) OAIUserUpdateAddress* address;
 
+@property(nonatomic) NSString* email;
+
 @property(nonatomic) NSArray<NSObject*>* pendingAddressChanges;
 
 @end
