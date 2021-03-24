@@ -17,10 +17,10 @@
 
 
 
-@protocol OAIDeliveryReclamationClaim
+@protocol OAIClaimType
 @end
 
-@interface OAIDeliveryReclamationClaim : OAIObject
+@interface OAIClaimType : OAIObject
 
 
 @end

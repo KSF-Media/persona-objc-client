@@ -14,9 +14,9 @@
 */
 
 
-#import "OAIDeliveryReclamationClaim.h"
-@protocol OAIDeliveryReclamationClaim;
-@class OAIDeliveryReclamationClaim;
+#import "OAIClaimType.h"
+@protocol OAIClaimType;
+@class OAIClaimType;
 
 
 
@@ -28,6 +28,6 @@
 
 @property(nonatomic) NSDate* publicationDate;
 
-@property(nonatomic) OAIDeliveryReclamationClaim* claim;
+@property(nonatomic) OAIClaimType* claim;
 
 @end

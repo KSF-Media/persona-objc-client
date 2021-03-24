@@ -44,11 +44,11 @@ Import the following:
 #import <OpenAPIClient/OAIActiveDays.h>
 #import <OpenAPIClient/OAIAddress.h>
 #import <OpenAPIClient/OAICancelSubscriptionReason.h>
+#import <OpenAPIClient/OAIClaimType.h>
 #import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeleteTempAddressChangeDates.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
-#import <OpenAPIClient/OAIDeliveryReclamationClaim.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
@@ -178,11 +178,11 @@ Class | Method | HTTP request | Description
  - [OAIActiveDays](docs/OAIActiveDays.md)
  - [OAIAddress](docs/OAIAddress.md)
  - [OAICancelSubscriptionReason](docs/OAICancelSubscriptionReason.md)
+ - [OAIClaimType](docs/OAIClaimType.md)
  - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeleteTempAddressChangeDates](docs/OAIDeleteTempAddressChangeDates.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
- - [OAIDeliveryReclamationClaim](docs/OAIDeliveryReclamationClaim.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)

@@ -25,15 +25,18 @@
 
 @interface OAISubscriptionPayments : OAIObject
 
-
+/* Product subsno 
+ */
 @property(nonatomic) NSNumber* subsno;
-
+/* Package name 
+ */
 @property(nonatomic) NSString* name;
 
 @property(nonatomic) NSDate* startDate;
 
 @property(nonatomic) NSDate* lastDate;
-
+/* Payments 
+ */
 @property(nonatomic) NSArray<OAIPayment>* payments;
 
 @end

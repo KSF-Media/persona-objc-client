@@ -18,6 +18,7 @@
 #import "OAIPackage.h"
 #import "OAIPackageCampaign.h"
 #import "OAIPausedSubscription.h"
+#import "OAIPaymentMethodId.h"
 #import "OAIPendingAddressChange.h"
 #import "OAISubscriptionDates.h"
 @protocol OAIDeliveryAddress;
@@ -28,6 +29,8 @@
 @class OAIPackageCampaign;
 @protocol OAIPausedSubscription;
 @class OAIPausedSubscription;
+@protocol OAIPaymentMethodId;
+@class OAIPaymentMethodId;
 @protocol OAIPendingAddressChange;
 @class OAIPendingAddressChange;
 @protocol OAISubscriptionDates;
@@ -40,41 +43,54 @@
 
 @interface OAISubscription : OAIObject
 
-
+/* Subscription Id - primary key together with extno 
+ */
 @property(nonatomic) NSNumber* subsno;
-
+/* Subscription Extension Id - how many times a subscription has been extended 
+ */
 @property(nonatomic) NSNumber* extno;
-
+/* Customer getting the subscription 
+ */
 @property(nonatomic) NSNumber* cusno;
-
+/* Customer paying for the subscription 
+ */
 @property(nonatomic) NSNumber* paycusno;
-
+/* Subscription kind - what kind of order is it 
+ */
 @property(nonatomic) NSString* kind;
-
+/* Current state of the Subscription 
+ */
 @property(nonatomic) NSString* state;
-
+/* Pricegroup of the Subscription [optional]
+ */
 @property(nonatomic) NSString* pricegroup;
 
 @property(nonatomic) OAIPackage* package;
 
 @property(nonatomic) OAISubscriptionDates* dates;
-
+/* If the extension of this subscription exists 
+ */
 @property(nonatomic) NSNumber* extsubsexists;
 
 @property(nonatomic) OAIPackageCampaign* campaign;
-
+/* Pause periods of this subscription [optional]
+ */
 @property(nonatomic) NSArray<OAIPausedSubscription>* paused;
-
+/* The name of subscription receiver [optional]
+ */
 @property(nonatomic) NSString* receiver;
 
 @property(nonatomic) OAIDeliveryAddress* deliveryAddress;
-
+/* Pending and ongoing temporary address changes [optional]
+ */
 @property(nonatomic) NSArray<OAIPendingAddressChange>* pendingAddressChanges;
-
+/* Order number of subscription [optional]
+ */
 @property(nonatomic) NSString* orderNumber;
-
+/* Payment method of subscription [optional]
+ */
 @property(nonatomic) NSString* paymentMethod;
 
-@property(nonatomic) NSNumber* paymentMethodId;
+@property(nonatomic) OAIPaymentMethodId* paymentMethodId;
 
 @end

@@ -22,9 +22,11 @@
 
 @interface OAIDescriptionFrequency : OAIObject
 
-
+/* Frequency number for the package 
+ */
 @property(nonatomic) NSNumber* amount;
-
+/* Unit in which the number is measured 
+ */
 @property(nonatomic) NSString* unit;
 
 @end

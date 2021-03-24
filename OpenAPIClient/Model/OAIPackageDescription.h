@@ -25,23 +25,31 @@
 
 @interface OAIPackageDescription : OAIObject
 
-
+/* Brand name 
+ */
 @property(nonatomic) NSString* brand;
-
+/* Brand name, long 
+ */
 @property(nonatomic) NSString* brandLong;
-
+/* Short description 
+ */
 @property(nonatomic) NSString* descShort;
-
+/* Long description 
+ */
 @property(nonatomic) NSString* descLong;
-
+/* Url for the current package 
+ */
 @property(nonatomic) NSString* url;
-
+/* How many days the package is active 
+ */
 @property(nonatomic) NSString* days;
-
+/* Weekdays for which the package is active 
+ */
 @property(nonatomic) NSString* weekdays;
 
 @property(nonatomic) OAIDescriptionFrequency* frequency;
-
+/* Entitlements included in the package 
+ */
 @property(nonatomic) NSArray<NSString*>* includes;
 
 @end

@@ -22,17 +22,21 @@
 
 @interface OAIDeliveryReclamation : OAIObject
 
-
+/* The reclamation identifier 
+ */
 @property(nonatomic) NSNumber* number;
-
+/* The identifier of the customer that made reclamation 
+ */
 @property(nonatomic) NSNumber* customerNumber;
-
+/* The identifier of the subscription for which reclamation was made 
+ */
 @property(nonatomic) NSNumber* subscriptionNumber;
 
 @property(nonatomic) NSDate* date;
 
 @property(nonatomic) NSDate* publicationDate;
-
+/* The type of claim for the reclamation 
+ */
 @property(nonatomic) NSString* claim;
 
 @end

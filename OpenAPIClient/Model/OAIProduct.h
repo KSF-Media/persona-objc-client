@@ -28,9 +28,11 @@
 
 @interface OAIProduct : OAIObject
 
-
+/* Identifying code of the product 
+ */
 @property(nonatomic) NSString* _id;
-
+/* The name of the product 
+ */
 @property(nonatomic) NSString* name;
 
 @property(nonatomic) OAIActiveDays* active;
@@ -38,7 +40,8 @@
 @property(nonatomic) NSDate* nextDelivery;
 
 @property(nonatomic) OAIPaper* paper;
-
+/* Is the product digital? 
+ */
 @property(nonatomic) NSNumber* digital;
 
 @end

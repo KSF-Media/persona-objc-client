@@ -37,25 +37,33 @@
 
 @interface OAIPackage : OAIObject
 
-
+/* Package identifier 
+ */
 @property(nonatomic) NSString* _id;
-
+/* Package name 
+ */
 @property(nonatomic) NSString* name;
 
 @property(nonatomic) OAIPaper* paper;
-
+/* All products in this package are digital 
+ */
 @property(nonatomic) NSNumber* digitalOnly;
-
+/* The Products contained in a package 
+ */
 @property(nonatomic) NSArray<OAIProduct>* products;
-
+/* Offers for the package 
+ */
 @property(nonatomic) NSArray<OAIPackageOffer>* offers;
-
+/* Active campaigns for the package 
+ */
 @property(nonatomic) NSArray<OAIPackageCampaign>* campaigns;
 
 @property(nonatomic) NSDate* nextDelivery;
-
+/* Does the package allow delivery pauses 
+ */
 @property(nonatomic) NSNumber* canPause;
-
+/* Does the package allow temporary address changes 
+ */
 @property(nonatomic) NSNumber* canTempAddr;
 
 @property(nonatomic) OAIPackageDescription* _description;

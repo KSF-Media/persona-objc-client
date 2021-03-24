@@ -1,6 +1,6 @@
-#import "OAIDeliveryReclamationClaim.h"
+#import "OAIClaimType.h"
 
-@implementation OAIDeliveryReclamationClaim
+@implementation OAIClaimType
 
 - (instancetype)init {
   self = [super init];

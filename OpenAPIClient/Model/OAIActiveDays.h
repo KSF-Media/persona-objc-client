@@ -22,19 +22,26 @@
 
 @interface OAIActiveDays : OAIObject
 
-
+/* Active on Monday 
+ */
 @property(nonatomic) NSNumber* mon;
-
+/* Active on Tuesday 
+ */
 @property(nonatomic) NSNumber* tue;
-
+/* Active on Wednedsday 
+ */
 @property(nonatomic) NSNumber* wed;
-
+/* Active on Thursday 
+ */
 @property(nonatomic) NSNumber* thu;
-
+/* Active on Friday 
+ */
 @property(nonatomic) NSNumber* fri;
-
+/* Active on Saturday 
+ */
 @property(nonatomic) NSNumber* sat;
-
+/* Active on Sunday 
+ */
 @property(nonatomic) NSNumber* sun;
 
 @end

@@ -22,9 +22,11 @@
 
 @interface OAICancelSubscriptionReason : OAIObject
 
-
+/* Cancel reason code 
+ */
 @property(nonatomic) NSString* reason;
-
+/* Cancel reason explanation [optional]
+ */
 @property(nonatomic) NSString* notes;
 
 @end

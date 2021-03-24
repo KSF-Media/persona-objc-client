@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invno** | **NSNumber*** |  | 
+**invno** | **NSNumber*** | Payment invoice ID | 
 **date** | **NSDate*** |  | 
 **dueDate** | **NSDate*** |  | 
 **expenses** | **NSNumber*** |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **state** | **NSString*** |  | 
 **discPercent** | **NSNumber*** |  | [optional] 
 **discAmount** | **NSNumber*** |  | [optional] 
-**reference** | **NSString*** |  | [optional] 
+**reference** | **NSString*** | Reference number | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

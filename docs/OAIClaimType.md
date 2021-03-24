@@ -1,4 +1,4 @@
-# OAIDeliveryReclamationClaim
+# OAIClaimType
 
 ## Properties
 Name | Type | Description | Notes

@@ -22,15 +22,20 @@
 
 @interface OAIPastTemporaryAddress : OAIObject
 
-
+/* Country code 
+ */
 @property(nonatomic) NSString* countryCode;
-
+/* Zip code 
+ */
 @property(nonatomic) NSString* zipcode;
-
+/* City [optional]
+ */
 @property(nonatomic) NSString* cityName;
-
+/* Street 
+ */
 @property(nonatomic) NSString* street;
-
+/* Temporary name (c/o) [optional]
+ */
 @property(nonatomic) NSString* temporaryName;
 
 @end

@@ -22,13 +22,17 @@
 
 @interface OAIDeliveryAddress : OAIObject
 
-
+/* Street address, containing all details [optional]
+ */
 @property(nonatomic) NSString* streetAddress;
-
+/*  
+ */
 @property(nonatomic) NSString* zipcode;
-
+/*  [optional]
+ */
 @property(nonatomic) NSString* city;
-
+/* Temporary name (or c/o) of delivery address [optional]
+ */
 @property(nonatomic) NSString* temporaryName;
 
 @end

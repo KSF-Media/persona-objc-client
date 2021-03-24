@@ -22,31 +22,42 @@
 
 @interface OAIPayment : OAIObject
 
-
+/* Payment invoice ID 
+ */
 @property(nonatomic) NSNumber* invno;
 
 @property(nonatomic) NSDate* date;
 
 @property(nonatomic) NSDate* dueDate;
-
+/*  
+ */
 @property(nonatomic) NSNumber* expenses;
-
+/*  
+ */
 @property(nonatomic) NSNumber* interest;
-
+/*  
+ */
 @property(nonatomic) NSNumber* vat;
-
+/*  
+ */
 @property(nonatomic) NSNumber* amount;
-
+/*  
+ */
 @property(nonatomic) NSNumber* openAmount;
-
+/*  
+ */
 @property(nonatomic) NSString* type;
-
+/*  
+ */
 @property(nonatomic) NSString* state;
-
+/*  [optional]
+ */
 @property(nonatomic) NSNumber* discPercent;
-
+/*  [optional]
+ */
 @property(nonatomic) NSNumber* discAmount;
-
+/* Reference number [optional]
+ */
 @property(nonatomic) NSString* reference;
 
 @end
