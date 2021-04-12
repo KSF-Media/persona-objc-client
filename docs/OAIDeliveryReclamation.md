@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **customerNumber** | **NSNumber*** | The identifier of the customer that made reclamation | 
 **subscriptionNumber** | **NSNumber*** | The identifier of the subscription for which reclamation was made | 
 **date** | **NSDate*** |  | 
+**paper** | [**OAIPaperCode***](OAIPaperCode.md) |  | [optional] 
 **publicationDate** | **NSDate*** |  | 
 **claim** | **NSString*** | The type of claim for the reclamation | 
 

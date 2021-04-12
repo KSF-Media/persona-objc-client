@@ -14,6 +14,9 @@
 */
 
 
+#import "OAIPaperCode.h"
+@protocol OAIPaperCode;
+@class OAIPaperCode;
 
 
 
@@ -22,9 +25,8 @@
 
 @interface OAIPaper : OAIObject
 
-/* Identifying code of the paper 
- */
-@property(nonatomic) NSString* code;
+
+@property(nonatomic) OAIPaperCode* code;
 /* The name of the paper 
  */
 @property(nonatomic) NSString* name;

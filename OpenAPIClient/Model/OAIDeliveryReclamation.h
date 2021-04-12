@@ -14,6 +14,9 @@
 */
 
 
+#import "OAIPaperCode.h"
+@protocol OAIPaperCode;
+@class OAIPaperCode;
 
 
 
@@ -33,6 +36,8 @@
 @property(nonatomic) NSNumber* subscriptionNumber;
 
 @property(nonatomic) NSDate* date;
+
+@property(nonatomic) OAIPaperCode* paper;
 
 @property(nonatomic) NSDate* publicationDate;
 /* The type of claim for the reclamation 
