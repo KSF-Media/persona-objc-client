@@ -136,7 +136,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 
 ///
 /// Search for users
-/// 
+/// deprecated
 ///  @param query  
 ///
 ///  @param authUser  (optional)

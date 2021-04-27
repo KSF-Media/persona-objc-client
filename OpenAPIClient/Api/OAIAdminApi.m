@@ -1,7 +1,10 @@
 #import "OAIAdminApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIUser.h"
+#import "OAIInlineResponse400.h"
+#import "OAIInlineResponse415.h"
+#import "OAISearchQuery.h"
+#import "OAISearchResult.h"
 
 
 @interface OAIAdminApi ()
@@ -50,40 +53,34 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
-/// Get user by admin credentials.
-/// Authorization header expects the following format ‘OAuth {token}’
-///  @param uuid  
+/// Search for users
+/// 
+///  @param body  
 ///
 ///  @param authUser  (optional)
 ///
 ///  @param authorization  (optional)
 ///
-///  @param cacheControl  (optional)
+///  @returns NSArray<OAISearchResult>*
 ///
-///  @returns OAIUser*
-///
--(NSURLSessionTask*) adminUuidGetWithUuid: (NSString*) uuid
+-(NSURLSessionTask*) adminSearchPostWithBody: (OAISearchQuery*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    cacheControl: (NSString*) cacheControl
-    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler {
-    // verify the required parameter 'uuid' is set
-    if (uuid == nil) {
-        NSParameterAssert(uuid);
+    completionHandler: (void (^)(NSArray<OAISearchResult>* output, NSError* error)) handler {
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
         if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"uuid"] };
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
             NSError* error = [NSError errorWithDomain:kOAIAdminApiErrorDomain code:kOAIAdminApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/admin/{uuid}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/admin/search"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (uuid != nil) {
-        pathParams[@"uuid"] = uuid;
-    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
@@ -93,9 +90,6 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
     }
     if (authorization != nil) {
         headerParams[@"Authorization"] = authorization;
-    }
-    if (cacheControl != nil) {
-        headerParams[@"Cache-Control"] = cacheControl;
     }
     // HTTP header `Accept`
     NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];
@@ -107,7 +101,7 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
     NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
 
     // request content type
-    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json;charset=utf-8"]];
 
     // Authentication setting
     NSArray *authSettings = @[];
@@ -115,9 +109,10 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -127,10 +122,10 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIUser*"
+                              responseType: @"NSArray<OAISearchResult>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIUser*)data, error);
+                                    handler((NSArray<OAISearchResult>*)data, error);
                                 }
                             }];
 }

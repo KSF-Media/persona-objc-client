@@ -57,7 +57,7 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 
 
 /// Search for users
-/// 
+/// deprecated
 ///
 /// @param query 
 /// @param authUser  (optional)

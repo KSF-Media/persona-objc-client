@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "OAIUser.h"
+#import "OAIInlineResponse400.h"
+#import "OAIInlineResponse415.h"
+#import "OAISearchQuery.h"
+#import "OAISearchResult.h"
 #import "OAIApi.h"
 
 /**
@@ -23,24 +26,22 @@ extern NSInteger kOAIAdminApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Get user by admin credentials.
-/// Authorization header expects the following format ‘OAuth {token}’
+/// Search for users
+/// 
 ///
-/// @param uuid 
+/// @param body 
 /// @param authUser  (optional)
 /// @param authorization  (optional)
-/// @param cacheControl  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Cache-Control` or `Authorization` or `AuthUser`",
-///  code:404 message:"`uuid` not found"
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
+///  code:415 message:"Unsupported media type"
 ///
-/// @return OAIUser*
--(NSURLSessionTask*) adminUuidGetWithUuid: (NSString*) uuid
+/// @return NSArray<OAISearchResult>*
+-(NSURLSessionTask*) adminSearchPostWithBody: (OAISearchQuery*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    cacheControl: (NSString*) cacheControl
-    completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<OAISearchResult>* output, NSError* error)) handler;
 
 
 

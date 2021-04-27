@@ -4,43 +4,38 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adminUuidGet**](OAIAdminApi.md#adminuuidget) | **GET** /admin/{uuid} | Get user by admin credentials.
+[**adminSearchPost**](OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 
 
-# **adminUuidGet**
+# **adminSearchPost**
 ```objc
--(NSURLSessionTask*) adminUuidGetWithUuid: (NSString*) uuid
+-(NSURLSessionTask*) adminSearchPostWithBody: (OAISearchQuery*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    cacheControl: (NSString*) cacheControl
-        completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<OAISearchResult>* output, NSError* error)) handler;
 ```
 
-Get user by admin credentials.
-
-Authorization header expects the following format ‘OAuth {token}’
+Search for users
 
 ### Example 
 ```objc
 
-NSString* uuid = @"uuid_example"; // 
+OAISearchQuery* body = [[OAISearchQuery alloc] init]; // 
 NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
-NSString* cacheControl = @"cacheControl_example"; //  (optional)
 
 OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
 
-// Get user by admin credentials.
-[apiInstance adminUuidGetWithUuid:uuid
+// Search for users
+[apiInstance adminSearchPostWithBody:body
               authUser:authUser
               authorization:authorization
-              cacheControl:cacheControl
-          completionHandler: ^(OAIUser* output, NSError* error) {
+          completionHandler: ^(NSArray<OAISearchResult>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling OAIAdminApi->adminUuidGet: %@", error);
+                            NSLog(@"Error calling OAIAdminApi->adminSearchPost: %@", error);
                         }
                     }];
 ```
@@ -49,14 +44,13 @@ OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | [**NSString***](.md)|  | 
+ **body** | [**OAISearchQuery***](OAISearchQuery.md)|  | 
  **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
- **cacheControl** | **NSString***|  | [optional] 
 
 ### Return type
 
-[**OAIUser***](OAIUser.md)
+[**NSArray<OAISearchResult>***](OAISearchResult.md)
 
 ### Authorization
 
@@ -64,7 +58,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -50,6 +50,7 @@ Import the following:
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
 #import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
+#import <OpenAPIClient/OAIFaroUser.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
@@ -66,6 +67,7 @@ Import the following:
 #import <OpenAPIClient/OAIInlineResponse415UnsupportedMediaType.h>
 #import <OpenAPIClient/OAIInlineResponse500.h>
 #import <OpenAPIClient/OAIInlineResponse500InternalServerError.h>
+#import <OpenAPIClient/OAIJanrainUser.h>
 #import <OpenAPIClient/OAILegalConsent.h>
 #import <OpenAPIClient/OAILoginData.h>
 #import <OpenAPIClient/OAILoginDataSSO.h>
@@ -84,6 +86,8 @@ Import the following:
 #import <OpenAPIClient/OAIPayment.h>
 #import <OpenAPIClient/OAIPendingAddressChange.h>
 #import <OpenAPIClient/OAIProduct.h>
+#import <OpenAPIClient/OAISearchQuery.h>
+#import <OpenAPIClient/OAISearchResult.h>
 #import <OpenAPIClient/OAISubscription.h>
 #import <OpenAPIClient/OAISubscriptionDates.h>
 #import <OpenAPIClient/OAISubscriptionPauseDates.h>
@@ -143,7 +147,7 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountCodeForTokenPost**](docs/OAIAccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
 *OAIAccountApi* | [**accountForgotPassPost**](docs/OAIAccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
 *OAIAccountApi* | [**accountResetForgottenPasswordPost**](docs/OAIAccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
-*OAIAdminApi* | [**adminUuidGet**](docs/OAIAdminApi.md#adminuuidget) | **GET** /admin/{uuid} | Get user by admin credentials.
+*OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
@@ -183,6 +187,7 @@ Class | Method | HTTP request | Description
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
  - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
+ - [OAIFaroUser](docs/OAIFaroUser.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
@@ -199,6 +204,7 @@ Class | Method | HTTP request | Description
  - [OAIInlineResponse415UnsupportedMediaType](docs/OAIInlineResponse415UnsupportedMediaType.md)
  - [OAIInlineResponse500](docs/OAIInlineResponse500.md)
  - [OAIInlineResponse500InternalServerError](docs/OAIInlineResponse500InternalServerError.md)
+ - [OAIJanrainUser](docs/OAIJanrainUser.md)
  - [OAILegalConsent](docs/OAILegalConsent.md)
  - [OAILoginData](docs/OAILoginData.md)
  - [OAILoginDataSSO](docs/OAILoginDataSSO.md)
@@ -217,6 +223,8 @@ Class | Method | HTTP request | Description
  - [OAIPayment](docs/OAIPayment.md)
  - [OAIPendingAddressChange](docs/OAIPendingAddressChange.md)
  - [OAIProduct](docs/OAIProduct.md)
+ - [OAISearchQuery](docs/OAISearchQuery.md)
+ - [OAISearchResult](docs/OAISearchResult.md)
  - [OAISubscription](docs/OAISubscription.md)
  - [OAISubscriptionDates](docs/OAISubscriptionDates.md)
  - [OAISubscriptionPauseDates](docs/OAISubscriptionPauseDates.md)
