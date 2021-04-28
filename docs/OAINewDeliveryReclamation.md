@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paper** | [**OAIPaperCode***](OAIPaperCode.md) |  | [optional] 
+**paper** | **NSString*** |  | [optional] 
 **publicationDate** | **NSDate*** |  | 
 **claim** | **NSString*** | The type of claim for the reclamation | 
 

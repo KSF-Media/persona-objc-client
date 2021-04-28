@@ -14,9 +14,6 @@
 */
 
 
-#import "OAIPrice.h"
-@protocol OAIPrice;
-@class OAIPrice;
 
 
 
@@ -28,9 +25,11 @@
 /* Duration of the offer 
  */
 @property(nonatomic) NSNumber* months;
-
-@property(nonatomic) OAIPrice* totalPrice;
-
-@property(nonatomic) OAIPrice* monthlyPrice;
+/* Amount of cents that has to be paid 
+ */
+@property(nonatomic) NSNumber* totalPrice;
+/* Amount of cents that has to be paid 
+ */
+@property(nonatomic) NSNumber* monthlyPrice;
 
 @end

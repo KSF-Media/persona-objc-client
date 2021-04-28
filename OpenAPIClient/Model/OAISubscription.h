@@ -18,7 +18,6 @@
 #import "OAIPackage.h"
 #import "OAIPackageCampaign.h"
 #import "OAIPausedSubscription.h"
-#import "OAIPaymentMethodId.h"
 #import "OAIPendingAddressChange.h"
 #import "OAISubscriptionDates.h"
 @protocol OAIDeliveryAddress;
@@ -29,8 +28,6 @@
 @class OAIPackageCampaign;
 @protocol OAIPausedSubscription;
 @class OAIPausedSubscription;
-@protocol OAIPaymentMethodId;
-@class OAIPaymentMethodId;
 @protocol OAIPendingAddressChange;
 @class OAIPendingAddressChange;
 @protocol OAISubscriptionDates;
@@ -91,6 +88,6 @@
  */
 @property(nonatomic) NSString* paymentMethod;
 
-@property(nonatomic) OAIPaymentMethodId* paymentMethodId;
+@property(nonatomic) NSNumber* paymentMethodId;
 
 @end
