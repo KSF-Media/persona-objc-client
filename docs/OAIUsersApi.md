@@ -4,6 +4,7 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**usersAdminPost**](OAIUsersApi.md#usersadminpost) | **POST** /users/admin | Create a new user with admin options.
 [**usersPost**](OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
 [**usersSearchGet**](OAIUsersApi.md#userssearchget) | **GET** /users/search | Search for users
 [**usersTemporaryPost**](OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
@@ -24,6 +25,62 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
 [**usersUuidSubscriptionsSubsnoUnpausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnounpausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
 
+
+# **usersAdminPost**
+```objc
+-(NSURLSessionTask*) usersAdminPostWithBody: (OAIAdminNewUser*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+```
+
+Create a new user with admin options.
+
+### Example 
+```objc
+
+OAIAdminNewUser* body = [[OAIAdminNewUser alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Create a new user with admin options.
+[apiInstance usersAdminPostWithBody:body
+              authUser:authUser
+              authorization:authorization
+          completionHandler: ^(OAILoginResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersAdminPost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OAIAdminNewUser***](OAIAdminNewUser.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAILoginResponse***](OAILoginResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usersPost**
 ```objc

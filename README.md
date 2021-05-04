@@ -43,6 +43,7 @@ Import the following:
 // load models
 #import <OpenAPIClient/OAIActiveDays.h>
 #import <OpenAPIClient/OAIAddress.h>
+#import <OpenAPIClient/OAIAdminNewUser.h>
 #import <OpenAPIClient/OAICancelSubscriptionReason.h>
 #import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeleteTempAddressChangeDates.h>
@@ -155,6 +156,7 @@ Class | Method | HTTP request | Description
 *OAILoginApi* | [**loginSomePost**](docs/OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
 *OAILoginApi* | [**loginSsoPost**](docs/OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *OAILoginApi* | [**loginUuidDelete**](docs/OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
+*OAIUsersApi* | [**usersAdminPost**](docs/OAIUsersApi.md#usersadminpost) | **POST** /users/admin | Create a new user with admin options.
 *OAIUsersApi* | [**usersPost**](docs/OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
 *OAIUsersApi* | [**usersSearchGet**](docs/OAIUsersApi.md#userssearchget) | **GET** /users/search | Search for users
 *OAIUsersApi* | [**usersTemporaryPost**](docs/OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
@@ -180,6 +182,7 @@ Class | Method | HTTP request | Description
 
  - [OAIActiveDays](docs/OAIActiveDays.md)
  - [OAIAddress](docs/OAIAddress.md)
+ - [OAIAdminNewUser](docs/OAIAdminNewUser.md)
  - [OAICancelSubscriptionReason](docs/OAICancelSubscriptionReason.md)
  - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeleteTempAddressChangeDates](docs/OAIDeleteTempAddressChangeDates.md)

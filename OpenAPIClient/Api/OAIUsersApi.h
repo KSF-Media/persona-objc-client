@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "OAIAdminNewUser.h"
 #import "OAICancelSubscriptionReason.h"
 #import "OAIDeleteTempAddressChangeDates.h"
 #import "OAIDeliveryReclamation.h"
@@ -41,6 +42,24 @@ extern NSString* kOAIUsersApiErrorDomain;
 extern NSInteger kOAIUsersApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
+
+/// Create a new user with admin options.
+/// 
+///
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAILoginResponse*
+-(NSURLSessionTask*) usersAdminPostWithBody: (OAIAdminNewUser*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+
 
 /// Create a new user.
 /// 
