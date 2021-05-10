@@ -25,7 +25,7 @@
 
 @property(nonatomic) NSString* password;
 
-@property(nonatomic) NSString* passwordConfirm;
+@property(nonatomic) NSString* confirmPassword;
 
 @property(nonatomic) NSString* token;
 

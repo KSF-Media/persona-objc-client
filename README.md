@@ -45,7 +45,6 @@ Import the following:
 #import <OpenAPIClient/OAIAddress.h>
 #import <OpenAPIClient/OAIAdminNewUser.h>
 #import <OpenAPIClient/OAICancelSubscriptionReason.h>
-#import <OpenAPIClient/OAICodeForTokenData.h>
 #import <OpenAPIClient/OAIDeleteTempAddressChangeDates.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
@@ -96,7 +95,6 @@ Import the following:
 #import <OpenAPIClient/OAISubscriptionPayments.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
 #import <OpenAPIClient/OAITemporaryAddressChangeDates.h>
-#import <OpenAPIClient/OAITokenResponse.h>
 #import <OpenAPIClient/OAIUpdatePasswordData.h>
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
@@ -122,13 +120,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```objc
 
 
-OAICodeForTokenData* *body = [[OAICodeForTokenData alloc] init]; // 
+OAIForgotPasswordData* *body = [[OAIForgotPasswordData alloc] init]; // 
 
 OAIAccountApi *apiInstance = [[OAIAccountApi alloc] init];
 
-// Get a password reset token
-[apiInstance accountCodeForTokenPostWithBody:body
-              completionHandler: ^(OAITokenResponse* output, NSError* error) {
+// Request password reset link
+[apiInstance accountPasswordForgotPostWithBody:body
+              completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -145,9 +143,8 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OAIAccountApi* | [**accountCodeForTokenPost**](docs/OAIAccountApi.md#accountcodefortokenpost) | **POST** /account/codeForToken | Get a password reset token
-*OAIAccountApi* | [**accountForgotPassPost**](docs/OAIAccountApi.md#accountforgotpasspost) | **POST** /account/forgotPass | Forgot Password
-*OAIAccountApi* | [**accountResetForgottenPasswordPost**](docs/OAIAccountApi.md#accountresetforgottenpasswordpost) | **POST** /account/resetForgottenPassword | Reset a forgotten password with a token
+*OAIAccountApi* | [**accountPasswordForgotPost**](docs/OAIAccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
+*OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIAdminApi* | [**adminUserPost**](docs/OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
@@ -184,7 +181,6 @@ Class | Method | HTTP request | Description
  - [OAIAddress](docs/OAIAddress.md)
  - [OAIAdminNewUser](docs/OAIAdminNewUser.md)
  - [OAICancelSubscriptionReason](docs/OAICancelSubscriptionReason.md)
- - [OAICodeForTokenData](docs/OAICodeForTokenData.md)
  - [OAIDeleteTempAddressChangeDates](docs/OAIDeleteTempAddressChangeDates.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
@@ -235,7 +231,6 @@ Class | Method | HTTP request | Description
  - [OAISubscriptionPayments](docs/OAISubscriptionPayments.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
  - [OAITemporaryAddressChangeDates](docs/OAITemporaryAddressChangeDates.md)
- - [OAITokenResponse](docs/OAITokenResponse.md)
  - [OAIUpdatePasswordData](docs/OAIUpdatePasswordData.md)
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)

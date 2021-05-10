@@ -1,9 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "OAICodeForTokenData.h"
 #import "OAIForgotPasswordData.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
-#import "OAITokenResponse.h"
 #import "OAIUpdatePasswordData.h"
 #import "OAIApi.h"
 
@@ -28,21 +26,7 @@ extern NSInteger kOAIAccountApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
-/// Get a password reset token
-/// 
-///
-/// @param body 
-/// 
-///  code:200 message:"",
-///  code:400 message:"Invalid `body`",
-///  code:415 message:"Unsupported media type"
-///
-/// @return OAITokenResponse*
--(NSURLSessionTask*) accountCodeForTokenPostWithBody: (OAICodeForTokenData*) body
-    completionHandler: (void (^)(OAITokenResponse* output, NSError* error)) handler;
-
-
-/// Forgot Password
+/// Request password reset link
 /// 
 ///
 /// @param body 
@@ -52,7 +36,7 @@ extern NSInteger kOAIAccountApiMissingParamErrorCode;
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return NSArray<NSObject*>*
--(NSURLSessionTask*) accountForgotPassPostWithBody: (OAIForgotPasswordData*) body
+-(NSURLSessionTask*) accountPasswordForgotPostWithBody: (OAIForgotPasswordData*) body
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 
 
@@ -66,7 +50,7 @@ extern NSInteger kOAIAccountApiMissingParamErrorCode;
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return NSArray<NSObject*>*
--(NSURLSessionTask*) accountResetForgottenPasswordPostWithBody: (OAIUpdatePasswordData*) body
+-(NSURLSessionTask*) accountPasswordResetPostWithBody: (OAIUpdatePasswordData*) body
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 
 
