@@ -48,7 +48,6 @@ Import the following:
 #import <OpenAPIClient/OAIDeleteTempAddressChangeDates.h>
 #import <OpenAPIClient/OAIDeliveryAddress.h>
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
-#import <OpenAPIClient/OAIDescriptionFrequency.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIFaroUser.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
@@ -78,7 +77,6 @@ Import the following:
 #import <OpenAPIClient/OAINewUser.h>
 #import <OpenAPIClient/OAIPackage.h>
 #import <OpenAPIClient/OAIPackageCampaign.h>
-#import <OpenAPIClient/OAIPackageDescription.h>
 #import <OpenAPIClient/OAIPackageOffer.h>
 #import <OpenAPIClient/OAIPaper.h>
 #import <OpenAPIClient/OAIPastTemporaryAddress.h>
@@ -184,7 +182,6 @@ Class | Method | HTTP request | Description
  - [OAIDeleteTempAddressChangeDates](docs/OAIDeleteTempAddressChangeDates.md)
  - [OAIDeliveryAddress](docs/OAIDeliveryAddress.md)
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
- - [OAIDescriptionFrequency](docs/OAIDescriptionFrequency.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIFaroUser](docs/OAIFaroUser.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
@@ -214,7 +211,6 @@ Class | Method | HTTP request | Description
  - [OAINewUser](docs/OAINewUser.md)
  - [OAIPackage](docs/OAIPackage.md)
  - [OAIPackageCampaign](docs/OAIPackageCampaign.md)
- - [OAIPackageDescription](docs/OAIPackageDescription.md)
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
  - [OAIPaper](docs/OAIPaper.md)
  - [OAIPastTemporaryAddress](docs/OAIPastTemporaryAddress.md)

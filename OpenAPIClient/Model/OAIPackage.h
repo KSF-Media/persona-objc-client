@@ -15,14 +15,11 @@
 
 
 #import "OAIPackageCampaign.h"
-#import "OAIPackageDescription.h"
 #import "OAIPackageOffer.h"
 #import "OAIPaper.h"
 #import "OAIProduct.h"
 @protocol OAIPackageCampaign;
 @class OAIPackageCampaign;
-@protocol OAIPackageDescription;
-@class OAIPackageDescription;
 @protocol OAIPackageOffer;
 @class OAIPackageOffer;
 @protocol OAIPaper;
@@ -43,6 +40,9 @@
 /* Package name 
  */
 @property(nonatomic) NSString* name;
+/* Package description 
+ */
+@property(nonatomic) NSArray<NSString*>* _description;
 
 @property(nonatomic) OAIPaper* paper;
 /* All products in this package are digital 
@@ -65,7 +65,5 @@
 /* Does the package allow temporary address changes 
  */
 @property(nonatomic) NSNumber* canTempAddr;
-
-@property(nonatomic) OAIPackageDescription* _description;
 
 @end
