@@ -42,7 +42,7 @@
 @property(nonatomic) NSString* name;
 /* Package description 
  */
-@property(nonatomic) NSArray<NSString*>* _description;
+@property(nonatomic) NSArray<NSString*>* info;
 
 @property(nonatomic) OAIPaper* paper;
 /* All products in this package are digital 

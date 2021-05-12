@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_id** | **NSString*** | Package identifier | 
 **name** | **NSString*** | Package name | 
-**_description** | **NSArray&lt;NSString*&gt;*** | Package description | 
+**info** | **NSArray&lt;NSString*&gt;*** | Package description | 
 **paper** | [**OAIPaper***](OAIPaper.md) |  | 
 **digitalOnly** | **NSNumber*** | All products in this package are digital | 
 **products** | [**NSArray&lt;OAIProduct&gt;***](OAIProduct.md) | The Products contained in a package | 
