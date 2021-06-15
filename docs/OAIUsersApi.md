@@ -5,7 +5,6 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usersPost**](OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
-[**usersSearchGet**](OAIUsersApi.md#userssearchget) | **GET** /users/search | Search for users
 [**usersTemporaryPost**](OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
 [**usersUuidEntitlementGet**](OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 [**usersUuidGdprPut**](OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
@@ -69,64 +68,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **usersSearchGet**
-```objc
--(NSURLSessionTask*) usersSearchGetWithQuery: (NSString*) query
-    authUser: (NSString*) authUser
-    authorization: (NSString*) authorization
-        completionHandler: (void (^)(NSArray<OAIUser>* output, NSError* error)) handler;
-```
-
-Search for users
-
-deprecated
-
-### Example 
-```objc
-
-NSString* query = @"query_example"; // 
-NSString* authUser = @"authUser_example"; //  (optional)
-NSString* authorization = @"authorization_example"; //  (optional)
-
-OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
-
-// Search for users
-[apiInstance usersSearchGetWithQuery:query
-              authUser:authUser
-              authorization:authorization
-          completionHandler: ^(NSArray<OAIUser>* output, NSError* error) {
-                        if (output) {
-                            NSLog(@"%@", output);
-                        }
-                        if (error) {
-                            NSLog(@"Error calling OAIUsersApi->usersSearchGet: %@", error);
-                        }
-                    }];
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **NSString***|  | 
- **authUser** | [**NSString***](.md)|  | [optional] 
- **authorization** | **NSString***|  | [optional] 
-
-### Return type
-
-[**NSArray<OAIUser>***](OAIUser.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

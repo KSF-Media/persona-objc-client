@@ -153,7 +153,6 @@ Class | Method | HTTP request | Description
 *OAILoginApi* | [**loginSsoPost**](docs/OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 *OAILoginApi* | [**loginUuidDelete**](docs/OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
 *OAIUsersApi* | [**usersPost**](docs/OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
-*OAIUsersApi* | [**usersSearchGet**](docs/OAIUsersApi.md#userssearchget) | **GET** /users/search | Search for users
 *OAIUsersApi* | [**usersTemporaryPost**](docs/OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
 *OAIUsersApi* | [**usersUuidEntitlementGet**](docs/OAIUsersApi.md#usersuuidentitlementget) | **GET** /users/{uuid}/entitlement | Get users entitlements.
 *OAIUsersApi* | [**usersUuidGdprPut**](docs/OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.

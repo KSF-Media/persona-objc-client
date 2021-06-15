@@ -36,4 +36,6 @@
 
 @property(nonatomic) NSArray<NSObject*>* pendingAddressChanges;
 
+@property(nonatomic) NSNumber* updateCusno;
+
 @end
