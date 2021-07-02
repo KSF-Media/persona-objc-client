@@ -10,6 +10,7 @@
 #import "OAINewDeliveryReclamation.h"
 #import "OAINewTemporaryUser.h"
 #import "OAINewUser.h"
+#import "OAINewsletterSubscriptions.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
 #import "OAISubscriptionPauseEdit.h"
@@ -150,6 +151,45 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(OAIUser* output, NSError* error)) handler;
+
+
+/// Get newsletter subscriptions
+/// Get list of newsletter subscriptions from mailchimp
+///
+/// @param uuid 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`",
+///  code:404 message:"`uuid` not found"
+///
+/// @return OAINewsletterSubscriptions*
+-(NSURLSessionTask*) usersUuidNewslettersGetWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler;
+
+
+/// Update newsletter subscriptions
+/// Get list of newsletter subscriptions from mailchimp
+///
+/// @param uuid 
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
+///  code:404 message:"`uuid` not found",
+///  code:415 message:"Unsupported media type"
+///
+/// @return OAINewsletterSubscriptions*
+-(NSURLSessionTask*) usersUuidNewslettersPutWithUuid: (NSString*) uuid
+    body: (OAINewsletterSubscriptions*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler;
 
 
 /// Set / Change user password

@@ -75,6 +75,7 @@ Import the following:
 #import <OpenAPIClient/OAINewDeliveryReclamation.h>
 #import <OpenAPIClient/OAINewTemporaryUser.h>
 #import <OpenAPIClient/OAINewUser.h>
+#import <OpenAPIClient/OAINewsletterSubscriptions.h>
 #import <OpenAPIClient/OAIPackage.h>
 #import <OpenAPIClient/OAIPackageCampaign.h>
 #import <OpenAPIClient/OAIPackageOffer.h>
@@ -158,6 +159,8 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidGdprPut**](docs/OAIUsersApi.md#usersuuidgdprput) | **PUT** /users/{uuid}/gdpr | Updates the GDPR consent settings for a given user.
 *OAIUsersApi* | [**usersUuidGet**](docs/OAIUsersApi.md#usersuuidget) | **GET** /users/{uuid} | Get user by UUID.
 *OAIUsersApi* | [**usersUuidLegalPut**](docs/OAIUsersApi.md#usersuuidlegalput) | **PUT** /users/{uuid}/legal | Updates the legal consent settings for a given user.
+*OAIUsersApi* | [**usersUuidNewslettersGet**](docs/OAIUsersApi.md#usersuuidnewslettersget) | **GET** /users/{uuid}/newsletters | Get newsletter subscriptions
+*OAIUsersApi* | [**usersUuidNewslettersPut**](docs/OAIUsersApi.md#usersuuidnewslettersput) | **PUT** /users/{uuid}/newsletters | Update newsletter subscriptions
 *OAIUsersApi* | [**usersUuidPasswordPut**](docs/OAIUsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 *OAIUsersApi* | [**usersUuidPatch**](docs/OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 *OAIUsersApi* | [**usersUuidPaymentsGet**](docs/OAIUsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
@@ -208,6 +211,7 @@ Class | Method | HTTP request | Description
  - [OAINewDeliveryReclamation](docs/OAINewDeliveryReclamation.md)
  - [OAINewTemporaryUser](docs/OAINewTemporaryUser.md)
  - [OAINewUser](docs/OAINewUser.md)
+ - [OAINewsletterSubscriptions](docs/OAINewsletterSubscriptions.md)
  - [OAIPackage](docs/OAIPackage.md)
  - [OAIPackageCampaign](docs/OAIPackageCampaign.md)
  - [OAIPackageOffer](docs/OAIPackageOffer.md)
