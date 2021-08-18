@@ -252,6 +252,24 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     completionHandler: (void (^)(NSArray<OAISubscriptionPayments>* output, NSError* error)) handler;
 
 
+/// Check if user has valid token for a scope
+/// Authorization header expects the following format ‘OAuth {token}’
+///
+/// @param uuid 
+/// @param authorization  (optional)
+/// @param scope  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `scope` or `Authorization`",
+///  code:404 message:"`uuid` not found"
+///
+/// @return void
+-(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+    scope: (NSString*) scope
+    completionHandler: (void (^)(NSError* error)) handler;
+
+
 /// Delete temporary address change for subscription
 /// Authorization header expects the following format ‘OAuth {token}’
 ///

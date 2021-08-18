@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**usersUuidPasswordPut**](OAIUsersApi.md#usersuuidpasswordput) | **PUT** /users/{uuid}/password | Set / Change user password
 [**usersUuidPatch**](OAIUsersApi.md#usersuuidpatch) | **PATCH** /users/{uuid} | Update a user
 [**usersUuidPaymentsGet**](OAIUsersApi.md#usersuuidpaymentsget) | **GET** /users/{uuid}/payments | Get user&#39;s subscriptions and payment events
+[**usersUuidScopeGet**](OAIUsersApi.md#usersuuidscopeget) | **GET** /users/{uuid}/scope | Check if user has valid token for a scope
 [**usersUuidSubscriptionsSubsnoAddressChangeDelete**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangedelete) | **DELETE** /users/{uuid}/subscriptions/{subsno}/addressChange | Delete temporary address change for subscription
 [**usersUuidSubscriptionsSubsnoAddressChangePatch**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepatch) | **PATCH** /users/{uuid}/subscriptions/{subsno}/addressChange | Edit temporary address change dates of a subscription
 [**usersUuidSubscriptionsSubsnoAddressChangePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoaddresschangepost) | **POST** /users/{uuid}/subscriptions/{subsno}/addressChange | Make a temporary address change for a subscription
@@ -669,6 +670,61 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usersUuidScopeGet**
+```objc
+-(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
+    authorization: (NSString*) authorization
+    scope: (NSString*) scope
+        completionHandler: (void (^)(NSError* error)) handler;
+```
+
+Check if user has valid token for a scope
+
+Authorization header expects the following format ‘OAuth {token}’
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSString* authorization = @"authorization_example"; //  (optional)
+NSString* scope = @"scope_example"; //  (optional)
+
+OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
+
+// Check if user has valid token for a scope
+[apiInstance usersUuidScopeGetWithUuid:uuid
+              authorization:authorization
+              scope:scope
+          completionHandler: ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling OAIUsersApi->usersUuidScopeGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **authorization** | **NSString***|  | [optional] 
+ **scope** | **NSString***|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
