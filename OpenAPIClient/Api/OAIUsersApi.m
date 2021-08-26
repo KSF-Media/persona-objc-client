@@ -1987,7 +1987,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Pause users subscription
+/// Unpause users subscription
 /// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
@@ -1997,12 +1997,18 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
+///  @param startDate  (optional)
+///
+///  @param endDate  (optional)
+///
 ///  @returns OAISubscription*
 ///
 -(NSURLSessionTask*) usersUuidSubscriptionsSubsnoUnpausePostWithUuid: (NSString*) uuid
     subsno: (NSNumber*) subsno
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
+    startDate: (NSDate*) startDate
+    endDate: (NSDate*) endDate
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
@@ -2037,6 +2043,12 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (startDate != nil) {
+        queryParams[@"startDate"] = startDate;
+    }
+    if (endDate != nil) {
+        queryParams[@"endDate"] = endDate;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     if (authUser != nil) {

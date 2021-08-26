@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**usersUuidSubscriptionsSubsnoPausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 [**usersUuidSubscriptionsSubsnoReclamationPost**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-[**usersUuidSubscriptionsSubsnoUnpausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnounpausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
+[**usersUuidSubscriptionsSubsnoUnpausePost**](OAIUsersApi.md#usersuuidsubscriptionssubsnounpausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Unpause users subscription
 
 
 # **usersPost**
@@ -1265,10 +1265,12 @@ No authorization required
     subsno: (NSNumber*) subsno
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
+    startDate: (NSDate*) startDate
+    endDate: (NSDate*) endDate
         completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 ```
 
-Pause users subscription
+Unpause users subscription
 
 Authorization header expects the following format ‘OAuth {token}’
 
@@ -1279,14 +1281,18 @@ NSString* uuid = @"uuid_example"; //
 NSNumber* subsno = @56; // 
 NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
+NSDate* startDate = @"2013-10-20T19:20:30+01:00"; //  (optional)
+NSDate* endDate = @"2013-10-20T19:20:30+01:00"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
-// Pause users subscription
+// Unpause users subscription
 [apiInstance usersUuidSubscriptionsSubsnoUnpausePostWithUuid:uuid
               subsno:subsno
               authUser:authUser
               authorization:authorization
+              startDate:startDate
+              endDate:endDate
           completionHandler: ^(OAISubscription* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -1305,6 +1311,8 @@ Name | Type | Description  | Notes
  **subsno** | **NSNumber***|  | 
  **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
+ **startDate** | **NSDate***|  | [optional] 
+ **endDate** | **NSDate***|  | [optional] 
 
 ### Return type
 

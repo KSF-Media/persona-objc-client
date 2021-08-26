@@ -453,16 +453,18 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     completionHandler: (void (^)(OAIDeliveryReclamation* output, NSError* error)) handler;
 
 
-/// Pause users subscription
+/// Unpause users subscription
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
 /// @param subsno 
 /// @param authUser  (optional)
 /// @param authorization  (optional)
+/// @param startDate  (optional)
+/// @param endDate  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Authorization` or `AuthUser`",
+///  code:400 message:"Invalid `endDate` or `startDate` or `Authorization` or `AuthUser`",
 ///  code:404 message:"`uuid` or `subsno` not found"
 ///
 /// @return OAISubscription*
@@ -470,6 +472,8 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
     subsno: (NSNumber*) subsno
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
+    startDate: (NSDate*) startDate
+    endDate: (NSDate*) endDate
     completionHandler: (void (^)(OAISubscription* output, NSError* error)) handler;
 
 

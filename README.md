@@ -173,7 +173,7 @@ Class | Method | HTTP request | Description
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoPausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnopausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/pause | Pause users subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationPost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationpost) | **POST** /users/{uuid}/subscriptions/{subsno}/reclamation | Create a new delivery reclamation for a subscription
 *OAIUsersApi* | [**usersUuidSubscriptionsSubsnoReclamationsReclaimnoGet**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnoreclamationsreclaimnoget) | **GET** /users/{uuid}/subscriptions/{subsno}/reclamations/{reclaimno} | Get a delivery reclamation
-*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoUnpausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnounpausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Pause users subscription
+*OAIUsersApi* | [**usersUuidSubscriptionsSubsnoUnpausePost**](docs/OAIUsersApi.md#usersuuidsubscriptionssubsnounpausepost) | **POST** /users/{uuid}/subscriptions/{subsno}/unpause | Unpause users subscription
 
 
 ## Documentation For Models
