@@ -263,11 +263,11 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///  code:400 message:"Invalid `scope` or `Authorization`",
 ///  code:404 message:"`uuid` not found"
 ///
-/// @return void
+/// @return NSNumber*
 -(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
     scope: (NSString*) scope
-    completionHandler: (void (^)(NSError* error)) handler;
+    completionHandler: (void (^)(NSNumber* output, NSError* error)) handler;
 
 
 /// Delete temporary address change for subscription

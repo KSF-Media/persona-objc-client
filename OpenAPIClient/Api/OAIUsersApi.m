@@ -1017,19 +1017,19 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param scope  (optional)
 ///
-///  @returns void
+///  @returns NSNumber*
 ///
 -(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
     scope: (NSString*) scope
-    completionHandler: (void (^)(NSError* error)) handler {
+    completionHandler: (void (^)(NSNumber* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
         NSParameterAssert(uuid);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"uuid"] };
             NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
-            handler(error);
+            handler(nil, error);
         }
         return nil;
     }
@@ -1051,7 +1051,7 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
         headerParams[@"Authorization"] = authorization;
     }
     // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[]];
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];
     if(acceptHeader.length > 0) {
         headerParams[@"Accept"] = acceptHeader;
     }
@@ -1080,10 +1080,10 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: nil
+                              responseType: @"NSNumber*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler(error);
+                                    handler((NSNumber*)data, error);
                                 }
                             }];
 }

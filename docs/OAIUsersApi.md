@@ -678,7 +678,7 @@ No authorization required
 -(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
     authorization: (NSString*) authorization
     scope: (NSString*) scope
-        completionHandler: (void (^)(NSError* error)) handler;
+        completionHandler: (void (^)(NSNumber* output, NSError* error)) handler;
 ```
 
 Check if user has valid token for a scope
@@ -698,7 +698,10 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidScopeGetWithUuid:uuid
               authorization:authorization
               scope:scope
-          completionHandler: ^(NSError* error) {
+          completionHandler: ^(NSNumber* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
                         if (error) {
                             NSLog(@"Error calling OAIUsersApi->usersUuidScopeGet: %@", error);
                         }
@@ -715,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**NSNumber***
 
 ### Authorization
 
@@ -724,7 +727,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
