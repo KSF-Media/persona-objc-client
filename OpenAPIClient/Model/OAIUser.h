@@ -49,6 +49,8 @@
 
 @property(nonatomic) NSString* lastName;
 
+@property(nonatomic) NSString* phone;
+
 @property(nonatomic) OAIAddress* address;
 
 @property(nonatomic) NSNumber* cusno;

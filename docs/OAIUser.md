@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **email** | **NSString*** |  | 
 **firstName** | **NSString*** |  | [optional] 
 **lastName** | **NSString*** |  | [optional] 
+**phone** | **NSString*** |  | [optional] 
 **address** | [**OAIAddress***](OAIAddress.md) |  | [optional] 
 **cusno** | **NSNumber*** |  | 
 **subs** | [**NSArray&lt;OAISubscription&gt;***](OAISubscription.md) |  | 

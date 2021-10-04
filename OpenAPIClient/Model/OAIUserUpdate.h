@@ -34,6 +34,8 @@
 
 @property(nonatomic) NSString* email;
 
+@property(nonatomic) NSString* phone;
+
 @property(nonatomic) NSArray<NSObject*>* pendingAddressChanges;
 
 @property(nonatomic) NSNumber* updateCusno;

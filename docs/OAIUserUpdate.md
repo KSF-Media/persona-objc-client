@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **lastName** | **NSString*** |  | [optional] 
 **address** | [**OAIUserUpdateAddress***](OAIUserUpdateAddress.md) |  | [optional] 
 **email** | **NSString*** |  | [optional] 
+**phone** | **NSString*** |  | [optional] 
 **pendingAddressChanges** | **NSArray&lt;NSObject*&gt;*** |  | [optional] 
 **updateCusno** | **NSNumber*** |  | [optional] 
 
