@@ -676,8 +676,8 @@ No authorization required
 # **usersUuidScopeGet**
 ```objc
 -(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
-    authorization: (NSString*) authorization
     scope: (NSString*) scope
+    authorization: (NSString*) authorization
         completionHandler: (void (^)(NSNumber* output, NSError* error)) handler;
 ```
 
@@ -689,15 +689,15 @@ Authorization header expects the following format ‘OAuth {token}’
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
+NSString* scope = @"scope_example"; // 
 NSString* authorization = @"authorization_example"; //  (optional)
-NSString* scope = @"scope_example"; //  (optional)
 
 OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 
 // Check if user has valid token for a scope
 [apiInstance usersUuidScopeGetWithUuid:uuid
-              authorization:authorization
               scope:scope
+              authorization:authorization
           completionHandler: ^(NSNumber* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -713,8 +713,8 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
+ **scope** | **NSString***|  | 
  **authorization** | **NSString***|  | [optional] 
- **scope** | **NSString***|  | [optional] 
 
 ### Return type
 

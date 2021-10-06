@@ -1013,21 +1013,32 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///  @param uuid  
 ///
-///  @param authorization  (optional)
+///  @param scope  
 ///
-///  @param scope  (optional)
+///  @param authorization  (optional)
 ///
 ///  @returns NSNumber*
 ///
 -(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
-    authorization: (NSString*) authorization
     scope: (NSString*) scope
+    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSNumber* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
         NSParameterAssert(uuid);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"uuid"] };
+            NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'scope' is set
+    if (scope == nil) {
+        NSParameterAssert(scope);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"scope"] };
             NSError* error = [NSError errorWithDomain:kOAIUsersApiErrorDomain code:kOAIUsersApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }

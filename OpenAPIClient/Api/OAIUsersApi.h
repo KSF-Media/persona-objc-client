@@ -256,8 +256,8 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 /// Authorization header expects the following format ‘OAuth {token}’
 ///
 /// @param uuid 
+/// @param scope 
 /// @param authorization  (optional)
-/// @param scope  (optional)
 /// 
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `scope` or `Authorization`",
@@ -265,8 +265,8 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///
 /// @return NSNumber*
 -(NSURLSessionTask*) usersUuidScopeGetWithUuid: (NSString*) uuid
-    authorization: (NSString*) authorization
     scope: (NSString*) scope
+    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSNumber* output, NSError* error)) handler;
 
 
