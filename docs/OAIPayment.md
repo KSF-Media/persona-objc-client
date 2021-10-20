@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **invno** | **NSNumber*** | Payment invoice ID | 
-**date** | **NSDate*** |  | 
-**dueDate** | **NSDate*** |  | 
+**date** | **NSDate*** |  | [optional] 
+**dueDate** | **NSDate*** |  | [optional] 
 **expenses** | **NSNumber*** |  | 
 **interest** | **NSNumber*** |  | 
 **vat** | **NSNumber*** |  | 

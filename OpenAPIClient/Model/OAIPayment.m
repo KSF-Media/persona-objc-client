@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"discPercent", @"discAmount", @"reference"];
+  NSArray *optionalProperties = @[@"date", @"dueDate", @"discPercent", @"discAmount", @"reference"];
   return [optionalProperties containsObject:propertyName];
 }
 
