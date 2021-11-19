@@ -4,10 +4,63 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**entitlementsAllowGet**](OAIEntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
 [**entitlementsAllowPost**](OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 [**entitlementsAllowUuidPost**](OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 
+
+# **entitlementsAllowGet**
+```objc
+-(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+```
+
+Check if global entitlements are enabled
+
+### Example 
+```objc
+
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
+
+// Check if global entitlements are enabled
+[apiInstance entitlementsAllowGetWithAuthUser:authUser
+              authorization:authorization
+          completionHandler: ^(NSString* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIEntitlementsApi->entitlementsAllowGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+**NSString***
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **entitlementsAllowPost**
 ```objc

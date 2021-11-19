@@ -146,6 +146,7 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIAdminApi* | [**adminUserPost**](docs/OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
+*OAIEntitlementsApi* | [**entitlementsAllowGet**](docs/OAIEntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
 *OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements

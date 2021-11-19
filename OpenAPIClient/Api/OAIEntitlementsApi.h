@@ -25,6 +25,21 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
+/// Check if global entitlements are enabled
+/// 
+///
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`"
+///
+/// @return NSString*
+-(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
 /// 
 /// 
 ///
