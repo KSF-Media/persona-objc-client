@@ -119,12 +119,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```objc
 
 
-OAIForgotPasswordData* *body = [[OAIForgotPasswordData alloc] init]; // 
+NSString* *email = @"email_example"; // 
+NSNumber* *redir = @56; //  (optional)
 
 OAIAccountApi *apiInstance = [[OAIAccountApi alloc] init];
 
 // Request password reset link
-[apiInstance accountPasswordForgotPostWithBody:body
+[apiInstance accountPasswordForgotGetWithEmail:email
+    redir:redir
               completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -142,6 +144,7 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OAIAccountApi* | [**accountPasswordForgotGet**](docs/OAIAccountApi.md#accountpasswordforgotget) | **GET** /account/password/forgot | Request password reset link
 *OAIAccountApi* | [**accountPasswordForgotPost**](docs/OAIAccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
 *OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users

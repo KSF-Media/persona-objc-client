@@ -29,6 +29,21 @@ extern NSInteger kOAIAccountApiMissingParamErrorCode;
 /// Request password reset link
 /// 
 ///
+/// @param email 
+/// @param redir  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `redir` or `email`"
+///
+/// @return NSArray<NSObject*>*
+-(NSURLSessionTask*) accountPasswordForgotGetWithEmail: (NSString*) email
+    redir: (NSNumber*) redir
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+
+
+/// Request password reset link
+/// 
+///
 /// @param body 
 /// 
 ///  code:200 message:"",

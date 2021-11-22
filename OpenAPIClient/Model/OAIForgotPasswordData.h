@@ -25,4 +25,6 @@
 
 @property(nonatomic) NSString* email;
 
+@property(nonatomic) NSNumber* redir;
+
 @end
