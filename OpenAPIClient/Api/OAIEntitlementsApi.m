@@ -58,11 +58,11 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
-///  @returns NSString*
+///  @returns NSArray<NSString*>*
 ///
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/entitlements/allow"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -106,10 +106,10 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSString*"
+                              responseType: @"NSArray<NSString*>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSString*)data, error);
+                                    handler((NSArray<NSString*>*)data, error);
                                 }
                             }];
 }

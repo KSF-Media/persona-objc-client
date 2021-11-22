@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ```objc
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
 ```
 
 Check if global entitlements are enabled
@@ -30,7 +30,7 @@ OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
 // Check if global entitlements are enabled
 [apiInstance entitlementsAllowGetWithAuthUser:authUser
               authorization:authorization
-          completionHandler: ^(NSString* output, NSError* error) {
+          completionHandler: ^(NSArray<NSString*>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**NSString***
+**NSArray<NSString*>***
 
 ### Authorization
 

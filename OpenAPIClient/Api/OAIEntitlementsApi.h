@@ -34,10 +34,10 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `Authorization` or `AuthUser`"
 ///
-/// @return NSString*
+/// @return NSArray<NSString*>*
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
 
 
 /// 
