@@ -58,16 +58,28 @@ NSInteger kOAIEntitlementsApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
+///  @param ip  (optional)
+///
+///  @param paper  (optional)
+///
 ///  @returns NSArray<NSString*>*
 ///
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
+    ip: (NSString*) ip
+    paper: (NSString*) paper
     completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/entitlements/allow"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (ip != nil) {
+        queryParams[@"ip"] = ip;
+    }
+    if (paper != nil) {
+        queryParams[@"paper"] = paper;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     if (authUser != nil) {

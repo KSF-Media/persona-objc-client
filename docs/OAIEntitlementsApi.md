@@ -14,6 +14,8 @@ Method | HTTP request | Description
 ```objc
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
+    ip: (NSString*) ip
+    paper: (NSString*) paper
         completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
 ```
 
@@ -24,12 +26,16 @@ Check if global entitlements are enabled
 
 NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
+NSString* ip = @"ip_example"; //  (optional)
+NSString* paper = @"paper_example"; //  (optional)
 
 OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
 
 // Check if global entitlements are enabled
 [apiInstance entitlementsAllowGetWithAuthUser:authUser
               authorization:authorization
+              ip:ip
+              paper:paper
           completionHandler: ^(NSArray<NSString*>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -46,6 +52,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
+ **ip** | **NSString***|  | [optional] 
+ **paper** | **NSString***|  | [optional] 
 
 ### Return type
 

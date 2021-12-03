@@ -30,13 +30,17 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 ///
 /// @param authUser  (optional)
 /// @param authorization  (optional)
+/// @param ip  (optional)
+/// @param paper  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `Authorization` or `AuthUser`"
+///  code:400 message:"Invalid `paper` or `ip` or `Authorization` or `AuthUser`"
 ///
 /// @return NSArray<NSString*>*
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
+    ip: (NSString*) ip
+    paper: (NSString*) paper
     completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
 
 
