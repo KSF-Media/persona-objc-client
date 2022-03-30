@@ -41,4 +41,8 @@
  */
 @property(nonatomic) NSString* lengthUnit;
 
+@property(nonatomic) NSDate* startDay;
+
+@property(nonatomic) NSDate* endDay;
+
 @end

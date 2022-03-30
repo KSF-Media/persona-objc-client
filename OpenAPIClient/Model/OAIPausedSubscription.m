@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"startDate": @"startDate", @"endDate": @"endDate" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"startDate": @"startDate", @"endDate": @"endDate", @"sleepType": @"sleepType" }];
 }
 
 /**
