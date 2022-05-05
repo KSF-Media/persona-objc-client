@@ -84,6 +84,7 @@ Import the following:
 #import <OpenAPIClient/OAIPausedSubscription.h>
 #import <OpenAPIClient/OAIPayment.h>
 #import <OpenAPIClient/OAIPendingAddressChange.h>
+#import <OpenAPIClient/OAIPersistedEntitlementAccess.h>
 #import <OpenAPIClient/OAIProduct.h>
 #import <OpenAPIClient/OAISearchQuery.h>
 #import <OpenAPIClient/OAISearchResult.h>
@@ -149,8 +150,9 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIAdminApi* | [**adminUserPost**](docs/OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
+*OAIEntitlementsApi* | [**entitlementsAllowDelete**](docs/OAIEntitlementsApi.md#entitlementsallowdelete) | **DELETE** /entitlements/allow | Remove an entitlement
 *OAIEntitlementsApi* | [**entitlementsAllowGet**](docs/OAIEntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
-*OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | 
+*OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | Add an entitlement for all users
 *OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAILoginApi* | [**loginPost**](docs/OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
@@ -225,6 +227,7 @@ Class | Method | HTTP request | Description
  - [OAIPausedSubscription](docs/OAIPausedSubscription.md)
  - [OAIPayment](docs/OAIPayment.md)
  - [OAIPendingAddressChange](docs/OAIPendingAddressChange.md)
+ - [OAIPersistedEntitlementAccess](docs/OAIPersistedEntitlementAccess.md)
  - [OAIProduct](docs/OAIProduct.md)
  - [OAISearchQuery](docs/OAISearchQuery.md)
  - [OAISearchResult](docs/OAISearchResult.md)

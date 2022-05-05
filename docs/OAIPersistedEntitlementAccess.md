@@ -1,8 +1,9 @@
-# OAIEntitlementAccess
+# OAIPersistedEntitlementAccess
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**_id** | **NSNumber*** |  | [optional] 
 **startAt** | **NSString*** |  | 
 **endAt** | **NSString*** |  | 
 **onlyToProducts** | **NSArray&lt;NSString*&gt;*** |  | [optional] 

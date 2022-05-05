@@ -17,11 +17,13 @@
 
 
 
-@protocol OAIEntitlementAccess
+@protocol OAIPersistedEntitlementAccess
 @end
 
-@interface OAIEntitlementAccess : OAIObject
+@interface OAIPersistedEntitlementAccess : OAIObject
 
+
+@property(nonatomic) NSNumber* _id;
 
 @property(nonatomic) NSString* startAt;
 

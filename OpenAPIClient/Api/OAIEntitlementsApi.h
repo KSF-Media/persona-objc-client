@@ -2,6 +2,7 @@
 #import "OAIEntitlementAccess.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
+#import "OAIPersistedEntitlementAccess.h"
 #import "OAIApi.h"
 
 /**
@@ -25,6 +26,24 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
+/// Remove an entitlement
+/// 
+///
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
+///  code:415 message:"Unsupported media type"
+///
+/// @return NSArray<NSObject*>*
+-(NSURLSessionTask*) entitlementsAllowDeleteWithBody: (NSNumber*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
+
+
 /// Check if global entitlements are enabled
 /// 
 ///
@@ -36,15 +55,15 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `paper` or `ip` or `Authorization` or `AuthUser`"
 ///
-/// @return NSArray<NSString*>*
+/// @return NSArray<OAIPersistedEntitlementAccess>*
 -(NSURLSessionTask*) entitlementsAllowGetWithAuthUser: (NSString*) authUser
     authorization: (NSString*) authorization
     ip: (NSString*) ip
     paper: (NSString*) paper
-    completionHandler: (void (^)(NSArray<NSString*>* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<OAIPersistedEntitlementAccess>* output, NSError* error)) handler;
 
 
-/// 
+/// Add an entitlement for all users
 /// 
 ///
 /// @param body 

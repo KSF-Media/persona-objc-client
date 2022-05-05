@@ -1,6 +1,6 @@
-#import "OAIEntitlementAccess.h"
+#import "OAIPersistedEntitlementAccess.h"
 
-@implementation OAIEntitlementAccess
+@implementation OAIPersistedEntitlementAccess
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"startAt": @"startAt", @"endAt": @"endAt", @"onlyToProducts": @"onlyToProducts" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"startAt": @"startAt", @"endAt": @"endAt", @"onlyToProducts": @"onlyToProducts" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"onlyToProducts"];
+  NSArray *optionalProperties = @[@"_id", @"onlyToProducts"];
   return [optionalProperties containsObject:propertyName];
 }
 
