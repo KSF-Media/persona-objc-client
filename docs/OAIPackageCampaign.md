@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **NSString*** | Campaign name | 
 **priceEur** | **NSNumber*** | Price of campaign in euros | 
 **length** | **NSNumber*** | Length of campaign | 
-**lengthUnit** | **NSString*** | Unit of length (days, weeks, months, years) | 
+**lengthUnit** | **NSString*** |  | 
 **startDay** | **NSDate*** |  | [optional] 
 **endDay** | **NSDate*** |  | [optional] 
 

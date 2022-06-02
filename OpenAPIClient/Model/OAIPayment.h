@@ -44,11 +44,9 @@
 /*  
  */
 @property(nonatomic) NSNumber* openAmount;
-/*  
- */
+
 @property(nonatomic) NSString* type;
-/*  
- */
+
 @property(nonatomic) NSString* state;
 /*  [optional]
  */

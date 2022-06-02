@@ -26,8 +26,7 @@
 @property(nonatomic) NSString* paper;
 
 @property(nonatomic) NSDate* publicationDate;
-/* The type of claim for the reclamation 
- */
+
 @property(nonatomic) NSString* claim;
 
 @end

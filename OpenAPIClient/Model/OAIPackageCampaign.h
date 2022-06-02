@@ -37,8 +37,7 @@
 /* Length of campaign 
  */
 @property(nonatomic) NSNumber* length;
-/* Unit of length (days, weeks, months, years) 
- */
+
 @property(nonatomic) NSString* lengthUnit;
 
 @property(nonatomic) NSDate* startDay;

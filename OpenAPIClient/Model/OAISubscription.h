@@ -84,8 +84,7 @@
 /* Order number of subscription [optional]
  */
 @property(nonatomic) NSString* orderNumber;
-/* Payment method of subscription [optional]
- */
+
 @property(nonatomic) NSString* paymentMethod;
 
 @property(nonatomic) NSNumber* paymentMethodId;

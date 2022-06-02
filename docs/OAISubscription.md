@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **deliveryAddress** | [**OAIDeliveryAddress***](OAIDeliveryAddress.md) |  | [optional] 
 **pendingAddressChanges** | [**NSArray&lt;OAIPendingAddressChange&gt;***](OAIPendingAddressChange.md) | Pending and ongoing temporary address changes | [optional] 
 **orderNumber** | **NSString*** | Order number of subscription | [optional] 
-**paymentMethod** | **NSString*** | Payment method of subscription | [optional] 
+**paymentMethod** | **NSString*** |  | [optional] 
 **paymentMethodId** | **NSNumber*** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

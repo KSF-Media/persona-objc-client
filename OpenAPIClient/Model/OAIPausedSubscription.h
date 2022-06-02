@@ -26,8 +26,7 @@
 @property(nonatomic) NSDate* startDate;
 
 @property(nonatomic) NSDate* endDate;
-/* Type of subscription pause 
- */
+
 @property(nonatomic) NSString* sleepType;
 
 @end

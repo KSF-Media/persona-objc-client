@@ -31,8 +31,7 @@
 @property(nonatomic) NSDate* startDate;
 
 @property(nonatomic) NSDate* endDate;
-/* Type of address change 
- */
+
 @property(nonatomic) NSString* type;
 
 @end
