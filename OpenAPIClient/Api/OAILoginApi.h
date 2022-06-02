@@ -88,8 +88,7 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 /// @param everywhere  (optional) (default to @(NO))
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `everywhere` or `Authorization`",
-///  code:404 message:"`uuid` not found"
+///  code:400 message:"Invalid `everywhere` or `uuid` or `Authorization`"
 ///
 /// @return NSArray<NSObject*>*
 -(NSURLSessionTask*) loginUuidDeleteWithUuid: (NSString*) uuid

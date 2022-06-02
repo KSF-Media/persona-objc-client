@@ -90,8 +90,7 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
 /// @param authorization  (optional)
 /// 
 ///  code:200 message:"",
-///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`",
-///  code:404 message:"`uuid` not found",
+///  code:400 message:"Invalid `body` or `uuid` or `Authorization` or `AuthUser`",
 ///  code:415 message:"Unsupported media type"
 ///
 /// @return NSArray<NSObject*>*
