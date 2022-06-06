@@ -52,14 +52,11 @@
 /* Customer paying for the subscription 
  */
 @property(nonatomic) NSNumber* paycusno;
-/* Subscription kind - what kind of order is it 
- */
+
 @property(nonatomic) NSString* kind;
-/* Current state of the Subscription 
- */
+
 @property(nonatomic) NSString* state;
-/* Pricegroup of the Subscription [optional]
- */
+
 @property(nonatomic) NSString* pricegroup;
 
 @property(nonatomic) OAIPackage* package;

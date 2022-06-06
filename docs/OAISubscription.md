@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **extno** | **NSNumber*** | Subscription Extension Id - how many times a subscription has been extended | 
 **cusno** | **NSNumber*** | Customer getting the subscription | 
 **paycusno** | **NSNumber*** | Customer paying for the subscription | 
-**kind** | **NSString*** | Subscription kind - what kind of order is it | 
-**state** | **NSString*** | Current state of the Subscription | 
-**pricegroup** | **NSString*** | Pricegroup of the Subscription | [optional] 
+**kind** | **NSString*** |  | 
+**state** | **NSString*** |  | 
+**pricegroup** | **NSString*** |  | [optional] 
 **package** | [**OAIPackage***](OAIPackage.md) |  | 
 **dates** | [**OAISubscriptionDates***](OAISubscriptionDates.md) |  | 
 **extsubsexists** | **NSNumber*** | If the extension of this subscription exists | 
