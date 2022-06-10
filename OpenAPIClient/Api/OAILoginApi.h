@@ -32,6 +32,23 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
+/// Login with IP
+/// Returns auth & token for customers with IP based entitlement
+///
+/// @param xRealIP  (optional)
+/// @param paper  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `paper` or `X-Real-IP`",
+///  code:403 message:"Forbidden",
+///  code:500 message:"Internal server error"
+///
+/// @return OAILoginResponse*
+-(NSURLSessionTask*) loginIpGetWithXRealIP: (NSString*) xRealIP
+    paper: (NSString*) paper
+    completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+
+
 /// Login with email and password
 /// 
 ///

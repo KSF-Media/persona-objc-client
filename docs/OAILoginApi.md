@@ -4,11 +4,66 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**loginIpGet**](OAILoginApi.md#loginipget) | **GET** /login/ip | Login with IP
 [**loginPost**](OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
 [**loginSomePost**](OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
 [**loginSsoPost**](OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
 [**loginUuidDelete**](OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
 
+
+# **loginIpGet**
+```objc
+-(NSURLSessionTask*) loginIpGetWithXRealIP: (NSString*) xRealIP
+    paper: (NSString*) paper
+        completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
+```
+
+Login with IP
+
+Returns auth & token for customers with IP based entitlement
+
+### Example 
+```objc
+
+NSString* xRealIP = @"xRealIP_example"; //  (optional)
+NSString* paper = @"paper_example"; //  (optional)
+
+OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
+
+// Login with IP
+[apiInstance loginIpGetWithXRealIP:xRealIP
+              paper:paper
+          completionHandler: ^(OAILoginResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAILoginApi->loginIpGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xRealIP** | **NSString***|  | [optional] 
+ **paper** | **NSString***|  | [optional] 
+
+### Return type
+
+[**OAILoginResponse***](OAILoginResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **loginPost**
 ```objc
