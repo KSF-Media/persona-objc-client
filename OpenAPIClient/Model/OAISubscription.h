@@ -86,4 +86,6 @@
 
 @property(nonatomic) NSNumber* paymentMethodId;
 
+@property(nonatomic) NSString* deliveryTroubleEnd;
+
 @end
