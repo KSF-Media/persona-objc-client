@@ -86,6 +86,6 @@
 
 @property(nonatomic) NSNumber* paymentMethodId;
 
-@property(nonatomic) NSString* deliveryTroubleEnd;
+@property(nonatomic) NSDate* deliveryTroubleEnd;
 
 @end

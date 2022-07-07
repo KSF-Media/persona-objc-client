@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **orderNumber** | **NSString*** | Order number of subscription | [optional] 
 **paymentMethod** | **NSString*** |  | [optional] 
 **paymentMethodId** | **NSNumber*** |  | [optional] 
-**deliveryTroubleEnd** | **NSString*** |  | [optional] 
+**deliveryTroubleEnd** | **NSDate*** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
