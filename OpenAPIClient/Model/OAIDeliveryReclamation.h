@@ -39,5 +39,8 @@
 @property(nonatomic) NSDate* publicationDate;
 
 @property(nonatomic) NSString* claim;
+/* Door code for redelivery [optional]
+ */
+@property(nonatomic) NSString* doorCode;
 
 @end
