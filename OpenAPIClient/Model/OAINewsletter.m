@@ -1,6 +1,6 @@
-#import "OAINewsletterSubscriptions.h"
+#import "OAINewsletter.h"
 
-@implementation OAINewsletterSubscriptions
+@implementation OAINewsletter
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"norden": @"norden", @"daily": @"daily", @"kultur": @"kultur" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"listId": @"listId", @"paper": @"paper", @"subscriptions": @"subscriptions" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"norden", @"daily", @"kultur"];
+  NSArray *optionalProperties = @[];
   return [optionalProperties containsObject:propertyName];
 }
 

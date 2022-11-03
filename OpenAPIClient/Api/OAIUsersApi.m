@@ -12,7 +12,7 @@
 #import "OAINewDeliveryReclamation.h"
 #import "OAINewTemporaryUser.h"
 #import "OAINewUser.h"
-#import "OAINewsletterSubscriptions.h"
+#import "OAINewsletter.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
 #import "OAISubscriptionPauseEdit.h"
@@ -572,12 +572,12 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
-///  @returns OAINewsletterSubscriptions*
+///  @returns NSArray<OAINewsletter>*
 ///
 -(NSURLSessionTask*) usersUuidNewslettersGetWithUuid: (NSString*) uuid
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<OAINewsletter>* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
         NSParameterAssert(uuid);
@@ -635,10 +635,10 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAINewsletterSubscriptions*"
+                              responseType: @"NSArray<OAINewsletter>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAINewsletterSubscriptions*)data, error);
+                                    handler((NSArray<OAINewsletter>*)data, error);
                                 }
                             }];
 }
@@ -654,13 +654,13 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
-///  @returns OAINewsletterSubscriptions*
+///  @returns NSArray<OAINewsletter>*
 ///
 -(NSURLSessionTask*) usersUuidNewslettersPutWithUuid: (NSString*) uuid
-    body: (OAINewsletterSubscriptions*) body
+    body: (NSArray<OAINewsletter>*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<OAINewsletter>* output, NSError* error)) handler {
     // verify the required parameter 'uuid' is set
     if (uuid == nil) {
         NSParameterAssert(uuid);
@@ -730,10 +730,10 @@ NSInteger kOAIUsersApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAINewsletterSubscriptions*"
+                              responseType: @"NSArray<OAINewsletter>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAINewsletterSubscriptions*)data, error);
+                                    handler((NSArray<OAINewsletter>*)data, error);
                                 }
                             }];
 }

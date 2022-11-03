@@ -10,7 +10,7 @@
 #import "OAINewDeliveryReclamation.h"
 #import "OAINewTemporaryUser.h"
 #import "OAINewUser.h"
-#import "OAINewsletterSubscriptions.h"
+#import "OAINewsletter.h"
 #import "OAISubscription.h"
 #import "OAISubscriptionPauseDates.h"
 #import "OAISubscriptionPauseEdit.h"
@@ -159,11 +159,11 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `uuid` or `Authorization` or `AuthUser`"
 ///
-/// @return OAINewsletterSubscriptions*
+/// @return NSArray<OAINewsletter>*
 -(NSURLSessionTask*) usersUuidNewslettersGetWithUuid: (NSString*) uuid
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<OAINewsletter>* output, NSError* error)) handler;
 
 
 /// Update newsletter subscriptions
@@ -178,12 +178,12 @@ extern NSInteger kOAIUsersApiMissingParamErrorCode;
 ///  code:400 message:"Invalid `body` or `uuid` or `Authorization` or `AuthUser`",
 ///  code:415 message:"Unsupported media type"
 ///
-/// @return OAINewsletterSubscriptions*
+/// @return NSArray<OAINewsletter>*
 -(NSURLSessionTask*) usersUuidNewslettersPutWithUuid: (NSString*) uuid
-    body: (OAINewsletterSubscriptions*) body
+    body: (NSArray<OAINewsletter>*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<OAINewsletter>* output, NSError* error)) handler;
 
 
 /// Set / Change user password

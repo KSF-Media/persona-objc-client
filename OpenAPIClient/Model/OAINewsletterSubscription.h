@@ -17,16 +17,16 @@
 
 
 
-@protocol OAINewsletterSubscriptions
+@protocol OAINewsletterSubscription
 @end
 
-@interface OAINewsletterSubscriptions : OAIObject
+@interface OAINewsletterSubscription : OAIObject
 
 
-@property(nonatomic) NSNumber* norden;
+@property(nonatomic) NSString* listName;
 
-@property(nonatomic) NSNumber* daily;
+@property(nonatomic) NSString* _id;
 
-@property(nonatomic) NSNumber* kultur;
+@property(nonatomic) NSNumber* subscribed;
 
 @end

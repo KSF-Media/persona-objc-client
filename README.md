@@ -75,7 +75,8 @@ Import the following:
 #import <OpenAPIClient/OAINewDeliveryReclamation.h>
 #import <OpenAPIClient/OAINewTemporaryUser.h>
 #import <OpenAPIClient/OAINewUser.h>
-#import <OpenAPIClient/OAINewsletterSubscriptions.h>
+#import <OpenAPIClient/OAINewsletter.h>
+#import <OpenAPIClient/OAINewsletterSubscription.h>
 #import <OpenAPIClient/OAIPackage.h>
 #import <OpenAPIClient/OAIPackageCampaign.h>
 #import <OpenAPIClient/OAIPackageOffer.h>
@@ -219,7 +220,8 @@ Class | Method | HTTP request | Description
  - [OAINewDeliveryReclamation](docs/OAINewDeliveryReclamation.md)
  - [OAINewTemporaryUser](docs/OAINewTemporaryUser.md)
  - [OAINewUser](docs/OAINewUser.md)
- - [OAINewsletterSubscriptions](docs/OAINewsletterSubscriptions.md)
+ - [OAINewsletter](docs/OAINewsletter.md)
+ - [OAINewsletterSubscription](docs/OAINewsletterSubscription.md)
  - [OAIPackage](docs/OAIPackage.md)
  - [OAIPackageCampaign](docs/OAIPackageCampaign.md)
  - [OAIPackageOffer](docs/OAIPackageOffer.md)

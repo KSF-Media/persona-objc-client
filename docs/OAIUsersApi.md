@@ -376,7 +376,7 @@ No authorization required
 -(NSURLSessionTask*) usersUuidNewslettersGetWithUuid: (NSString*) uuid
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<OAINewsletter>* output, NSError* error)) handler;
 ```
 
 Get newsletter subscriptions
@@ -396,7 +396,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 [apiInstance usersUuidNewslettersGetWithUuid:uuid
               authUser:authUser
               authorization:authorization
-          completionHandler: ^(OAINewsletterSubscriptions* output, NSError* error) {
+          completionHandler: ^(NSArray<OAINewsletter>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAINewsletterSubscriptions***](OAINewsletterSubscriptions.md)
+[**NSArray<OAINewsletter>***](OAINewsletter.md)
 
 ### Authorization
 
@@ -432,10 +432,10 @@ No authorization required
 # **usersUuidNewslettersPut**
 ```objc
 -(NSURLSessionTask*) usersUuidNewslettersPutWithUuid: (NSString*) uuid
-    body: (OAINewsletterSubscriptions*) body
+    body: (NSArray<OAINewsletter>*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(OAINewsletterSubscriptions* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<OAINewsletter>* output, NSError* error)) handler;
 ```
 
 Update newsletter subscriptions
@@ -446,7 +446,7 @@ Get list of newsletter subscriptions from mailchimp
 ```objc
 
 NSString* uuid = @"uuid_example"; // 
-OAINewsletterSubscriptions* body = [[OAINewsletterSubscriptions alloc] init]; // 
+NSArray<OAINewsletter>* body = @[[[NSArray alloc] init]]; // 
 NSString* authUser = @"authUser_example"; //  (optional)
 NSString* authorization = @"authorization_example"; //  (optional)
 
@@ -457,7 +457,7 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
               body:body
               authUser:authUser
               authorization:authorization
-          completionHandler: ^(OAINewsletterSubscriptions* output, NSError* error) {
+          completionHandler: ^(NSArray<OAINewsletter>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -472,13 +472,13 @@ OAIUsersApi*apiInstance = [[OAIUsersApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**NSString***](.md)|  | 
- **body** | [**OAINewsletterSubscriptions***](OAINewsletterSubscriptions.md)|  | 
+ **body** | [**NSArray&lt;OAINewsletter&gt;***](NSArray.md)|  | 
  **authUser** | [**NSString***](.md)|  | [optional] 
  **authorization** | **NSString***|  | [optional] 
 
 ### Return type
 
-[**OAINewsletterSubscriptions***](OAINewsletterSubscriptions.md)
+[**NSArray<OAINewsletter>***](OAINewsletter.md)
 
 ### Authorization
 
