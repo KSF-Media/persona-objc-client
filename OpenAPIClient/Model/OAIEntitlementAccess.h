@@ -29,4 +29,6 @@
 
 @property(nonatomic) NSArray<NSString*>* onlyToProducts;
 
+@property(nonatomic) NSString* byPackageId;
+
 @end
