@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**entitlementsAllowPost**](OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | Add an entitlement for all users
 [**entitlementsAllowUuidPost**](OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 [**entitlementsGet**](OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
+[**entitlementsGlobalGet**](OAIEntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
 
 
 # **entitlementsAllowDelete**
@@ -275,6 +276,58 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**NSDictionary<NSString*, NSArray<NSString*>*>***](NSArray.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **entitlementsGlobalGet**
+```objc
+-(NSURLSessionTask*) entitlementsGlobalGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSArray<OAIPersistedEntitlementAccess>* output, NSError* error)) handler;
+```
+
+Lists all past and future global entitlements
+
+### Example 
+```objc
+
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIEntitlementsApi*apiInstance = [[OAIEntitlementsApi alloc] init];
+
+// Lists all past and future global entitlements
+[apiInstance entitlementsGlobalGetWithAuthUser:authUser
+              authorization:authorization
+          completionHandler: ^(NSArray<OAIPersistedEntitlementAccess>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIEntitlementsApi->entitlementsGlobalGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**NSArray<OAIPersistedEntitlementAccess>***](OAIPersistedEntitlementAccess.md)
 
 ### Authorization
 

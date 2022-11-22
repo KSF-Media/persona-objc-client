@@ -112,5 +112,20 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
     (void (^)(NSDictionary<NSString*, NSArray<NSString*>*>* output, NSError* error)) handler;
 
 
+/// Lists all past and future global entitlements
+/// 
+///
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`"
+///
+/// @return NSArray<OAIPersistedEntitlementAccess>*
+-(NSURLSessionTask*) entitlementsGlobalGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<OAIPersistedEntitlementAccess>* output, NSError* error)) handler;
+
+
 
 @end
