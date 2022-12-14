@@ -35,8 +35,8 @@ extern NSInteger kOAILoginApiMissingParamErrorCode;
 /// Login with IP
 /// Returns auth & token for customers with IP based entitlement
 ///
-/// @param xRealIP  (optional)
-/// @param paper  (optional)
+/// @param xRealIP 
+/// @param paper 
 /// 
 ///  code:200 message:"",
 ///  code:400 message:"Invalid `paper` or `X-Real-IP`",

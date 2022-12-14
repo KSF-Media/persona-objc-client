@@ -25,8 +25,8 @@ Returns auth & token for customers with IP based entitlement
 ### Example 
 ```objc
 
-NSString* xRealIP = @"xRealIP_example"; //  (optional)
-NSString* paper = @"paper_example"; //  (optional)
+NSString* xRealIP = @"xRealIP_example"; // 
+NSString* paper = @"paper_example"; // 
 
 OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
@@ -47,8 +47,8 @@ OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xRealIP** | **NSString***|  | [optional] 
- **paper** | **NSString***|  | [optional] 
+ **xRealIP** | **NSString***|  | 
+ **paper** | **NSString***|  | 
 
 ### Return type
 

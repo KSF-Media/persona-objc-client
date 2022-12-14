@@ -61,15 +61,37 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
 ///
 /// Login with IP
 /// Returns auth & token for customers with IP based entitlement
-///  @param xRealIP  (optional)
+///  @param xRealIP  
 ///
-///  @param paper  (optional)
+///  @param paper  
 ///
 ///  @returns OAILoginResponse*
 ///
 -(NSURLSessionTask*) loginIpGetWithXRealIP: (NSString*) xRealIP
     paper: (NSString*) paper
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler {
+    // verify the required parameter 'xRealIP' is set
+    if (xRealIP == nil) {
+        NSParameterAssert(xRealIP);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"xRealIP"] };
+            NSError* error = [NSError errorWithDomain:kOAILoginApiErrorDomain code:kOAILoginApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'paper' is set
+    if (paper == nil) {
+        NSParameterAssert(paper);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"paper"] };
+            NSError* error = [NSError errorWithDomain:kOAILoginApiErrorDomain code:kOAILoginApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/login/ip"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
