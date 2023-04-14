@@ -133,6 +133,86 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
 }
 
 ///
+/// Transfers passive customers from Kayak to Mailchimp
+/// Passive subscribers/members/customers are users who don't have active entitlements and haven't opted out from email marketing. For the given list (audience) ID, this endpoint transfers the list of passive subscribers from Kayak to Mailchimp (via Faro).
+///  @param listid  
+///
+///  @param authUser  (optional)
+///
+///  @param authorization  (optional)
+///
+///  @returns void
+///
+-(NSURLSessionTask*) adminTransferPassiveSubscribersListidPostWithListid: (NSString*) listid
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSError* error)) handler {
+    // verify the required parameter 'listid' is set
+    if (listid == nil) {
+        NSParameterAssert(listid);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"listid"] };
+            NSError* error = [NSError errorWithDomain:kOAIAdminApiErrorDomain code:kOAIAdminApiMissingParamErrorCode userInfo:userInfo];
+            handler(error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/admin/transfer-passive-subscribers/{listid}"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (listid != nil) {
+        pathParams[@"listid"] = listid;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    if (authUser != nil) {
+        headerParams[@"AuthUser"] = authUser;
+    }
+    if (authorization != nil) {
+        headerParams[@"Authorization"] = authorization;
+    }
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: nil
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler(error);
+                                }
+                            }];
+}
+
+///
 /// Create a new user with admin options.
 /// 
 ///  @param body  

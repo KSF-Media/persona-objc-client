@@ -46,6 +46,23 @@ extern NSInteger kOAIAdminApiMissingParamErrorCode;
     completionHandler: (void (^)(NSArray<OAISearchResult>* output, NSError* error)) handler;
 
 
+/// Transfers passive customers from Kayak to Mailchimp
+/// Passive subscribers/members/customers are users who don't have active entitlements and haven't opted out from email marketing. For the given list (audience) ID, this endpoint transfers the list of passive subscribers from Kayak to Mailchimp (via Faro).
+///
+/// @param listid 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:204 message:"",
+///  code:400 message:"Invalid `listid` or `Authorization` or `AuthUser`"
+///
+/// @return void
+-(NSURLSessionTask*) adminTransferPassiveSubscribersListidPostWithListid: (NSString*) listid
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSError* error)) handler;
+
+
 /// Create a new user with admin options.
 /// 
 ///
