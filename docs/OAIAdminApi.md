@@ -70,7 +70,7 @@ No authorization required
 -(NSURLSessionTask*) adminTransferPassiveSubscribersListidPostWithListid: (NSString*) listid
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-        completionHandler: (void (^)(NSError* error)) handler;
+        completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 ```
 
 Transfers passive customers from Kayak to Mailchimp
@@ -90,7 +90,10 @@ OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
 [apiInstance adminTransferPassiveSubscribersListidPostWithListid:listid
               authUser:authUser
               authorization:authorization
-          completionHandler: ^(NSError* error) {
+          completionHandler: ^(NSObject* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
                         if (error) {
                             NSLog(@"Error calling OAIAdminApi->adminTransferPassiveSubscribersListidPost: %@", error);
                         }
@@ -107,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**NSObject***
 
 ### Authorization
 
@@ -116,7 +119,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

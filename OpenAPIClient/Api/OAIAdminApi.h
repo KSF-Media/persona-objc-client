@@ -53,14 +53,16 @@ extern NSInteger kOAIAdminApiMissingParamErrorCode;
 /// @param authUser  (optional)
 /// @param authorization  (optional)
 /// 
-///  code:204 message:"",
-///  code:400 message:"Invalid `listid` or `Authorization` or `AuthUser`"
+///  code:200 message:"",
+///  code:400 message:"Invalid `listid` or `Authorization` or `AuthUser`",
+///  code:403 message:"",
+///  code:500 message:""
 ///
-/// @return void
+/// @return NSObject*
 -(NSURLSessionTask*) adminTransferPassiveSubscribersListidPostWithListid: (NSString*) listid
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSError* error)) handler;
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 /// Create a new user with admin options.

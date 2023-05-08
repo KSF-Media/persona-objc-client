@@ -141,19 +141,19 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
 ///
 ///  @param authorization  (optional)
 ///
-///  @returns void
+///  @returns NSObject*
 ///
 -(NSURLSessionTask*) adminTransferPassiveSubscribersListidPostWithListid: (NSString*) listid
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
-    completionHandler: (void (^)(NSError* error)) handler {
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
     // verify the required parameter 'listid' is set
     if (listid == nil) {
         NSParameterAssert(listid);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"listid"] };
             NSError* error = [NSError errorWithDomain:kOAIAdminApiErrorDomain code:kOAIAdminApiMissingParamErrorCode userInfo:userInfo];
-            handler(error);
+            handler(nil, error);
         }
         return nil;
     }
@@ -175,7 +175,7 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
         headerParams[@"Authorization"] = authorization;
     }
     // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[]];
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];
     if(acceptHeader.length > 0) {
         headerParams[@"Accept"] = acceptHeader;
     }
@@ -204,10 +204,10 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: nil
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler(error);
+                                    handler((NSObject*)data, error);
                                 }
                             }];
 }
