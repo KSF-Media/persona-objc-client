@@ -22,12 +22,12 @@
 
 @interface OAISubscriptionDates : OAIObject
 
-/* Length of Subscription in months [optional]
- */
-@property(nonatomic) NSNumber* lenMonths;
 /* Additional days (on top of months) for Subscription duration [optional]
  */
 @property(nonatomic) NSNumber* lenDays;
+/* Length of Subscription in months [optional]
+ */
+@property(nonatomic) NSNumber* lenMonths;
 
 @property(nonatomic) NSDate* start;
 

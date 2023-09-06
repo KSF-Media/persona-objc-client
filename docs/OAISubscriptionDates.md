@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lenMonths** | **NSNumber*** | Length of Subscription in months | [optional] 
 **lenDays** | **NSNumber*** | Additional days (on top of months) for Subscription duration | [optional] 
+**lenMonths** | **NSNumber*** | Length of Subscription in months | [optional] 
 **start** | **NSDate*** |  | 
 **end** | **NSDate*** |  | [optional] 
 **unpaidBreak** | **NSDate*** |  | [optional] 
