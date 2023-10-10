@@ -105,6 +105,7 @@ Import the following:
 #import <OpenAPIClient/OAIAccountApi.h>
 #import <OpenAPIClient/OAIAdminApi.h>
 #import <OpenAPIClient/OAIEntitlementsApi.h>
+#import <OpenAPIClient/OAIIdentificationApi.h>
 #import <OpenAPIClient/OAILoginApi.h>
 #import <OpenAPIClient/OAIUsersApi.h>
 
@@ -158,6 +159,9 @@ Class | Method | HTTP request | Description
 *OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAIEntitlementsApi* | [**entitlementsGlobalGet**](docs/OAIEntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
+*OAIIdentificationApi* | [**identificationLoginGet**](docs/OAIIdentificationApi.md#identificationloginget) | **GET** /identification/login | Authenticate with OpenID Connect
+*OAIIdentificationApi* | [**identificationLoginReturnGet**](docs/OAIIdentificationApi.md#identificationloginreturnget) | **GET** /identification/login/return | Redirect endpoint for OpenID Connect
+*OAIIdentificationApi* | [**identificationUserStampUuidPost**](docs/OAIIdentificationApi.md#identificationuserstampuuidpost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 *OAILoginApi* | [**loginIpGet**](docs/OAILoginApi.md#loginipget) | **GET** /login/ip | Login with IP
 *OAILoginApi* | [**loginPost**](docs/OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
 *OAILoginApi* | [**loginSomePost**](docs/OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
