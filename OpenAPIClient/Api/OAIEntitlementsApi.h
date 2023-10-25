@@ -101,6 +101,23 @@ extern NSInteger kOAIEntitlementsApiMissingParamErrorCode;
     completionHandler: (void (^)(NSArray<NSObject*>* output, NSError* error)) handler;
 
 
+/// Verify given free pass hash
+/// 
+///
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// @param freePassHash  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `freePassHash` or `Authorization` or `AuthUser`"
+///
+/// @return NSNumber*
+-(NSURLSessionTask*) entitlementsFreePassGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    freePassHash: (NSString*) freePassHash
+    completionHandler: (void (^)(NSNumber* output, NSError* error)) handler;
+
+
 /// List all entitlements
 /// 
 ///

@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "OAIAdminNewUser.h"
+#import "OAIFreePass.h"
+#import "OAIFreePassInput.h"
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse415.h"
 #import "OAILoginResponse.h"
@@ -27,6 +29,55 @@ extern NSString* kOAIAdminApiErrorDomain;
 extern NSInteger kOAIAdminApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
+
+/// Revokes an existing free pass
+/// Revoking a free pass does not perform a hard delete, but rather marks the free pass with the given hash as being revoked in the DB. This is the only sensible way of deleting free passes as this kind of state information cannot be included in hashes. Revoked free passes can be reinstated with a simple SQL query.
+///
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`"
+///
+/// @return void
+-(NSURLSessionTask*) adminFreePassDeleteWithBody: (NSString*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSError* error)) handler;
+
+
+/// Creates a free pass to an article
+/// Free passes can be used to temporarily bypass the paywall for individual articles. This endpoint is stateless (and thus deterministic).
+///
+/// @param body 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`"
+///
+/// @return NSString*
+-(NSURLSessionTask*) adminFreePassPostWithBody: (OAIFreePassInput*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
+/// Lists all free passes
+/// This end point returns the list of all free passes, including those that have been expired or revoked.
+///
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `Authorization` or `AuthUser`"
+///
+/// @return NSArray<OAIFreePass>*
+-(NSURLSessionTask*) adminFreePassesGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSArray<OAIFreePass>* output, NSError* error)) handler;
+
 
 /// Search for users
 /// 
