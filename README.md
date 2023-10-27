@@ -160,6 +160,7 @@ Class | Method | HTTP request | Description
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAIEntitlementsApi* | [**entitlementsGlobalGet**](docs/OAIEntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
 *OAIIdentificationApi* | [**identificationLoginGet**](docs/OAIIdentificationApi.md#identificationloginget) | **GET** /identification/login | Authenticate with OpenID Connect
+*OAIIdentificationApi* | [**identificationLoginMonitorGet**](docs/OAIIdentificationApi.md#identificationloginmonitorget) | **GET** /identification/login/monitor | Get token for off band response login flow monitor
 *OAIIdentificationApi* | [**identificationLoginReturnGet**](docs/OAIIdentificationApi.md#identificationloginreturnget) | **GET** /identification/login/return | Redirect endpoint for OpenID Connect
 *OAIIdentificationApi* | [**identificationUserStampUuidPost**](docs/OAIIdentificationApi.md#identificationuserstampuuidpost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 *OAILoginApi* | [**loginIpGet**](docs/OAILoginApi.md#loginipget) | **GET** /login/ip | Login with IP

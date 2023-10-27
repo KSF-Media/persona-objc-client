@@ -33,6 +33,17 @@ extern NSInteger kOAIIdentificationApiMissingParamErrorCode;
     (void (^)(NSError* error)) handler;
 
 
+/// Get token for off band response login flow monitor
+/// 
+///
+/// 
+///  code:200 message:""
+///
+/// @return void
+-(NSURLSessionTask*) identificationLoginMonitorGetWithCompletionHandler: 
+    (void (^)(NSError* error)) handler;
+
+
 /// Redirect endpoint for OpenID Connect
 /// 
 ///

@@ -5,6 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**identificationLoginGet**](OAIIdentificationApi.md#identificationloginget) | **GET** /identification/login | Authenticate with OpenID Connect
+[**identificationLoginMonitorGet**](OAIIdentificationApi.md#identificationloginmonitorget) | **GET** /identification/login/monitor | Get token for off band response login flow monitor
 [**identificationLoginReturnGet**](OAIIdentificationApi.md#identificationloginreturnget) | **GET** /identification/login/return | Redirect endpoint for OpenID Connect
 [**identificationUserStampUuidPost**](OAIIdentificationApi.md#identificationuserstampuuidpost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 
@@ -28,6 +29,47 @@ OAIIdentificationApi*apiInstance = [[OAIIdentificationApi alloc] init];
           ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling OAIIdentificationApi->identificationLoginGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **identificationLoginMonitorGet**
+```objc
+-(NSURLSessionTask*) identificationLoginMonitorGetWithCompletionHandler: 
+        (void (^)(NSError* error)) handler;
+```
+
+Get token for off band response login flow monitor
+
+### Example 
+```objc
+
+
+OAIIdentificationApi*apiInstance = [[OAIIdentificationApi alloc] init];
+
+// Get token for off band response login flow monitor
+[apiInstance identificationLoginMonitorGetWithCompletionHandler: 
+          ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling OAIIdentificationApi->identificationLoginMonitorGet: %@", error);
                         }
                     }];
 ```
