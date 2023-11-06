@@ -25,12 +25,14 @@ extern NSInteger kOAIIdentificationApiMissingParamErrorCode;
 /// Authenticate with OpenID Connect
 /// 
 ///
+/// @param monitor  (optional)
 /// 
-///  code:302 message:""
+///  code:302 message:"",
+///  code:400 message:"Invalid `monitor`"
 ///
 /// @return void
--(NSURLSessionTask*) identificationLoginGetWithCompletionHandler: 
-    (void (^)(NSError* error)) handler;
+-(NSURLSessionTask*) identificationLoginGetWithMonitor: (NSString*) monitor
+    completionHandler: (void (^)(NSError* error)) handler;
 
 
 /// Get token for off band response login flow monitor

@@ -51,15 +51,20 @@ NSInteger kOAIIdentificationApiMissingParamErrorCode = 234513;
 ///
 /// Authenticate with OpenID Connect
 /// 
+///  @param monitor  (optional)
+///
 ///  @returns void
 ///
--(NSURLSessionTask*) identificationLoginGetWithCompletionHandler: 
-    (void (^)(NSError* error)) handler {
+-(NSURLSessionTask*) identificationLoginGetWithMonitor: (NSString*) monitor
+    completionHandler: (void (^)(NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/identification/login"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (monitor != nil) {
+        queryParams[@"monitor"] = monitor;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`

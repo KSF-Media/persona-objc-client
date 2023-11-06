@@ -12,8 +12,8 @@ Method | HTTP request | Description
 
 # **identificationLoginGet**
 ```objc
--(NSURLSessionTask*) identificationLoginGetWithCompletionHandler: 
-        (void (^)(NSError* error)) handler;
+-(NSURLSessionTask*) identificationLoginGetWithMonitor: (NSString*) monitor
+        completionHandler: (void (^)(NSError* error)) handler;
 ```
 
 Authenticate with OpenID Connect
@@ -21,12 +21,13 @@ Authenticate with OpenID Connect
 ### Example 
 ```objc
 
+NSString* monitor = @"monitor_example"; //  (optional)
 
 OAIIdentificationApi*apiInstance = [[OAIIdentificationApi alloc] init];
 
 // Authenticate with OpenID Connect
-[apiInstance identificationLoginGetWithCompletionHandler: 
-          ^(NSError* error) {
+[apiInstance identificationLoginGetWithMonitor:monitor
+          completionHandler: ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling OAIIdentificationApi->identificationLoginGet: %@", error);
                         }
@@ -34,7 +35,10 @@ OAIIdentificationApi*apiInstance = [[OAIIdentificationApi alloc] init];
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **monitor** | **NSString***|  | [optional] 
 
 ### Return type
 
