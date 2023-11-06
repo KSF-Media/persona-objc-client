@@ -51,6 +51,8 @@ Import the following:
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIFaroUser.h>
 #import <OpenAPIClient/OAIForgotPasswordData.h>
+#import <OpenAPIClient/OAIFreePass.h>
+#import <OpenAPIClient/OAIFreePassInput.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
 #import <OpenAPIClient/OAIInlineResponse400.h>
 #import <OpenAPIClient/OAIInlineResponse400InvalidRequestBody.h>
@@ -150,6 +152,9 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountPasswordForgotGet**](docs/OAIAccountApi.md#accountpasswordforgotget) | **GET** /account/password/forgot | Request password reset link
 *OAIAccountApi* | [**accountPasswordForgotPost**](docs/OAIAccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
 *OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
+*OAIAdminApi* | [**adminFreePassDelete**](docs/OAIAdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
+*OAIAdminApi* | [**adminFreePassPost**](docs/OAIAdminApi.md#adminfreepasspost) | **POST** /admin/free-pass | Creates a free pass to an article
+*OAIAdminApi* | [**adminFreePassesGet**](docs/OAIAdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIAdminApi* | [**adminTransferPassiveSubscribersListidPost**](docs/OAIAdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 *OAIAdminApi* | [**adminUserPost**](docs/OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
@@ -157,6 +162,7 @@ Class | Method | HTTP request | Description
 *OAIEntitlementsApi* | [**entitlementsAllowGet**](docs/OAIEntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | Add an entitlement for all users
 *OAIEntitlementsApi* | [**entitlementsAllowUuidPost**](docs/OAIEntitlementsApi.md#entitlementsallowuuidpost) | **POST** /entitlements/allow/{uuid} | Grant product access to a customer
+*OAIEntitlementsApi* | [**entitlementsFreePassGet**](docs/OAIEntitlementsApi.md#entitlementsfreepassget) | **GET** /entitlements/free-pass | Verify given free pass hash
 *OAIEntitlementsApi* | [**entitlementsGet**](docs/OAIEntitlementsApi.md#entitlementsget) | **GET** /entitlements | List all entitlements
 *OAIEntitlementsApi* | [**entitlementsGlobalGet**](docs/OAIEntitlementsApi.md#entitlementsglobalget) | **GET** /entitlements/global | Lists all past and future global entitlements
 *OAIIdentificationApi* | [**identificationLoginGet**](docs/OAIIdentificationApi.md#identificationloginget) | **GET** /identification/login | Authenticate with OpenID Connect
@@ -203,6 +209,8 @@ Class | Method | HTTP request | Description
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIFaroUser](docs/OAIFaroUser.md)
  - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
+ - [OAIFreePass](docs/OAIFreePass.md)
+ - [OAIFreePassInput](docs/OAIFreePassInput.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
  - [OAIInlineResponse400](docs/OAIInlineResponse400.md)
  - [OAIInlineResponse400InvalidRequestBody](docs/OAIInlineResponse400InvalidRequestBody.md)

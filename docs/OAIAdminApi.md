@@ -4,10 +4,180 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**adminFreePassDelete**](OAIAdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
+[**adminFreePassPost**](OAIAdminApi.md#adminfreepasspost) | **POST** /admin/free-pass | Creates a free pass to an article
+[**adminFreePassesGet**](OAIAdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
 [**adminSearchPost**](OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](OAIAdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 [**adminUserPost**](OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
 
+
+# **adminFreePassDelete**
+```objc
+-(NSURLSessionTask*) adminFreePassDeleteWithBody: (NSString*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSError* error)) handler;
+```
+
+Revokes an existing free pass
+
+Marks a free pass as being revoked so that it can't be used anymore. Currently, revoked free passes can't be reinstated through Persona API (though it's possible to do so with an SQL query).
+
+### Example 
+```objc
+
+NSString* body = @"body_example"; // 
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
+
+// Revokes an existing free pass
+[apiInstance adminFreePassDeleteWithBody:body
+              authUser:authUser
+              authorization:authorization
+          completionHandler: ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling OAIAdminApi->adminFreePassDelete: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **NSString***|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **adminFreePassPost**
+```objc
+-(NSURLSessionTask*) adminFreePassPostWithBody: (OAIFreePassInput*) body
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+```
+
+Creates a free pass to an article
+
+Free passes can be used to temporarily bypass the paywall for individual articles.
+
+### Example 
+```objc
+
+OAIFreePassInput* body = [[OAIFreePassInput alloc] init]; // 
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
+
+// Creates a free pass to an article
+[apiInstance adminFreePassPostWithBody:body
+              authUser:authUser
+              authorization:authorization
+          completionHandler: ^(NSString* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIAdminApi->adminFreePassPost: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OAIFreePassInput***](OAIFreePassInput.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+**NSString***
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **adminFreePassesGet**
+```objc
+-(NSURLSessionTask*) adminFreePassesGetWithAuthUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSArray<OAIFreePass>* output, NSError* error)) handler;
+```
+
+Lists all free passes
+
+This end point returns the list of all free passes, including those that have been expired or revoked.
+
+### Example 
+```objc
+
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
+
+// Lists all free passes
+[apiInstance adminFreePassesGetWithAuthUser:authUser
+              authorization:authorization
+          completionHandler: ^(NSArray<OAIFreePass>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIAdminApi->adminFreePassesGet: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+[**NSArray<OAIFreePass>***](OAIFreePass.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **adminSearchPost**
 ```objc
