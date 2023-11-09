@@ -58,7 +58,7 @@ extern NSInteger kOAIAdminApiMissingParamErrorCode;
 ///  code:400 message:"Invalid `body` or `Authorization` or `AuthUser`"
 ///
 /// @return NSString*
--(NSURLSessionTask*) adminFreePassPostWithBody: (OAIFreePassInput*) body
+-(NSURLSessionTask*) adminFreePassPutWithBody: (OAIFreePassInput*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;

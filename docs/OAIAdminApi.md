@@ -5,7 +5,7 @@ All URIs are relative to *http://http:/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adminFreePassDelete**](OAIAdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
-[**adminFreePassPost**](OAIAdminApi.md#adminfreepasspost) | **POST** /admin/free-pass | Creates a free pass to an article
+[**adminFreePassPut**](OAIAdminApi.md#adminfreepassput) | **PUT** /admin/free-pass | Creates a free pass to an article
 [**adminFreePassesGet**](OAIAdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
 [**adminSearchPost**](OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](OAIAdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
@@ -67,9 +67,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **adminFreePassPost**
+# **adminFreePassPut**
 ```objc
--(NSURLSessionTask*) adminFreePassPostWithBody: (OAIFreePassInput*) body
+-(NSURLSessionTask*) adminFreePassPutWithBody: (OAIFreePassInput*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
         completionHandler: (void (^)(NSString* output, NSError* error)) handler;
@@ -89,7 +89,7 @@ NSString* authorization = @"authorization_example"; //  (optional)
 OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
 
 // Creates a free pass to an article
-[apiInstance adminFreePassPostWithBody:body
+[apiInstance adminFreePassPutWithBody:body
               authUser:authUser
               authorization:authorization
           completionHandler: ^(NSString* output, NSError* error) {
@@ -97,7 +97,7 @@ OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling OAIAdminApi->adminFreePassPost: %@", error);
+                            NSLog(@"Error calling OAIAdminApi->adminFreePassPut: %@", error);
                         }
                     }];
 ```

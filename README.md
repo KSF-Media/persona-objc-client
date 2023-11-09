@@ -153,7 +153,7 @@ Class | Method | HTTP request | Description
 *OAIAccountApi* | [**accountPasswordForgotPost**](docs/OAIAccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
 *OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminFreePassDelete**](docs/OAIAdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
-*OAIAdminApi* | [**adminFreePassPost**](docs/OAIAdminApi.md#adminfreepasspost) | **POST** /admin/free-pass | Creates a free pass to an article
+*OAIAdminApi* | [**adminFreePassPut**](docs/OAIAdminApi.md#adminfreepassput) | **PUT** /admin/free-pass | Creates a free pass to an article
 *OAIAdminApi* | [**adminFreePassesGet**](docs/OAIAdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIAdminApi* | [**adminTransferPassiveSubscribersListidPost**](docs/OAIAdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp

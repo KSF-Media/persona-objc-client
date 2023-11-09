@@ -145,7 +145,7 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSString*
 ///
--(NSURLSessionTask*) adminFreePassPostWithBody: (OAIFreePassInput*) body
+-(NSURLSessionTask*) adminFreePassPutWithBody: (OAIFreePassInput*) body
     authUser: (NSString*) authUser
     authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
@@ -194,7 +194,7 @@ NSInteger kOAIAdminApiMissingParamErrorCode = 234513;
     bodyParam = body;
 
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"PUT"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
