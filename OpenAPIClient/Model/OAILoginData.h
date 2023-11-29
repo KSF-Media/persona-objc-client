@@ -27,6 +27,4 @@
 
 @property(nonatomic) NSString* password;
 
-@property(nonatomic) NSString* mergeToken;
-
 @end

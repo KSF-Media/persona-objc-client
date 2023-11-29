@@ -25,8 +25,6 @@
 
 @property(nonatomic) NSString* token;
 
-@property(nonatomic) NSString* ssoCode;
-
 @property(nonatomic) NSString* uuid;
 
 @property(nonatomic) NSNumber* isAdmin;

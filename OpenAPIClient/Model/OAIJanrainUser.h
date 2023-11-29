@@ -14,12 +14,6 @@
 */
 
 
-#import "OAIGdprConsent.h"
-#import "OAILegalConsent.h"
-@protocol OAIGdprConsent;
-@class OAIGdprConsent;
-@protocol OAILegalConsent;
-@class OAILegalConsent;
 
 
 
@@ -36,12 +30,6 @@
 @property(nonatomic) NSString* firstName;
 
 @property(nonatomic) NSString* lastName;
-
-@property(nonatomic) NSString* middleName;
-
-@property(nonatomic) NSArray<OAIGdprConsent>* consent;
-
-@property(nonatomic) NSArray<OAILegalConsent>* legal;
 
 @property(nonatomic) NSString* cusno;
 

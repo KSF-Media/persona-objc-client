@@ -6,8 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**loginIpGet**](OAILoginApi.md#loginipget) | **GET** /login/ip | Login with IP
 [**loginPost**](OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
-[**loginSomePost**](OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
-[**loginSsoPost**](OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
+[**loginSsoPost**](OAILoginApi.md#loginssopost) | **POST** /login/sso | Disabled. Always returns 403.
 [**loginUuidDelete**](OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
 
 
@@ -113,61 +112,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **loginSomePost**
-```objc
--(NSURLSessionTask*) loginSomePostWithBody: (OAILoginDataSoMe*) body
-        completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
-```
-
-Login with social media
-
-### Example 
-```objc
-
-OAILoginDataSoMe* body = [[OAILoginDataSoMe alloc] init]; // 
-
-OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
-
-// Login with social media
-[apiInstance loginSomePostWithBody:body
-          completionHandler: ^(OAILoginResponse* output, NSError* error) {
-                        if (output) {
-                            NSLog(@"%@", output);
-                        }
-                        if (error) {
-                            NSLog(@"Error calling OAILoginApi->loginSomePost: %@", error);
-                        }
-                    }];
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**OAILoginDataSoMe***](OAILoginDataSoMe.md)|  | 
-
-### Return type
-
-[**OAILoginResponse***](OAILoginResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **loginSsoPost**
 ```objc
 -(NSURLSessionTask*) loginSsoPostWithBody: (OAILoginDataSSO*) body
         completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 ```
 
-Login with the AccessToken given by the SSO auth
+Disabled. Always returns 403.
 
 ### Example 
 ```objc
@@ -176,7 +127,7 @@ OAILoginDataSSO* body = [[OAILoginDataSSO alloc] init]; //
 
 OAILoginApi*apiInstance = [[OAILoginApi alloc] init];
 
-// Login with the AccessToken given by the SSO auth
+// Disabled. Always returns 403.
 [apiInstance loginSsoPostWithBody:body
           completionHandler: ^(OAILoginResponse* output, NSError* error) {
                         if (output) {

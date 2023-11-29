@@ -7,9 +7,6 @@ Name | Type | Description | Notes
 **email** | **NSString*** |  | [optional] 
 **firstName** | **NSString*** |  | [optional] 
 **lastName** | **NSString*** |  | [optional] 
-**middleName** | **NSString*** |  | [optional] 
-**consent** | [**NSArray&lt;OAIGdprConsent&gt;***](OAIGdprConsent.md) |  | 
-**legal** | [**NSArray&lt;OAILegalConsent&gt;***](OAILegalConsent.md) |  | 
 **cusno** | **NSString*** |  | [optional] 
 **otherCusnos** | **NSArray&lt;NSString*&gt;*** |  | [optional] 
 

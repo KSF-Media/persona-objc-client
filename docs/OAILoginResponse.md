@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **NSString*** |  | 
-**ssoCode** | **NSString*** |  | [optional] 
 **uuid** | **NSString*** |  | 
 **isAdmin** | **NSNumber*** |  | 
 

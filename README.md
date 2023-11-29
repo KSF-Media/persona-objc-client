@@ -50,7 +50,6 @@ Import the following:
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIFaroUser.h>
-#import <OpenAPIClient/OAIForgotPasswordData.h>
 #import <OpenAPIClient/OAIFreePass.h>
 #import <OpenAPIClient/OAIFreePassInput.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
@@ -59,10 +58,6 @@ Import the following:
 #import <OpenAPIClient/OAIInlineResponse403.h>
 #import <OpenAPIClient/OAIInlineResponse4031.h>
 #import <OpenAPIClient/OAIInlineResponse4031AccessTokenExpired.h>
-#import <OpenAPIClient/OAIInlineResponse4032.h>
-#import <OpenAPIClient/OAIInlineResponse4032EmailAddressInUse.h>
-#import <OpenAPIClient/OAIInlineResponse4032EmailNotAuthorized.h>
-#import <OpenAPIClient/OAIInlineResponse4032OauthFailed.h>
 #import <OpenAPIClient/OAIInlineResponse403InvalidCredentials.h>
 #import <OpenAPIClient/OAIInlineResponse415.h>
 #import <OpenAPIClient/OAIInlineResponse415UnsupportedMediaType.h>
@@ -72,7 +67,6 @@ Import the following:
 #import <OpenAPIClient/OAILegalConsent.h>
 #import <OpenAPIClient/OAILoginData.h>
 #import <OpenAPIClient/OAILoginDataSSO.h>
-#import <OpenAPIClient/OAILoginDataSoMe.h>
 #import <OpenAPIClient/OAILoginResponse.h>
 #import <OpenAPIClient/OAINewDeliveryReclamation.h>
 #import <OpenAPIClient/OAINewTemporaryUser.h>
@@ -98,13 +92,11 @@ Import the following:
 #import <OpenAPIClient/OAISubscriptionPayments.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
 #import <OpenAPIClient/OAITemporaryAddressChangeDates.h>
-#import <OpenAPIClient/OAIUpdatePasswordData.h>
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
 #import <OpenAPIClient/OAIUserUpdateAddress.h>
 #import <OpenAPIClient/OAIUserUpdatePassword.h>
 // load API classes for accessing endpoints
-#import <OpenAPIClient/OAIAccountApi.h>
 #import <OpenAPIClient/OAIAdminApi.h>
 #import <OpenAPIClient/OAIEntitlementsApi.h>
 #import <OpenAPIClient/OAIIdentificationApi.h>
@@ -124,18 +116,17 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```objc
 
 
-NSString* *email = @"email_example"; // 
-NSNumber* *redir = @56; //  (optional)
+NSString* *body = @"body_example"; // 
+NSString* *authUser = @"authUser_example"; //  (optional)
+NSString* *authorization = @"authorization_example"; //  (optional)
 
-OAIAccountApi *apiInstance = [[OAIAccountApi alloc] init];
+OAIAdminApi *apiInstance = [[OAIAdminApi alloc] init];
 
-// Request password reset link
-[apiInstance accountPasswordForgotGetWithEmail:email
-    redir:redir
-              completionHandler: ^(NSArray<NSObject*>* output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
+// Revokes an existing free pass
+[apiInstance adminFreePassDeleteWithBody:body
+    authUser:authUser
+    authorization:authorization
+              completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
                             }
@@ -149,9 +140,6 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OAIAccountApi* | [**accountPasswordForgotGet**](docs/OAIAccountApi.md#accountpasswordforgotget) | **GET** /account/password/forgot | Request password reset link
-*OAIAccountApi* | [**accountPasswordForgotPost**](docs/OAIAccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
-*OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminFreePassDelete**](docs/OAIAdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
 *OAIAdminApi* | [**adminFreePassPut**](docs/OAIAdminApi.md#adminfreepassput) | **PUT** /admin/free-pass | Creates a free pass to an article
 *OAIAdminApi* | [**adminFreePassesGet**](docs/OAIAdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
@@ -171,8 +159,7 @@ Class | Method | HTTP request | Description
 *OAIIdentificationApi* | [**identificationUserStampUuidPost**](docs/OAIIdentificationApi.md#identificationuserstampuuidpost) | **POST** /identification/user/stamp/{uuid} | Query when the strong identification was last updated
 *OAILoginApi* | [**loginIpGet**](docs/OAILoginApi.md#loginipget) | **GET** /login/ip | Login with IP
 *OAILoginApi* | [**loginPost**](docs/OAILoginApi.md#loginpost) | **POST** /login | Login with email and password
-*OAILoginApi* | [**loginSomePost**](docs/OAILoginApi.md#loginsomepost) | **POST** /login/some | Login with social media
-*OAILoginApi* | [**loginSsoPost**](docs/OAILoginApi.md#loginssopost) | **POST** /login/sso | Login with the AccessToken given by the SSO auth
+*OAILoginApi* | [**loginSsoPost**](docs/OAILoginApi.md#loginssopost) | **POST** /login/sso | Disabled. Always returns 403.
 *OAILoginApi* | [**loginUuidDelete**](docs/OAILoginApi.md#loginuuiddelete) | **DELETE** /login/{uuid} | Logout
 *OAIUsersApi* | [**usersPost**](docs/OAIUsersApi.md#userspost) | **POST** /users | Create a new user.
 *OAIUsersApi* | [**usersTemporaryPost**](docs/OAIUsersApi.md#userstemporarypost) | **POST** /users/temporary | Create a new user with email.
@@ -208,7 +195,6 @@ Class | Method | HTTP request | Description
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIFaroUser](docs/OAIFaroUser.md)
- - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
  - [OAIFreePass](docs/OAIFreePass.md)
  - [OAIFreePassInput](docs/OAIFreePassInput.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
@@ -217,10 +203,6 @@ Class | Method | HTTP request | Description
  - [OAIInlineResponse403](docs/OAIInlineResponse403.md)
  - [OAIInlineResponse4031](docs/OAIInlineResponse4031.md)
  - [OAIInlineResponse4031AccessTokenExpired](docs/OAIInlineResponse4031AccessTokenExpired.md)
- - [OAIInlineResponse4032](docs/OAIInlineResponse4032.md)
- - [OAIInlineResponse4032EmailAddressInUse](docs/OAIInlineResponse4032EmailAddressInUse.md)
- - [OAIInlineResponse4032EmailNotAuthorized](docs/OAIInlineResponse4032EmailNotAuthorized.md)
- - [OAIInlineResponse4032OauthFailed](docs/OAIInlineResponse4032OauthFailed.md)
  - [OAIInlineResponse403InvalidCredentials](docs/OAIInlineResponse403InvalidCredentials.md)
  - [OAIInlineResponse415](docs/OAIInlineResponse415.md)
  - [OAIInlineResponse415UnsupportedMediaType](docs/OAIInlineResponse415UnsupportedMediaType.md)
@@ -230,7 +212,6 @@ Class | Method | HTTP request | Description
  - [OAILegalConsent](docs/OAILegalConsent.md)
  - [OAILoginData](docs/OAILoginData.md)
  - [OAILoginDataSSO](docs/OAILoginDataSSO.md)
- - [OAILoginDataSoMe](docs/OAILoginDataSoMe.md)
  - [OAILoginResponse](docs/OAILoginResponse.md)
  - [OAINewDeliveryReclamation](docs/OAINewDeliveryReclamation.md)
  - [OAINewTemporaryUser](docs/OAINewTemporaryUser.md)
@@ -256,7 +237,6 @@ Class | Method | HTTP request | Description
  - [OAISubscriptionPayments](docs/OAISubscriptionPayments.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
  - [OAITemporaryAddressChangeDates](docs/OAITemporaryAddressChangeDates.md)
- - [OAIUpdatePasswordData](docs/OAIUpdatePasswordData.md)
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)
  - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)

@@ -4,12 +4,10 @@
 #import "OAIInlineResponse400.h"
 #import "OAIInlineResponse403.h"
 #import "OAIInlineResponse4031.h"
-#import "OAIInlineResponse4032.h"
 #import "OAIInlineResponse415.h"
 #import "OAIInlineResponse500.h"
 #import "OAILoginData.h"
 #import "OAILoginDataSSO.h"
-#import "OAILoginDataSoMe.h"
 #import "OAILoginResponse.h"
 
 
@@ -210,73 +208,7 @@ NSInteger kOAILoginApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Login with social media
-/// 
-///  @param body  
-///
-///  @returns OAILoginResponse*
-///
--(NSURLSessionTask*) loginSomePostWithBody: (OAILoginDataSoMe*) body
-    completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler {
-    // verify the required parameter 'body' is set
-    if (body == nil) {
-        NSParameterAssert(body);
-        if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
-            NSError* error = [NSError errorWithDomain:kOAILoginApiErrorDomain code:kOAILoginApiMissingParamErrorCode userInfo:userInfo];
-            handler(nil, error);
-        }
-        return nil;
-    }
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/login/some"];
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
-    [headerParams addEntriesFromDictionary:self.defaultHeaders];
-    // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json;charset=utf-8"]];
-    if(acceptHeader.length > 0) {
-        headerParams[@"Accept"] = acceptHeader;
-    }
-
-    // response content type
-    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
-
-    // request content type
-    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json;charset=utf-8"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = body;
-
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"OAILoginResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                                if(handler) {
-                                    handler((OAILoginResponse*)data, error);
-                                }
-                            }];
-}
-
-///
-/// Login with the AccessToken given by the SSO auth
+/// Disabled. Always returns 403.
 /// 
 ///  @param body  
 ///
