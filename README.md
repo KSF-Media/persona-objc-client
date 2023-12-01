@@ -50,6 +50,7 @@ Import the following:
 #import <OpenAPIClient/OAIDeliveryReclamation.h>
 #import <OpenAPIClient/OAIEntitlementAccess.h>
 #import <OpenAPIClient/OAIFaroUser.h>
+#import <OpenAPIClient/OAIForgotPasswordData.h>
 #import <OpenAPIClient/OAIFreePass.h>
 #import <OpenAPIClient/OAIFreePassInput.h>
 #import <OpenAPIClient/OAIGdprConsent.h>
@@ -92,11 +93,13 @@ Import the following:
 #import <OpenAPIClient/OAISubscriptionPayments.h>
 #import <OpenAPIClient/OAITemporaryAddressChange.h>
 #import <OpenAPIClient/OAITemporaryAddressChangeDates.h>
+#import <OpenAPIClient/OAIUpdatePasswordData.h>
 #import <OpenAPIClient/OAIUser.h>
 #import <OpenAPIClient/OAIUserUpdate.h>
 #import <OpenAPIClient/OAIUserUpdateAddress.h>
 #import <OpenAPIClient/OAIUserUpdatePassword.h>
 // load API classes for accessing endpoints
+#import <OpenAPIClient/OAIAccountApi.h>
 #import <OpenAPIClient/OAIAdminApi.h>
 #import <OpenAPIClient/OAIEntitlementsApi.h>
 #import <OpenAPIClient/OAIIdentificationApi.h>
@@ -117,15 +120,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 
 NSString* *body = @"body_example"; // 
-NSString* *authUser = @"authUser_example"; //  (optional)
-NSString* *authorization = @"authorization_example"; //  (optional)
 
-OAIAdminApi *apiInstance = [[OAIAdminApi alloc] init];
+OAIAccountApi *apiInstance = [[OAIAccountApi alloc] init];
 
-// Revokes an existing free pass
-[apiInstance adminFreePassDeleteWithBody:body
-    authUser:authUser
-    authorization:authorization
+// Validate password reset token
+[apiInstance accountPasswordCheckTokenPostWithBody:body
               completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -140,6 +139,9 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OAIAccountApi* | [**accountPasswordCheckTokenPost**](docs/OAIAccountApi.md#accountpasswordchecktokenpost) | **POST** /account/password/check-token | Validate password reset token
+*OAIAccountApi* | [**accountPasswordForgotPost**](docs/OAIAccountApi.md#accountpasswordforgotpost) | **POST** /account/password/forgot | Request password reset link
+*OAIAccountApi* | [**accountPasswordResetPost**](docs/OAIAccountApi.md#accountpasswordresetpost) | **POST** /account/password/reset | Reset a forgotten password with a token
 *OAIAdminApi* | [**adminFreePassDelete**](docs/OAIAdminApi.md#adminfreepassdelete) | **DELETE** /admin/free-pass | Revokes an existing free pass
 *OAIAdminApi* | [**adminFreePassPut**](docs/OAIAdminApi.md#adminfreepassput) | **PUT** /admin/free-pass | Creates a free pass to an article
 *OAIAdminApi* | [**adminFreePassesGet**](docs/OAIAdminApi.md#adminfreepassesget) | **GET** /admin/free-passes | Lists all free passes
@@ -195,6 +197,7 @@ Class | Method | HTTP request | Description
  - [OAIDeliveryReclamation](docs/OAIDeliveryReclamation.md)
  - [OAIEntitlementAccess](docs/OAIEntitlementAccess.md)
  - [OAIFaroUser](docs/OAIFaroUser.md)
+ - [OAIForgotPasswordData](docs/OAIForgotPasswordData.md)
  - [OAIFreePass](docs/OAIFreePass.md)
  - [OAIFreePassInput](docs/OAIFreePassInput.md)
  - [OAIGdprConsent](docs/OAIGdprConsent.md)
@@ -237,6 +240,7 @@ Class | Method | HTTP request | Description
  - [OAISubscriptionPayments](docs/OAISubscriptionPayments.md)
  - [OAITemporaryAddressChange](docs/OAITemporaryAddressChange.md)
  - [OAITemporaryAddressChangeDates](docs/OAITemporaryAddressChangeDates.md)
+ - [OAIUpdatePasswordData](docs/OAIUpdatePasswordData.md)
  - [OAIUser](docs/OAIUser.md)
  - [OAIUserUpdate](docs/OAIUserUpdate.md)
  - [OAIUserUpdateAddress](docs/OAIUserUpdateAddress.md)
