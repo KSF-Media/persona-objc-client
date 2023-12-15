@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"password", @"confirmPassword", ];
   return [optionalProperties containsObject:propertyName];
 }
 
