@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**adminSearchPost**](OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 [**adminTransferPassiveSubscribersListidPost**](OAIAdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 [**adminUserPost**](OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
+[**adminUserUuidDelete**](OAIAdminApi.md#adminuseruuiddelete) | **DELETE** /admin/user/{uuid} | Delete user
 
 
 # **adminFreePassDelete**
@@ -346,6 +347,59 @@ No authorization required
 
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **adminUserUuidDelete**
+```objc
+-(NSURLSessionTask*) adminUserUuidDeleteWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+        completionHandler: (void (^)(NSError* error)) handler;
+```
+
+Delete user
+
+### Example 
+```objc
+
+NSString* uuid = @"uuid_example"; // 
+NSString* authUser = @"authUser_example"; //  (optional)
+NSString* authorization = @"authorization_example"; //  (optional)
+
+OAIAdminApi*apiInstance = [[OAIAdminApi alloc] init];
+
+// Delete user
+[apiInstance adminUserUuidDeleteWithUuid:uuid
+              authUser:authUser
+              authorization:authorization
+          completionHandler: ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling OAIAdminApi->adminUserUuidDelete: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**NSString***](.md)|  | 
+ **authUser** | [**NSString***](.md)|  | [optional] 
+ **authorization** | **NSString***|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

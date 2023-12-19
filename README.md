@@ -148,6 +148,7 @@ Class | Method | HTTP request | Description
 *OAIAdminApi* | [**adminSearchPost**](docs/OAIAdminApi.md#adminsearchpost) | **POST** /admin/search | Search for users
 *OAIAdminApi* | [**adminTransferPassiveSubscribersListidPost**](docs/OAIAdminApi.md#admintransferpassivesubscriberslistidpost) | **POST** /admin/transfer-passive-subscribers/{listid} | Transfers passive customers from Kayak to Mailchimp
 *OAIAdminApi* | [**adminUserPost**](docs/OAIAdminApi.md#adminuserpost) | **POST** /admin/user | Create a new user with admin options.
+*OAIAdminApi* | [**adminUserUuidDelete**](docs/OAIAdminApi.md#adminuseruuiddelete) | **DELETE** /admin/user/{uuid} | Delete user
 *OAIEntitlementsApi* | [**entitlementsAllowDelete**](docs/OAIEntitlementsApi.md#entitlementsallowdelete) | **DELETE** /entitlements/allow | Remove an entitlement
 *OAIEntitlementsApi* | [**entitlementsAllowGet**](docs/OAIEntitlementsApi.md#entitlementsallowget) | **GET** /entitlements/allow | Check if global entitlements are enabled
 *OAIEntitlementsApi* | [**entitlementsAllowPost**](docs/OAIEntitlementsApi.md#entitlementsallowpost) | **POST** /entitlements/allow | Add an entitlement for all users

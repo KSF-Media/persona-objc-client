@@ -134,5 +134,22 @@ extern NSInteger kOAIAdminApiMissingParamErrorCode;
     completionHandler: (void (^)(OAILoginResponse* output, NSError* error)) handler;
 
 
+/// Delete user
+/// 
+///
+/// @param uuid 
+/// @param authUser  (optional)
+/// @param authorization  (optional)
+/// 
+///  code:200 message:"",
+///  code:400 message:"Invalid `uuid` or `Authorization` or `AuthUser`"
+///
+/// @return void
+-(NSURLSessionTask*) adminUserUuidDeleteWithUuid: (NSString*) uuid
+    authUser: (NSString*) authUser
+    authorization: (NSString*) authorization
+    completionHandler: (void (^)(NSError* error)) handler;
+
+
 
 @end
