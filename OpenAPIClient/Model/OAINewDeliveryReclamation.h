@@ -32,4 +32,6 @@
  */
 @property(nonatomic) NSString* doorCode;
 
+@property(nonatomic) NSString* reason;
+
 @end
